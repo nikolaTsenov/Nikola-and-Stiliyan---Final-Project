@@ -25,31 +25,74 @@ body {
 #userNav {
 	margin: 0 auto;
 	width: 100%;
-	height: 8em;
+	height: 10em;
 	box-sizing: border-box;
 	border: 2px solid #ccc;
-	background-image: url('../images/technology.png');
-	background: red; /* For browsers that do not support gradients */
-    background: url('../images/technology.png'), -webkit-linear-gradient(left, #81caf4 , #0077ff); /* For Safari 5.1 to 6.0 */
-    background: url('../images/technology.png'), -o-linear-gradient(right, #81caf4, #0077ff); /* For Opera 11.1 to 12.0 */
-    background: url('../images/technology.png'), -moz-linear-gradient(right, #81caf4, #0077ff); /* For Firefox 3.6 to 15 */
-    background: url('../images/technology.png'), linear-gradient(to right, #81caf4 , #0077ff); /* Standard syntax */
+	background-image: url('../images/electro.png') right center #f9792a;
+    background: url('../images/electro.png') right center, -webkit-linear-gradient(left, #ffbb91 , #f9792a); /* For Safari 5.1 to 6.0 */
+    background: url('../images/electro.png') right center, -o-linear-gradient(right, #ffbb91, #f9792a); /* For Opera 11.1 to 12.0 */
+    background: url('../images/electro.png') right center, -moz-linear-gradient(right, #ffbb91, #f9792a); /* For Firefox 3.6 to 15 */
+    background: url('../images/electro.png') right center, linear-gradient(to right, #ffbb91 , #f9792a); /* Standard syntax */
 	background-repeat: no-repeat;
 	background-size: auto 100%;
+}
+@media all and (max-width:1150px) {
+	#userNav {
+		background-image: none;
+		background-color: #fea773;
+	}
+}
+@media all and (max-width:1000px) {
+	#userNav {
+		height: 15em;
+	}
+}
+@media all and (max-width:850px) {
+	#userNav {
+		height: 30em;
+	}
+}
+@media all and (max-width:480px) {
+	#userNav {
+		height: 25em;
+	}
+}
+@media all and (max-width:300px) {
+	#userNav {
+		height: 28em;
+	}
 }
 #siteHeading {
 	font-size: 3em;
 	font-weight: bolder;
-	padding: 1em;
 	float: left;
+	height: 100%;
+}
+@media all and (max-width:850px) {
+	#siteHeading {
+		width: 100%;
+		text-align: center;
+		height: 60%;
+	}
 }
 #siteHeading a {
 	width: 100%;
+	height: 100%;
 	color: black;
+	display: inline-block;
+}
+#siteHeading a img {
+	width: 100%;
+	height: 100%;
 }
 #searchingForm {
 	display: inline-block;
 	padding: 1em;
+}
+@media all and (max-width:350px) {
+	#searchingForm {
+		padding: 0.1em;
+	}
 }
 #searchingForm input[type=submit] {
 	height: 2em;
@@ -64,6 +107,7 @@ body {
 	border: 1px solid #202225;
 	border-radius: 10%;
 	width: 4em;
+	display: inline-block;
 }
 #searchingForm input[type=submit]:hover, #searchingForm input[type=submit]:active {
 	border: 2px solid #202225;
@@ -76,11 +120,33 @@ body {
 #personalNav li, #profileAccess li {
 	padding: 1em;
 }
+@media all and (max-width:480px) {
+	#subHeading {
+		padding: 0.1em;
+	}
+}
 #personalNav li a, #profileAccess li a {
-	color: black;
+	color: #272728;
 	width: 100%;
 	font-size: 1.2em;
 }
 #personalNav li a:hover, #profileAccess li a:hover, #personalNav li a:active, #profileAccess li a:active {
 	text-decoration: underline;
+}
+#subHeading {
+	font-weight: bold;
+	font-size: 1.2em;
+	color: #1261e2;
+	max-width: 70%;
+	padding-left: 0.5em;
+}
+@media all and (max-width:1150px) {
+	#subHeading {
+		max-width: 85%;
+	}
+}
+@media all and (max-width:480px) {
+	#subHeading {
+		display: none;
+	}
 }

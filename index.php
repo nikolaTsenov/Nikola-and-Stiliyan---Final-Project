@@ -14,7 +14,7 @@
 	<div id="wrapper">
 		<header id="header">
 			<nav id="userNav">
-				<h1 id="siteHeading"><a href="">elBag</a></h1>
+				<h1 id="siteHeading"><a href=""><img src="./assets/images/newnewlogo.png" alt="elBag_logo" /></a></h1>
 				<form id="searchingForm">
   					<input type="text" name="search" placeholder="Search..">
   					<input type="submit" name="submitSearch" value="Търси" />
@@ -24,8 +24,8 @@
 				?>
 				<ul id="personalNav">
 					<li><a href="#">Моят акаунт</a></li>
-					<li><a href="#"><i class="fa fa-heart" aria-hidden="true"></i> Фаворити</a></li>
-					<li><a href="#"><i class="fa fa-shopping-cart" aria-hidden="true"></i> Количка</a></li>
+					<li><a href="#" style="color:#076d02"><i class="fa fa-heart" aria-hidden="true" style="color:#d80a0a" ></i> Фаворити</a></li>
+					<li><a href="#" style="color:#1261e2"><i class="fa fa-shopping-cart" aria-hidden="true"></i> Количка</a></li>
 				</ul>
 				<?php  
 				} else {
@@ -37,6 +37,7 @@
 				<?php 
 				}
 				?>
+				<h2 id="subHeading">&quot;Добре дошли в <strong>elBag</strong> - най-големия сайт за електроника в България!&quot;</h2>
 			</nav>
 			<nav id="productNav">
 				<ul id="categories">
