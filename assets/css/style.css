@@ -8,6 +8,7 @@
 body {
 	background-color: #edf2f4;
 	font-family: Arial, sans-serif;
+	box-sizing: border-box;
 }
 /* Make it liquid */
 #wrapper {
@@ -165,6 +166,7 @@ body {
 .productNavFixed { /* for fixed use in js*/
 	width: 100%;
 	position: fixed;
+	z-index: 5;
 	top: 0px;
 	margin: 0 auto;
 	heigth: auto;
@@ -302,10 +304,10 @@ body {
 	display: inline-block;
 	margin-top: 1em;
 	background-color: #deecf2;
-	background: -webkit-radial-gradient(circle, #43a8d3, #7bbcd8, #b8dfef); /* Safari */
-    background: -o-radial-gradient(circle, #43a8d3, #7bbcd8, #b8dfef); /* Opera 11.6 to 12.0 */
-    background: -moz-radial-gradient(circle, #43a8d3, #7bbcd8, #b8dfef); /* Firefox 3.6 to 15 */
-    background: radial-gradient(circle, #43a8d3, #7bbcd8, #b8dfef); /* Standard syntax */
+	background: -webkit-radial-gradient(circle, #bec9db, #c5d2e8, #e2edff); /* Safari */
+    background: -o-radial-gradient(circle, #bec9db, #c5d2e8, #e2edff); /* Opera 11.6 to 12.0 */
+    background: -moz-radial-gradient(circle, #bec9db, #c5d2e8, #e2edff); /* Firefox 3.6 to 15 */
+    background: radial-gradient(circle, #bec9db, #c5d2e8, #e2edff); /* Standard syntax */
 }
 @media all and (max-width:1000px) {
 	#articles {
@@ -345,4 +347,174 @@ body {
 }
 #goUp p a:hover {
 	font-size: 1.2em;
+}
+
+/* Top Brands Div */
+#topBrands {
+	width: 95%;
+	margin: 0 auto;
+	border: 1px solid #d7e0ef;
+	border-radius: 1em;
+}
+#brandsHeader {
+	width: 100%;
+	text-align: center;
+	padding: 1em;
+	font-size: 1.2em;
+	font-weight: bold;
+}
+/* Technology brand carousel */
+.techBrand {
+	display:none;
+	width: 100%;
+	height: 100%;
+}
+/* Slideshow container */
+.slideshow-container {
+  max-width: 70%;
+  height: 10em;
+  position: relative;
+  margin: auto;
+}
+/* Image container */
+.carouselImg {
+	width: 100%;
+	height: 100%;
+}
+/* Next & previous buttons */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -22px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+
+/* Caption text */
+.text {
+  color: #f2f2f2;
+  font-size: 15px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  cursor:pointer;
+  height: 13px;
+  width: 13px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+  background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+@keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+/* On smaller screens, decrease text size */
+@media only screen and (max-width: 300px) {
+  .prev, .next,.text {font-size: 11px}
+}
+/* Footer */
+#footer {
+	width: 95%;
+	margin: 0 auto;
+	border: 1px solid #d7e0ef;
+	border-radius: 1em;
+	margin-top: 1em;
+	display: inline-block;
+	margin-left: 2.5%;
+	text-align: center;
+}
+#services,#orders, #contacts {
+	width: 33%;
+	padding: 0.5em;
+	float: left;
+	display: inline-block;
+}
+@media all and (max-width:480px) {
+	#services,#orders, #contacts {
+		width: 95%;
+		clear: both;
+		margin-left: 2.5%;
+		margin-right: 2.5%;
+		margin-bottom: 0.5em;
+	}
+}
+#services h6, #orders h6, #contacts h6 {
+	font-size: 1.2em;
+	font-weight: bold;
+	padding: 0.3em;
+}
+#services ul li a, #orders ul li a, #contacts ul li a {
+	font-size: 1em;
+	font-weight: normal;
+	padding: 0.1em;
+	color: #2d2d2d;
+}
+#services ul li a:hover, #orders ul li a:hover, #contacts ul li a:hover {
+	color: #7f7272;
+}
+#services ul li a:active, #orders ul li a:active, #contacts ul li a:active {
+	color: #7f7272;
+	text-decoration: underline;
+}
+#rights {
+	width: 95%;
+	margin: 0 auto;
+	margin-top: 1em;
+	margin-bottom: 1em;
+}
+#rights marquee {
+	color: #7f7272;
 }
