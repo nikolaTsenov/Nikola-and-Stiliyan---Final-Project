@@ -8,7 +8,20 @@
 	<link rel="stylesheet" href="./assets/css/reset.css" type="text/css" />
 	<link rel="stylesheet"
 		href="./assets/font-awesome-4.7.0/css/font-awesome.min.css" />
-	<link rel="stylesheet" href="./assets/css/style.css" type="text/css" />
+	<?php 
+	if ((isset ($_COOKIE['skin']) && $_COOKIE['skin'] == 'skin1') || !isset ($_COOKIE['skin'])) {
+		$logo = "Logoto.png";
+	?>
+	<link rel="stylesheet" href="./assets/css/style1.css" type="text/css" />
+	<?php 
+	}
+	if ((isset ($_COOKIE['skin']) && $_COOKIE['skin'] == 'skin2')) {
+		$logo = "newnewlogo.png";
+	?>
+	<link rel="stylesheet" href="./assets/css/style2.css" type="text/css" />
+	<?php 
+	}
+	?>
 	<script
 		src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 </head>
@@ -17,7 +30,7 @@
 		<header id="header">
 			<nav id="userNav">
 				<h1 id="siteHeading">
-					<a href=""><img src="./assets/images/newnewlogo.png"
+					<a href=""><img src="./assets/images/<?php echo $logo; ?>"
 						alt="elBag_logo" /></a>
 				</h1>
 				<form id="searchingForm">
@@ -48,6 +61,9 @@
 					&quot;Добре дошли в <strong>elBag</strong> - най-големия сайт за
 					електроника в България!&quot;
 				</h2>
+				<p id="skinsPar">Смени стила:</p>
+				<button id="skin1">Стил 1</button>
+				<button id="skin2">Стил 2</button>
 			</nav>
 			<nav class="productNav">
 				<ul id="categories">
@@ -152,5 +168,7 @@
 	<script src="./assets/js/fixProductNavPosition.js"></script>
 	<!-- The below js script is for the carousel of thech brands -->
 	<script src="./assets/js/carouselTechBrands.js"></script>
+	<!-- The below js script is for changing skins -->
+	<script src="./assets/js/changeSkin.js" ></script>
 </body>
 </html>

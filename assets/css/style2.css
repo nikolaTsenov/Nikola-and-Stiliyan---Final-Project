@@ -1,0 +1,539 @@
+@CHARSET "UTF-8";
+
+/* Settings for the whole page */
+* {
+	box-sizing: border-box;
+	text-decoration: none;
+}
+body {
+	background-color: #edf2f4;
+	font-family: Arial, sans-serif;
+	box-sizing: border-box;
+}
+/* Make it liquid */
+#wrapper {
+	margin: 0 auto;
+	width: 100%;
+	height: auto;
+}
+/* Header */
+#header {
+	margin: 0 auto;
+	width: 100%;
+	height: auto;
+}
+/* The user navigation */
+#userNav {
+	margin: 0 auto;
+	width: 100%;
+	height: 10em;
+	box-sizing: border-box;
+	border: 2px solid #ccc;
+	background-image: url('../images/electro.png') right center #f9792a;
+    background: url('../images/electro.png') right center, -webkit-linear-gradient(left, #ffbb91 , #f9792a); /* For Safari 5.1 to 6.0 */
+    background: url('../images/electro.png') right center, -o-linear-gradient(right, #ffbb91, #f9792a); /* For Opera 11.1 to 12.0 */
+    background: url('../images/electro.png') right center, -moz-linear-gradient(right, #ffbb91, #f9792a); /* For Firefox 3.6 to 15 */
+    background: url('../images/electro.png') right center, linear-gradient(to right, #ffbb91 , #f9792a); /* Standard syntax */
+	background-repeat: no-repeat;
+	background-size: auto 100%;
+}
+@media all and (max-width:1150px) {
+	#userNav {
+		background-image: none;
+		background-color: #fea773;
+	}
+}
+@media all and (max-width:1000px) {
+	#userNav {
+		height: 15em;
+	}
+}
+@media all and (max-width:850px) {
+	#userNav {
+		height: 30em;
+	}
+}
+@media all and (max-width:480px) {
+	#userNav {
+		height: 25em;
+	}
+}
+@media all and (max-width:300px) {
+	#userNav {
+		height: 28em;
+	}
+}
+#siteHeading {
+	font-size: 3em;
+	font-weight: bolder;
+	float: left;
+	height: 100%;
+}
+@media all and (max-width:850px) {
+	#siteHeading {
+		width: 100%;
+		text-align: center;
+		height: 60%;
+	}
+}
+#siteHeading a {
+	width: 100%;
+	height: 100%;
+	color: black;
+	display: inline-block;
+}
+#siteHeading a img {
+	width: 100%;
+	height: 100%;
+}
+#searchingForm {
+	display: inline-block;
+	padding: 1em;
+}
+@media all and (max-width:350px) {
+	#searchingForm {
+		padding: 0.1em;
+	}
+}
+#searchingForm input[type=submit] {
+	height: 2em;
+	font-size: 0.8em;
+	padding: 0.3em;
+	background-color: Transparent;
+    background-repeat: no-repeat;
+	cursor: pointer;
+    overflow: hidden;
+    outline: none;
+    color: #202225;
+	border: 1px solid #202225;
+	border-radius: 10%;
+	width: 4em;
+	display: inline-block;
+}
+#searchingForm input[type=submit]:hover, #searchingForm input[type=submit]:active {
+	border: 2px solid #202225;
+	font-weight: bold;
+	height: 2.2em;
+}
+#personalNav, #profileAccess, #personalNav li, #profileAccess li {
+	display: inline-block;
+}
+#personalNav li, #profileAccess li {
+	padding: 1em;
+}
+@media all and (max-width:480px) {
+	#subHeading {
+		padding: 0.1em;
+	}
+}
+#personalNav li a, #profileAccess li a {
+	color: #272728;
+	width: 100%;
+	font-size: 1.2em;
+}
+#personalNav li a:hover, #profileAccess li a:hover, #personalNav li a:active, #profileAccess li a:active {
+	text-decoration: underline;
+}
+#subHeading {
+	font-weight: bold;
+	font-size: 1.2em;
+	color: #1261e2;
+	max-width: 70%;
+	padding-left: 0.5em;
+}
+@media all and (max-width:1150px) {
+	#subHeading {
+		max-width: 85%;
+	}
+}
+@media all and (max-width:480px) {
+	#subHeading {
+		display: none;
+	}
+}
+#skinsPar {
+	padding: 0.5em;
+	color: #017fc1;
+}
+#skin1, #skin2 {
+	height: 2em;
+	font-size: 0.8em;
+	padding: 0.3em;
+	background-color: Transparent;
+    background-repeat: no-repeat;
+	cursor: pointer;
+    overflow: hidden;
+    outline: none;
+    color: #017fc1;
+	border: 1px solid #017fc1;
+	border-radius: 10%;
+	width: 4em;
+	display: inline-block;
+}
+/* The product navigation */
+.productNav {
+	width: 100%;
+	margin: 0 auto;
+	heigth: auto;
+	padding: 0.8em;
+	background-color: #4286f4;
+	background: -webkit-linear-gradient(#9ad8ea, #017fc1); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(#9ad8ea, #017fc1); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(#9ad8ea, #017fc1); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(#9ad8ea, #017fc1); /* Standard syntax */
+}
+.productNavFixed { /* for fixed use in js*/
+	width: 100%;
+	position: fixed;
+	z-index: 5;
+	top: 0px;
+	margin: 0 auto;
+	heigth: auto;
+	padding: 0.8em;
+	background-color: #4286f4;
+	background: -webkit-linear-gradient(#9ad8ea, #017fc1); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(#9ad8ea, #017fc1); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(#9ad8ea, #017fc1); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(#9ad8ea, #017fc1); /* Standard syntax */
+}
+#categories {
+	width: 100%;
+	margin: 0 auto;
+	display: inline-block;
+	text-align: center;
+}
+#categories li {
+	float: left;
+	display: inline-block;
+	max-width: 20%;
+	min-width: 19.1%;
+	height: 4em;
+	margin: 0.2em;
+	border-radius: 1em;
+	background-color: #fea773;
+}
+#categories #telephones {
+	background-color: #9ad8ea;
+}
+#categories li:hover {
+	background-color: #9ad8ea;
+}
+@media all and (max-width:1200px) {
+	#categories li {
+		max-width: 100%;
+	}
+}
+@media all and (max-width:799px) {
+	#categories li {
+		display: block;
+		width: 100%;
+		height: auto;
+	}
+}
+#categories li a {
+	display: block;
+	width: 100%;
+	height: 100%;
+	color: #017fc1;
+	font-weight: bold;
+	padding: 1em;
+}
+#categories #telephones a {
+	color: #f9792a;
+}
+@media all and (max-width:799px) {
+	#categories li a {
+		padding: 1em;
+	}
+}
+#categories li a:hover{
+	color: #f9792a;	
+}
+#categories li a:active {
+	color: #f9792a;
+	text-decoration: underline;
+}
+/* left aside subcategories */
+.leftAside {
+	width: 20%;
+	margin: 2em;
+	margin-top: 1em;
+	height: auto;
+	float: left;
+	display: inline-block;
+	background-color: #ffbb91;
+	background: -webkit-linear-gradient(left, #f9792a , #ffbb91); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(right, #f9792a , #ffbb91); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(right, #f9792a , #ffbb91); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(to right, #f9792a , #ffbb91); /* Standard syntax */
+}
+@media all and (max-width:599px) {
+	.leftAside {
+		width: 95%;
+		clear: both;
+		margin-left: 2.5%;
+		margin-right: 2.5%;
+		margin-bottom: 0.5em;
+	}
+}
+
+#telCat {
+	padding: 0.3em;
+	width: 95%;
+	margin: 0 auto;
+	padding-bottom: 1em;
+	font-weight: bold;
+	border-bottom: 1px solid #ccc;
+	margin-bottom: 1em;
+}
+#telList {
+	width: 100%;
+	padding-bottom: 1em;
+}
+#telList li {
+	padding: 0.5em;
+	width: 95%;
+	margin: 0 auto;
+}
+#telList li:hover {
+	background-color: #9ad8ea; 
+}
+#telList li a {
+	color: #017fc1;
+	font-weight: bold;
+	display: block;
+	width: 100%;
+	height: 100%;
+}
+#telList li a:hover {
+	color: #f9792a;
+}
+#telList li a:hover:after {
+	content: ">";
+    text-align: right;
+  	float: right;
+}
+#telList li a:active {
+	text-decoration: underline;	
+}
+/* Section with articles */
+#articles {
+	width: 73%;
+	height: 40em;
+	display: inline-block;
+	margin-top: 1em;
+	background-color: #deecf2;
+	background: -webkit-radial-gradient(circle, #bec9db, #c5d2e8, #e2edff); /* Safari */
+    background: -o-radial-gradient(circle, #bec9db, #c5d2e8, #e2edff); /* Opera 11.6 to 12.0 */
+    background: -moz-radial-gradient(circle, #bec9db, #c5d2e8, #e2edff); /* Firefox 3.6 to 15 */
+    background: radial-gradient(circle, #bec9db, #c5d2e8, #e2edff); /* Standard syntax */
+}
+@media all and (max-width:1000px) {
+	#articles {
+		width: 71%;
+	}
+}
+@media all and (max-width:699px) {
+	#articles {
+		width: 69%;
+	}
+}
+@media all and (max-width:599px) {
+	#articles {
+		width: 95%;
+		clear: both;
+		margin-left: 2.5%;
+		margin-right: 2.5%;
+		margin-top: 0em;
+	}
+}
+/* Go up button */
+#goUp {
+	position: fixed;
+	bottom: 3em;
+	left: 2em;
+	display: none;
+	border: 1px solid black;
+	border-radius: 0.5em;
+	padding: 0.5em;
+	background-color: #edeeef;
+	z-index: 5;
+}
+#goUp p a {
+	color: black;
+	font-weight: bold;
+	font-size: 1em;
+}
+#goUp p a:hover {
+	font-size: 1.2em;
+}
+
+/* Top Brands Div */
+#topBrands {
+	width: 95%;
+	margin: 0 auto;
+	border: 1px solid #d7e0ef;
+	border-radius: 1em;
+}
+#brandsHeader {
+	width: 100%;
+	text-align: center;
+	padding: 1em;
+	font-size: 1.2em;
+	font-weight: bold;
+}
+/* Technology brand carousel */
+.techBrand {
+	display:none;
+	width: 100%;
+	height: 100%;
+}
+/* Slideshow container */
+.slideshow-container {
+  max-width: 70%;
+  height: 10em;
+  position: relative;
+  margin: auto;
+}
+/* Image container */
+.carouselImg {
+	width: 100%;
+	height: 100%;
+}
+/* Next & previous buttons */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -22px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+
+/* Caption text */
+.text {
+  color: #f2f2f2;
+  font-size: 15px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  cursor:pointer;
+  height: 13px;
+  width: 13px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+  background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+@keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+/* On smaller screens, decrease text size */
+@media only screen and (max-width: 300px) {
+  .prev, .next,.text {font-size: 11px}
+}
+/* Footer */
+#footer {
+	width: 95%;
+	margin: 0 auto;
+	border: 1px solid #d7e0ef;
+	border-radius: 1em;
+	margin-top: 1em;
+	display: inline-block;
+	margin-left: 2.5%;
+	text-align: center;
+}
+#services,#orders, #contacts {
+	width: 33%;
+	padding: 0.5em;
+	float: left;
+	display: inline-block;
+}
+@media all and (max-width:480px) {
+	#services,#orders, #contacts {
+		width: 95%;
+		clear: both;
+		margin-left: 2.5%;
+		margin-right: 2.5%;
+		margin-bottom: 0.5em;
+	}
+}
+#services h6, #orders h6, #contacts h6 {
+	font-size: 1.2em;
+	font-weight: bold;
+	padding: 0.3em;
+}
+#services ul li a, #orders ul li a, #contacts ul li a {
+	font-size: 1em;
+	font-weight: normal;
+	padding: 0.1em;
+	color: #2d2d2d;
+}
+#services ul li a:hover, #orders ul li a:hover, #contacts ul li a:hover {
+	color: #7f7272;
+}
+#services ul li a:active, #orders ul li a:active, #contacts ul li a:active {
+	color: #7f7272;
+	text-decoration: underline;
+}
+#rights {
+	width: 95%;
+	margin: 0 auto;
+	margin-top: 1em;
+	margin-bottom: 1em;
+}
+#rights marquee {
+	color: #7f7272;
+}
