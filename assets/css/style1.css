@@ -28,19 +28,14 @@ body {
 	width: 100%;
 	height: 10em;
 	box-sizing: border-box;
-	border: 2px solid #ccc;
-	background-image: url('../images/electro.png') right center #f9792a;
-    background: url('../images/electro.png') right center, -webkit-linear-gradient(left, #ffbb91 , #f9792a); /* For Safari 5.1 to 6.0 */
-    background: url('../images/electro.png') right center, -o-linear-gradient(right, #ffbb91, #f9792a); /* For Opera 11.1 to 12.0 */
-    background: url('../images/electro.png') right center, -moz-linear-gradient(right, #ffbb91, #f9792a); /* For Firefox 3.6 to 15 */
-    background: url('../images/electro.png') right center, linear-gradient(to right, #ffbb91 , #f9792a); /* Standard syntax */
+	background: url('../images/electro.png') right center, #0000FF;
 	background-repeat: no-repeat;
 	background-size: auto 100%;
 }
 @media all and (max-width:1150px) {
 	#userNav {
 		background-image: none;
-		background-color: #fea773;
+		background-color: #0000FF;
 	}
 }
 @media all and (max-width:1000px) {
@@ -68,6 +63,7 @@ body {
 	font-weight: bolder;
 	float: left;
 	height: 100%;
+	width: 20%;
 }
 @media all and (max-width:850px) {
 	#siteHeading {
@@ -104,14 +100,14 @@ body {
 	cursor: pointer;
     overflow: hidden;
     outline: none;
-    color: #202225;
-	border: 1px solid #202225;
+    color: #d4d8f7;
+	border: 1px solid #d4d8f7;
 	border-radius: 10%;
 	width: 4em;
 	display: inline-block;
 }
 #searchingForm input[type=submit]:hover, #searchingForm input[type=submit]:active {
-	border: 2px solid #202225;
+	border: 2px solid #d4d8f7;
 	font-weight: bold;
 	height: 2.2em;
 }
@@ -127,7 +123,7 @@ body {
 	}
 }
 #personalNav li a, #profileAccess li a {
-	color: #272728;
+	color: #f7f8ff;
 	width: 100%;
 	font-size: 1.2em;
 }
@@ -137,7 +133,7 @@ body {
 #subHeading {
 	font-weight: bold;
 	font-size: 1.2em;
-	color: #1261e2;
+	color: #f7f8ff;
 	max-width: 70%;
 	padding-left: 0.5em;
 }
@@ -151,6 +147,25 @@ body {
 		display: none;
 	}
 }
+#skinsPar {
+	padding: 0.5em;
+	color: #f7f8ff;
+}
+#skin1, #skin2 {
+	height: 2em;
+	font-size: 0.8em;
+	padding: 0.3em;
+	background-color: Transparent;
+    background-repeat: no-repeat;
+	cursor: pointer;
+    overflow: hidden;
+    outline: none;
+    color: #d4d8f7;
+	border: 1px solid #d4d8f7;
+	border-radius: 10%;
+	width: 4em;
+	display: inline-block;
+}
 /* The product navigation */
 .productNav {
 	width: 100%;
@@ -158,10 +173,10 @@ body {
 	heigth: auto;
 	padding: 0.8em;
 	background-color: #4286f4;
-	background: -webkit-linear-gradient(#9ad8ea, #017fc1); /* For Safari 5.1 to 6.0 */
-    background: -o-linear-gradient(#9ad8ea, #017fc1); /* For Opera 11.1 to 12.0 */
-    background: -moz-linear-gradient(#9ad8ea, #017fc1); /* For Firefox 3.6 to 15 */
-    background: linear-gradient(#9ad8ea, #017fc1); /* Standard syntax */
+	background: -webkit-linear-gradient(#0000FF, #017fc1); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(#0000FF, #017fc1); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(#0000FF, #017fc1); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(#0000FF, #017fc1); /* Standard syntax */
 }
 .productNavFixed { /* for fixed use in js*/
 	width: 100%;
@@ -172,10 +187,10 @@ body {
 	heigth: auto;
 	padding: 0.8em;
 	background-color: #4286f4;
-	background: -webkit-linear-gradient(#9ad8ea, #017fc1); /* For Safari 5.1 to 6.0 */
-    background: -o-linear-gradient(#9ad8ea, #017fc1); /* For Opera 11.1 to 12.0 */
-    background: -moz-linear-gradient(#9ad8ea, #017fc1); /* For Firefox 3.6 to 15 */
-    background: linear-gradient(#9ad8ea, #017fc1); /* Standard syntax */
+	background: -webkit-linear-gradient(#0000FF, #017fc1); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(#0000FF, #017fc1); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(#0000FF, #017fc1); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(#0000FF, #017fc1); /* Standard syntax */
 }
 #categories {
 	width: 100%;
@@ -191,10 +206,10 @@ body {
 	height: 4em;
 	margin: 0.2em;
 	border-radius: 1em;
-	background-color: #fea773;
+	background-color: #e70001;
 }
 #categories #telephones {
-	background-color: #9ad8ea;
+	background-color: #688ff9;
 }
 #categories li:hover {
 	background-color: #9ad8ea;
@@ -215,12 +230,12 @@ body {
 	display: block;
 	width: 100%;
 	height: 100%;
-	color: #017fc1;
+	color: #0000ff;
 	font-weight: bold;
 	padding: 1em;
 }
 #categories #telephones a {
-	color: #f9792a;
+	color: #e70001;
 }
 @media all and (max-width:799px) {
 	#categories li a {
@@ -228,10 +243,10 @@ body {
 	}
 }
 #categories li a:hover{
-	color: #f9792a;	
+	color: #e70001;	
 }
 #categories li a:active {
-	color: #f9792a;
+	color: #e70001;
 	text-decoration: underline;
 }
 /* left aside subcategories */
@@ -242,11 +257,11 @@ body {
 	height: auto;
 	float: left;
 	display: inline-block;
-	background-color: #ffbb91;
-	background: -webkit-linear-gradient(left, #f9792a , #ffbb91); /* For Safari 5.1 to 6.0 */
-    background: -o-linear-gradient(right, #f9792a , #ffbb91); /* For Opera 11.1 to 12.0 */
-    background: -moz-linear-gradient(right, #f9792a , #ffbb91); /* For Firefox 3.6 to 15 */
-    background: linear-gradient(to right, #f9792a , #ffbb91); /* Standard syntax */
+	background-color: #0000FF;
+	background: -webkit-linear-gradient(left, #0000FF , #2375e0); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(right, #0000FF , #2375e0); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(right, #0000FF , #2375e0); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(to right, #0000FF , #2375e0); /* Standard syntax */
 }
 @media all and (max-width:599px) {
 	.leftAside {
@@ -266,6 +281,7 @@ body {
 	font-weight: bold;
 	border-bottom: 1px solid #ccc;
 	margin-bottom: 1em;
+	color: #f7f8ff;
 }
 #telList {
 	width: 100%;
@@ -280,14 +296,14 @@ body {
 	background-color: #9ad8ea; 
 }
 #telList li a {
-	color: #017fc1;
+	color: #f7f8ff;
 	font-weight: bold;
 	display: block;
 	width: 100%;
 	height: 100%;
 }
 #telList li a:hover {
-	color: #f9792a;
+	color: #e70001;
 }
 #telList li a:hover:after {
 	content: ">";
