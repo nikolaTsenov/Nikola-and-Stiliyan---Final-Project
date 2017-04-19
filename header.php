@@ -59,8 +59,6 @@
             <ul id="categories">
             	<?php 
 				    $currentDir = $_SERVER['PHP_SELF'];
-				    $temp = explode("/",$currentDir);
-				    $temp2 = explode(".",$temp[2]);
 				    
 				    $cats = array ('Телефони, Таблети &amp; Смарт технологии',
 				    				'Лаптопи, IT продукти &amp; Офис',
@@ -76,7 +74,7 @@
 				    );
 				    
 				    for ($index = 0; $index < 5; $index++) {
-				    	if ($temp2[0] == $links[$index]) {
+				    	if (strpos($currentDir, $links[$index]) !== false) {
 				    		echo "<li id='telephones'><a href='./" . $links[$index] . ".php' >$cats[$index]</a></li>";
 				    	} else {
 				    		echo "<li><a href='./" . $links[$index] . ".php' >$cats[$index]</a></li>";
