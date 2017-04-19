@@ -57,11 +57,32 @@
         </nav>
         <nav class="productNav">
             <ul id="categories">
-                <li id="telephones"><a href="./index.php">Телефони, Таблети &amp; Смарт технологии</a></li>
-                <li><a href="./laptops.php">Лаптопи, IT продукти &amp; Офис</a></li>
-                <li><a href="./electronics.php">ТВ, Електроника &amp; Фото</a></li>
-                <li><a href="./bigEls.php">Големи електроуреди</a></li>
-                <li><a href="./smallEls.php">Малки електроуреди</a></li>
+            	<?php 
+				    $currentDir = $_SERVER['PHP_SELF'];
+				    $temp = explode("/",$currentDir);
+				    $temp2 = explode(".",$temp[2]);
+				    
+				    $cats = array ('Телефони, Таблети &amp; Смарт технологии',
+				    				'Лаптопи, IT продукти &amp; Офис',
+				    				'ТВ, Електроника &amp; Фото',
+				    				'Големи електроуреди',
+				    				'Малки електроуреди'
+				    );
+				    $links = array ('index',
+				    				'laptops',
+				    				'electronics',
+				    				'bigEls',
+				    				'smallEls'
+				    );
+				    
+				    for ($index = 0; $index < 5; $index++) {
+				    	if ($temp2[0] == $links[$index]) {
+				    		echo "<li id='telephones'><a href='./" . $links[$index] . ".php' >$cats[$index]</a></li>";
+				    	} else {
+				    		echo "<li><a href='./" . $links[$index] . ".php' >$cats[$index]</a></li>";
+				    	}
+				    }
+			    ?>
             </ul>
         </nav>
     </header>
