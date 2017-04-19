@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.5.1
--- http://www.phpmyadmin.net
+-- version 4.6.5.2
+-- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 19 апр 2017 в 17:23
--- Версия на сървъра: 10.1.19-MariaDB
--- PHP Version: 7.0.9
+-- Generation Time: 19 апр 2017 в 17:53
+-- Версия на сървъра: 10.1.21-MariaDB
+-- PHP Version: 7.1.1
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -56,17 +56,16 @@ CREATE TABLE `categories` (
   `name` varchar(45) COLLATE utf8_unicode_ci DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
--- --------------------------------------------------------
-
 --
--- Структура на таблица `comments`
+-- Схема на данните от таблица `categories`
 --
 
-CREATE TABLE `comments` (
-  `id` int(11) NOT NULL,
-  `comment` text,
-  `user_id` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+INSERT INTO `categories` (`category_id`, `name`) VALUES
+(1, 'Телефони,Таблети,Смарт технологии'),
+(2, 'Лаптопи,IT продукти и Офис'),
+(3, 'ТВ,Електроника и Фото'),
+(4, 'Големи електроуреди'),
+(5, 'Малки електроуреди');
 
 -- --------------------------------------------------------
 
@@ -160,6 +159,42 @@ CREATE TABLE `subcategories` (
   `category_id` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
+--
+-- Схема на данните от таблица `subcategories`
+--
+
+INSERT INTO `subcategories` (`subcategories_id`, `name`, `category_id`) VALUES
+(1, 'Мобилни Телефони', 1),
+(2, 'Смарт часовници', 1),
+(3, 'Таблети', 1),
+(4, 'Външни батерии', 1),
+(5, 'Аксесоари', 1),
+(6, 'Smart Home & VR очила', 1),
+(7, 'Лаптопи & Аксесоари', 2),
+(8, 'Настолни компютри и Монитори', 2),
+(9, 'PC компоненти', 2),
+(10, 'Softwere', 2),
+(11, 'Периферия', 2),
+(12, 'Принтери и Скенери', 2),
+(13, 'Wireless & Networking', 2),
+(14, 'Телевизори & Аксесоари', 3),
+(15, 'Видео проектори & Екрани', 3),
+(16, 'Системи за домашно кино и Аудио Hi-Fi', 3),
+(17, 'Електроника', 3),
+(18, 'Конзоли и Игри', 3),
+(19, 'Фотоапарати', 3),
+(20, 'Видеокамери', 3),
+(21, 'Фото и Видеоаксесоари', 3),
+(22, 'Хладилна Техника', 4),
+(23, 'Перални и сушилни за дрехи', 4),
+(24, 'Съдомиялни машини', 4),
+(25, 'Уреди за вграждане', 4),
+(26, 'Готварски печки и микровълнови', 4),
+(27, 'Батерии,Климатици и Уреди за вграждане', 4),
+(28, 'Прахосмукачки и Ютии', 5),
+(29, 'Приготвяне на напитки', 5),
+(30, 'Кухненски уреди', 5);
+
 -- --------------------------------------------------------
 
 --
@@ -193,13 +228,6 @@ ALTER TABLE `address`
 --
 ALTER TABLE `categories`
   ADD PRIMARY KEY (`category_id`);
-
---
--- Indexes for table `comments`
---
-ALTER TABLE `comments`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `fk_comments_users1_idx` (`user_id`);
 
 --
 -- Indexes for table `favorits`
@@ -265,12 +293,7 @@ ALTER TABLE `address`
 -- AUTO_INCREMENT for table `categories`
 --
 ALTER TABLE `categories`
-  MODIFY `category_id` int(11) NOT NULL AUTO_INCREMENT;
---
--- AUTO_INCREMENT for table `comments`
---
-ALTER TABLE `comments`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `category_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 --
 -- AUTO_INCREMENT for table `favorits`
 --
@@ -305,22 +328,12 @@ ALTER TABLE `product_specification_name_values`
 -- AUTO_INCREMENT for table `subcategories`
 --
 ALTER TABLE `subcategories`
-  MODIFY `subcategories_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `subcategories_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
   MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT;
---
--- Ограничения за дъмпнати таблици
---
-
---
--- Ограничения за таблица `comments`
---
-ALTER TABLE `comments`
-  ADD CONSTRAINT `fk_comments_users1` FOREIGN KEY (`user_id`) REFERENCES `users` (`user_id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
-
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
