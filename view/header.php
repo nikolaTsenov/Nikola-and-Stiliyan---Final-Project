@@ -8,21 +8,10 @@
     <link rel="stylesheet" href="../assets/css/reset.css" type="text/css" />
     <link rel="stylesheet" href="../assets/font-awesome-4.7.0/css/font-awesome.min.css"/>
     <?php
-    if ((isset ($_COOKIE['skin']) && $_COOKIE['skin'] == 'skin1') || !isset ($_COOKIE['skin'])) {
-        $logo = "Logoto.png";
-        ?>
-        <link rel="stylesheet" href="../assets/css/style1.css" type="text/css" />
-        <link rel="stylesheet" href="../assets/css/loginStyle1.css" type="text/css" />
-        <?php
-    }
-    if ((isset ($_COOKIE['skin']) && $_COOKIE['skin'] == 'skin2')) {
-        $logo = "newnewlogo.png";
-        ?>
-        <link rel="stylesheet" href="../assets/css/style2.css" type="text/css" />
-        <link rel="stylesheet" href="../assets/css/loginStyle2.css" type="text/css" />
-        <?php
-    }
+    include_once "../controller/skinController.php";
     ?>
+    <link rel="stylesheet" href="../assets/css/<?php echo $style; ?>.css" type="text/css" />
+    <link rel="stylesheet" href="../assets/css/<?php echo $loginStyle; ?>.css" type="text/css" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 </head>
 <body>
@@ -35,21 +24,10 @@
                 <input type="submit" name="submitSearch" value="Търси" />
             </form>
             <?php
-            if (isset($_SESSION['username'])) {
-                ?>
-                <ul id="personalNav">
-                    <li><a href="#">Моят акаунт</a></li>
-                    <li><a href="#" style="color:#076d02"><i class="fa fa-heart" aria-hidden="true" style="color:#d80a0a" ></i> Фаворити</a></li>
-                    <li><a href="#" style="color:#1261e2"><i class="fa fa-shopping-cart" aria-hidden="true"></i> Количка</a></li>
-                </ul>
-                <?php
-            } else {
-                ?>
-                <ul id="profileAccess">
-                    <li><button onclick="document.getElementById('register').style.display='block'">Моят профил</button></li>
-                </ul>
-                <?php
-            }
+            // Include accountController to define whether the user is logged and has a valid session:
+            include_once "../controller/accountController.php";
+            // Include either logged.php or notLogged.php:
+            include_once "../view/$accountBarPath.php";
             ?>
             <h2 id="subHeading">&quot;Добре дошли в <strong>elBag</strong> - най-големия сайт за електроника в България!&quot;</h2>
             <p id="skinsPar">Смени стила:</p>
@@ -75,10 +53,10 @@
 				    );
 				    
 				    for ($index = 0; $index < 5; $index++) {
-				    	if (strpos($currentDir, $links[$index]) !== false) {
-				    		echo "<li id='telephones'><a href='./" . $links[$index] . ".php' >$cats[$index]</a></li>";
+				    	if (strpos($currentDir, $links[$index]) !== false || (strpos($currentDir, 'homeController') !== false && $index == 0)) {
+				    		echo "<li id='telephones'><a href='../view/" . $links[$index] . ".php' >$cats[$index]</a></li>";
 				    	} else {
-				    		echo "<li><a href='./" . $links[$index] . ".php' >$cats[$index]</a></li>";
+				    		echo "<li><a href='../view/" . $links[$index] . ".php' >$cats[$index]</a></li>";
 				    	}
 				    }
 			    ?>
