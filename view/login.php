@@ -22,7 +22,7 @@
 			<button type="button" 
 				onclick="document.getElementById('register').style.display='none'"
 				class="cancelbtn">Изход</button>
-			<span class="psw">Нямате регистрация? <a href="#">Регистрирайте се в <strong>elBag</strong>!</a></span> 
+			<span class="psw">Нямате регистрация? <a href="../view/register.php">Регистрирайте се в <strong>elBag</strong>!</a></span> 
 		</div>
 	</form>
 	<div class='error'>
