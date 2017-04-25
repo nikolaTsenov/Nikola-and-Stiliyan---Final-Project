@@ -10,7 +10,7 @@
             ?>
             <div class="techBrand fade">
                 <div class="numbertext"><?php echo $index . " / " . $countTopBrands; ?></div>
-                <div class="carouselImg"><img src="./assets/images/TopBrands/brand<?php echo $index; ?>.jpg" style="width: 100%; height: 100%"></div>
+                <div class="carouselImg"><img src="../assets/images/TopBrands/brand<?php echo $index; ?>.jpg" style="width: 100%; height: 100%"></div>
                 <div class="text">Най-търсените брандове</div>
             </div>
             <?php
@@ -68,12 +68,12 @@
 </footer>
 </div>
 <!-- The below js file is to regulate when the #goUp div to appear and disappear -->
-<script src="./assets/js/goUpButton.js" ></script>
+<script src="../assets/js/goUpButton.js" ></script>
 <!-- The below js script is to fix the position of #productNav and to regulate it through matchMedia queries in JS -->
-<script src="./assets/js/fixProductNavPosition.js" ></script>
+<script src="../assets/js/fixProductNavPosition.js" ></script>
 <!-- The below js script is for the carousel of thech brands -->
-<script src="./assets/js/carouselTechBrands.js" ></script>
+<script src="../assets/js/carouselTechBrands.js" ></script>
 <!-- The below js script is for changing skins -->
-<script src="./assets/js/changeSkin.js" ></script>
+<script src="../assets/js/changeSkin.js" ></script>
 </body>
 </html>

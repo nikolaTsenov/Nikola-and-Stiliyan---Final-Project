@@ -126,9 +126,22 @@ body {
 	color: #f7f8ff;
 	width: 100%;
 	font-size: 1.2em;
+	cursor: pointer;
 }
 #personalNav li a:hover, #profileAccess li a:hover, #personalNav li a:active, #profileAccess li a:active {
 	text-decoration: underline;
+}
+#personalNav li button, #profileAccess li button {
+	background: Transparent;
+	border: none;
+	color: #f7f8ff;
+	width: 100%;
+	font-size: 1.2em;
+	cursor: pointer;
+}
+#personalNav li button:hover, #profileAccess li button:hover,
+#personalNav li button:active, #profileAccess li button:active {
+	color: #e70001;
 }
 #subHeading {
 	font-weight: bold;
@@ -163,7 +176,7 @@ body {
     color: #d4d8f7;
 	border: 1px solid #d4d8f7;
 	border-radius: 10%;
-	width: 4em;
+	width: auto;
 	display: inline-block;
 }
 /* The product navigation */

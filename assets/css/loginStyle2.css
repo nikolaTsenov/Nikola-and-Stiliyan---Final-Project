@@ -1,0 +1,139 @@
+@CHARSET "UTF-8";
+
+/* Full-width input fields */
+div#register input[type=text],div#register input[type=password] {
+    width: 100%;
+    padding: 0.75em 1.25em;
+    margin: 0.5em 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+/* Set a style for all labels: */
+div#register label {
+	color: #272728;
+	font-size: 1em;
+	font-weight: bold;
+}
+/* Set a style for all buttons */
+div#register button {
+    background-color: #f9792a;
+    color: #272728;
+    font-weight: bolder;
+    font-size: 1em;
+    padding: 0.75em 1.25em;
+    margin: 0.5em 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+}
+
+div#register button:hover {
+    opacity: 0.8;
+}
+
+/* Extra styles for the cancel button */
+div#register .cancelbtn {
+    width: auto;
+    padding: 0.625em 1.125em;
+    background-color: #fc9b4b;
+}
+
+/* Center the image and position the close button */
+div#register .imgcontainer {
+    text-align: center;
+    margin: 1.5em 0 0.75em 0;
+    position: relative;
+}
+
+div#register img.avatar {
+    width: 20%;
+    height: 5em;
+    border-radius: 50%;
+}
+
+div#register .container {
+    padding: 1em;
+}
+
+div#register span.psw {
+    float: right;
+    padding-top: 1em;
+    color: #272728;
+}
+div#register span.psw a {
+    color: black;
+    font-weight: bolder;
+}
+div#register span.psw a:hover, div#register span.psw a:active {
+    text-decoration: underline;
+}
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    padding-top: 60px;
+}
+
+/* Modal Content/Box */
+.modal-content {
+    background-color: #4286f4;
+	background: -webkit-linear-gradient(#9ad8ea, #017fc1); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(#9ad8ea, #017fc1); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(#9ad8ea, #017fc1); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(#9ad8ea, #017fc1); /* Standard syntax */
+    margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+    border: 1px solid #888;
+    width: 80%; /* Could be more or less, depending on screen size */
+}
+
+/* The Close Button (x) */
+.close {
+    position: absolute;
+    right: 1.6em;
+    top: 0;
+    color: #000;
+    font-size: 2.18em;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: #f9792a;
+    cursor: pointer;
+}
+
+/* Add Zoom Animation */
+.animate {
+    -webkit-animation: animatezoom 0.6s;
+    animation: animatezoom 0.6s
+}
+
+@-webkit-keyframes animatezoom {
+    from {-webkit-transform: scale(0)} 
+    to {-webkit-transform: scale(1)}
+}
+    
+@keyframes animatezoom {
+    from {transform: scale(0)} 
+    to {transform: scale(1)}
+}
+
+/* Change styles for span and cancel button on extra small screens */
+@media screen and (max-width: 300px) {
+    span.psw {
+       display: block;
+       float: none;
+    }
+    .cancelbtn {
+       width: 100%;
+    }
+}

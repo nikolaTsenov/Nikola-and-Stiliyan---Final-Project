@@ -5,19 +5,21 @@
     <meta name="description" content="elBag"/>
     <meta http-equiv="author" name="Nikola Tsenov, Stiliyan Blagoev" />
     <title>elBag</title>
-    <link rel="stylesheet" href="./assets/css/reset.css" type="text/css" />
-    <link rel="stylesheet" href="./assets/font-awesome-4.7.0/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="../assets/css/reset.css" type="text/css" />
+    <link rel="stylesheet" href="../assets/font-awesome-4.7.0/css/font-awesome.min.css"/>
     <?php
     if ((isset ($_COOKIE['skin']) && $_COOKIE['skin'] == 'skin1') || !isset ($_COOKIE['skin'])) {
         $logo = "Logoto.png";
         ?>
-        <link rel="stylesheet" href="./assets/css/style1.css" type="text/css" />
+        <link rel="stylesheet" href="../assets/css/style1.css" type="text/css" />
+        <link rel="stylesheet" href="../assets/css/loginStyle1.css" type="text/css" />
         <?php
     }
     if ((isset ($_COOKIE['skin']) && $_COOKIE['skin'] == 'skin2')) {
         $logo = "newnewlogo.png";
         ?>
-        <link rel="stylesheet" href="./assets/css/style2.css" type="text/css" />
+        <link rel="stylesheet" href="../assets/css/style2.css" type="text/css" />
+        <link rel="stylesheet" href="../assets/css/loginStyle2.css" type="text/css" />
         <?php
     }
     ?>
@@ -27,7 +29,7 @@
 <div id="wrapper">
     <header id="header">
         <nav id="userNav">
-            <h1 id="siteHeading"><a href=""><img src="./assets/images/<?php echo $logo; ?>" alt="elBag_logo"/></a></h1>
+            <h1 id="siteHeading"><a href=""><img src="../assets/images/<?php echo $logo; ?>" alt="elBag_logo"/></a></h1>
             <form id="searchingForm">
                 <input type="text" name="search" placeholder="Search..">
                 <input type="submit" name="submitSearch" value="Търси" />
@@ -44,16 +46,15 @@
             } else {
                 ?>
                 <ul id="profileAccess">
-                    <li><a href="#">Регистрация</a></li>
-                    <li><a href="#">Влез в профила си</a></li>
+                    <li><button onclick="document.getElementById('register').style.display='block'">Моят профил</button></li>
                 </ul>
                 <?php
             }
             ?>
             <h2 id="subHeading">&quot;Добре дошли в <strong>elBag</strong> - най-големия сайт за електроника в България!&quot;</h2>
             <p id="skinsPar">Смени стила:</p>
-            <button id="skin1">Стил 1</button>
-            <button id="skin2">Стил 2</button>
+            <button id="skin1">Популярен</button>
+            <button id="skin2">Щадящ очите</button>
         </nav>
         <nav class="productNav">
             <ul id="categories">
