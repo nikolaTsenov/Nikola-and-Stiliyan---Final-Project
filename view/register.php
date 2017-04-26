@@ -24,10 +24,10 @@
 <div id="registration-form">
 	<div class='fieldset'>
     <legend>Регистрационна форма</legend>
-		<form action="?page=register" method="post" data-validate="parsley" >
+		<form action="../controller/registerController.php" method="post" data-validate="parsley" >
 			<div class='row'>
-				<label for='username'>Вашият e-mail:</label><br />
-				<input type="text" placeholder="e-mail" name='username' id='email' data-required="true" data-error-message="Your email is required" onblur="checkCharacters(this.value),checkUsername(this.value)">
+				<label for='email'>Вашият e-mail:</label><br />
+				<input type="text" placeholder="e-mail" name='email' id='email' data-required="true" data-error-message="Your email is required" onblur="checkCharacters(this.value),checkUsername(this.value)">
 				<span id="emailError" class ="error"></span>
 			</div>
 			<div class='row'>
@@ -50,6 +50,24 @@
 			<input name = "submit" id ="submit" type="submit" value="Регистрация!">
 		</form>
 	</div>
+</div>
+<?php
+    // set error msg:
+    $errorMessage = isset($errorMessage) ? $errorMessage : '';
+    // get the current dir from the url:
+    $currentDir = $_SERVER['PHP_SELF'];
+    // look for logiController in the url:
+    if (strpos($currentDir, 'registerController') !== false) {
+    	// in this case div.errors needs to be displayed
+    	$errorsStyle = 'block';
+    } else {
+    	// in this case div.errors doesn't need to be displayed
+    	$errorsStyle = 'none';
+    }
+    
+?>
+<div class="errors" style="display:<?php echo $errorsStyle; ?>" >
+	<p class="errorMsg" ><?php echo $errorMessage; ?></p>
 </div>
 <div id="goBack2">
 	<p><a href="../view/index.php">Към основното съдържание</a></p>

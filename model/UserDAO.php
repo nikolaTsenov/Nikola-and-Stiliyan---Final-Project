@@ -22,7 +22,10 @@
 		}
 		
 		public function registerUser (User $user) {
+			$db = DBConnection::getDb();
 			
+			$pstmt = $db->prepare(self::ADD_NEW_USER_SQL);
+			$pstmt->execute(array($user->name, $user->email, $user->password));
 		}
 	}
 ?>
