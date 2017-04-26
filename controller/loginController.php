@@ -22,5 +22,7 @@
 			$errorMessage = $e->getMessage();
 			include '../view/index.php';
 		}
+	} else {
+		header('Location:../view/index.php');
 	}
 ?>

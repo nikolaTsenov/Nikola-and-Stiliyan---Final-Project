@@ -4,6 +4,7 @@ if (session_status() == PHP_SESSION_NONE) {
 }
 if (isset($_SESSION['user'])) {
 	$accountBarPath = "logged";
+	$user = json_decode($_SESSION['user']);
 } else {
 	$accountBarPath = "notLogged";
 }

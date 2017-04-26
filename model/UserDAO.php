@@ -2,6 +2,7 @@
 	class UserDAO implements IUserDAO {
 		
 		const CHECK_USER_SQL = "SELECT name, email, user_id FROM users WHERE email = ? AND password = sha1(?)";
+		const ADD_NEW_USER_SQL = "INSERT INTO users VALUES (null,?,?,sha1(?),null,null,null,null,null)";
 		
 		public function loginUser(User $user) {
 			$db = DBConnection::getDb();
@@ -17,8 +18,11 @@
 			
 			$user = $res[0];
 			
-			return new User($user['name'], $user['email'], 'sth', $user['user_id']);
+			return new User($user['email'], 'sth', $user['name'], $user['user_id']);
 		}
 		
+		public function registerUser (User $user) {
+			
+		}
 	}
 ?>

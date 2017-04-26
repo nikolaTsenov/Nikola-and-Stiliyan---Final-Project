@@ -589,3 +589,15 @@ body {
     display: inline-block;
     box-sizing: border-box;
 }
+/* Error Messages */
+.errors {
+	width: 100%;
+	margin: 0 auto;
+	padding: 1em;
+}
+.errorMsg {
+	text-align: center;
+	color: red;
+	font-size: 1.2em;
+	font-weight: bold;
+}
