@@ -10,11 +10,13 @@
 
 		<div class="container">
 			<label><b>Вашият e-mail:</b></label> <input type="text"
-				placeholder="Въведете e-mail" name="email" required> <label><b>Вашата парола:</b></label>
-			<input type="password" placeholder="Въведете парола" name="psw"
-				required>
-
-			<button type="submit" name="submit" >Влез</button>
+				placeholder="Въведете e-mail" name="email" id="email" required> 
+			<p class="error" id="emailError"></p>
+			<label><b>Вашата парола:</b></label>
+			<input type="password" placeholder="Въведете парола" name="psw" id="password"
+				onblur="checkPassSymbols(this.value)" required>
+			<p class="error" id="passwordError"></p>
+			<button type="submit" name="submit" id="submit" >Влез</button>
 			<input type="checkbox" checked="checked"> Запомни ме
 		</div>
 
@@ -29,3 +31,5 @@
 		<?= $errorMessage ?>
 	</div>
 </div>
+<!-- The below js file is for front-end validation of the above form -->
+<script src="../assets/js/loginValidation.js" ></script>

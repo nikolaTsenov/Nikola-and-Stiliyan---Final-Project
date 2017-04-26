@@ -267,3 +267,8 @@ div#error {
 #goBack2 p a:hover {
 	text-decoration: underline;
 }
+/* Errors */
+.error {
+	padding: 0.2em;
+	color: red;
+}

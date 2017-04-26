@@ -94,7 +94,22 @@ div#register span.psw a:hover, div#register span.psw a:active {
     border: 1px solid #888;
     width: 40%; /* Could be more or less, depending on screen size */
 }
-
+@media all and (max-width:1290px) {
+	.modal-content {
+		height: 32em;
+	}
+}
+@media all and (max-width:799px) {
+	.modal-content {
+		width: 70%;
+	}
+}
+@media all and (max-width:599px) {
+	.modal-content {
+		width: 80%;
+		height: 34em;
+	}
+}
 /* The Close Button (x) */
 .close {
     position: absolute;
@@ -136,4 +151,9 @@ div#register span.psw a:hover, div#register span.psw a:active {
     .cancelbtn {
        width: 100%;
     }
+}
+/* Errors */
+.error {
+	padding: 0.2em;
+	color: red;
 }

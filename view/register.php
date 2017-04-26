@@ -24,25 +24,25 @@
 <div id="registration-form">
 	<div class='fieldset'>
     <legend>Регистрационна форма</legend>
-		<form action="../controller/registerController.php" method="post" data-validate="parsley" >
+		<form action="../controller/registerController.php" method="post" name="regForm" >
 			<div class='row'>
 				<label for='email'>Вашият e-mail:</label><br />
-				<input type="text" placeholder="e-mail" name='email' id='email' data-required="true" data-error-message="Your email is required" onblur="checkCharacters(this.value),checkUsername(this.value)">
+				<input type="text" placeholder="e-mail" name='email' id='email' required >
 				<span id="emailError" class ="error"></span>
 			</div>
 			<div class='row'>
 				<label for='username'>Потребителско име:</label><br />
-				<input type="text" placeholder="Изберете име" name='username' id='username' data-required="true" data-error-message="Your username is required" onblur="checkCharacters(this.value),checkUsername(this.value)">
+				<input type="text" placeholder="Изберете име" name='username' id='username' onblur="checkCharacters(this.value)" required >
 				<span id="usernameError" class ="error"></span>
 			</div>
 			<div class='row'>
 				<label for="password">Вашата парола:</label><br />
-				<input type="password" placeholder="Въведете парола"  name='password' id="password" data-required="true" data-type="password" data-error-message="Your password is required" onblur="checkCharacters(this.value)">
-				<span id="passwordError" class ="error"></span>
+				<input type="password" placeholder="Въведете парола"  name='password' id="password" class="passes" onblur="checkPassSymbols(this.value)" required ><br />
+				<span id="passwordError" class ="error"></span><br />
 			</div>
 			<div class='row'>
 				<label for="repeatPassword">Потвърдете вашата парола:</label><br />
-				<input type="password" placeholder="Повторете паролата" name='repeatPassword' id = "repeatPassword" data-required="true" data-error-message="Your confirm password is required" onkeyup = "validatePassword(this.value)" onblur="checkCharacters(this.value)">
+				<input type="password" placeholder="Повторете паролата" name='repeatPassword' id = "repeatPassword" class="passes" onblur="checkPassSymbols(this.value)" required >
 					<span id="rePasswordError" class ="error" >	
 						
 					</span>
@@ -72,5 +72,7 @@
 <div id="goBack2">
 	<p><a href="../view/index.php">Към основното съдържание</a></p>
 </div>
+<!-- The below js file is for front-end validation of the above form -->
+<script src="../assets/js/registerValidation.js" ></script>
 </body>
 </html>
