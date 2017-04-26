@@ -27,7 +27,7 @@
 		<form action="../controller/registerController.php" method="post" name="regForm" >
 			<div class='row'>
 				<label for='email'>Вашият e-mail:</label><br />
-				<input type="text" placeholder="e-mail" name='email' id='email' required >
+				<input type="text" placeholder="e-mail" name='email' id='email' onblur="checkMailLength(this.value)" required >
 				<span id="emailError" class ="error"></span>
 			</div>
 			<div class='row'>

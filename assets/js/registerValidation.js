@@ -7,40 +7,32 @@ var name = document.getElementById('username');
 var submitButton = document.getElementById('submit');
 
 // Email validation:
-// Define security limits for email:
+//Define security limits for email:
 var emailDownSecurityLimit = 5;
 var emailUpperSecurityLimit = 40;
-// Set flag for valid email:
+// Set flags for valid email:
 var validEmail = true;
 /**
- * This function disables the submit button if certain email requirements are not met onblur
- * First if else statement is for validating the string length
- * Second if else statement is for checking whether the string contains "@" and "."
+ * 
+ * @param characters
+ * @returns checks if the mail is the desired length
+ * checks if the mail contains "@" or "."
  */
-email.onblur = function () {
-	if (email.value.trim().length < emailDownSecurityLimit) {
+function checkMailLength (characters) {
+	if((characters.length < emailDownSecurityLimit) || (characters.length > emailUpperSecurityLimit)) {
 		validEmail = false;
-		document.getElementById("emailError").innerHTML = "Вашият e-mail трябва да е от поне "+emailDownSecurityLimit+" символа!";
-		submitButton.disabled = true;
-	} else if(email.value.trim().length > emailUpperSecurityLimit) {
+		document.getElementById('submit').disabled = true;
+		document.getElementById('emailError').innerHTML = 'Моля използвайте между '+emailDownSecurityLimit+' и '+emailUpperSecurityLimit+' символа за e-mail.';
+	} else if(characters.includes("@") === false || characters.includes(".") === false) {
 		validEmail = false;
-		document.getElementById("emailError").innerHTML = "Вашият e-mail не може да превишава "+emailUpperSecurityLimit+" символа!";
-		submitButton.disabled = true;
+		document.getElementById('submit').disabled = true;
+		document.getElementById('emailError').innerHTML = 'Моля въведете валиден e-mail.';
 	} else {
 		validEmail = true;
-		document.getElementById("emailError").innerHTML = "";
-		submitButton.disabled = false;
-	}
-	var emailStr = email.value;
-	if (emailStr.includes("@") === false || emailStr.includes(".") === false) {
-		validEmail = false;
-		document.getElementById("emailError").innerHTML = "Невалиден e-mail!";
-		submitButton.disabled = true;
-	} else {
-		validEmail = true;
-		document.getElementById("emailError").innerHTML = "";
-		submitButton.disabled = false;
-	}
+		document.getElementById('submit').disabled = false;
+		document.getElementById('emailError').innerHTML = '';
+	} 
+
 }
 /**
  * This function serves to complete the onblur function by setting behavior onkeyup

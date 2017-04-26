@@ -10,7 +10,7 @@
 
 		<div class="container">
 			<label><b>Вашият e-mail:</b></label> <input type="text"
-				placeholder="Въведете e-mail" name="email" id="email" required> 
+				placeholder="Въведете e-mail" name="email" id="email" onblur="checkMailLength(this.value)" required> 
 			<p class="error" id="emailError"></p>
 			<label><b>Вашата парола:</b></label>
 			<input type="password" placeholder="Въведете парола" name="psw" id="password"
