@@ -3,6 +3,7 @@ class UserValidation {
 	
 	const CHECK_NAME_IF_EXISTS_SQL = "SELECT name FROM users WHERE name = ?";
 	const CHECK_EMAIL_IF_EXISTS_SQL = "SELECT email FROM users WHERE email = ?";
+	const CHECK_SESSION_SQL = "SELECT name FROM users WHERE email = ? AND name=?";
 	
 	public function checkName (User $user) {
 		if (mb_strlen($user->name,"UTF-8") > 25) {
@@ -52,5 +53,20 @@ class UserValidation {
 				return true;
 			}
 		}
+	}
+	
+	public function checkSession (User $user) {
+		$db = DBConnection::getDb();
+		
+		$pstmt = $db->prepare(self::CHECK_SESSION_SQL);
+		$pstmt->execute(array($user->email,$user->name));
+		
+		$sessCheck = $pstmt->fetchAll(PDO::FETCH_ASSOC);
+		
+		if (count($sessCheck) === 0) {
+			throw new Exception("Нямате права да изтриете този потребител!");
+		}
+		
+		return true;
 	}
 }
