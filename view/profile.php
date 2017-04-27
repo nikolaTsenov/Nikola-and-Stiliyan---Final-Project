@@ -20,6 +20,11 @@
 	<input type="submit" name="submitDestroy" value="Изход" />
 </form>
 
+<form id="deleteAccountForm" action="../controller/deleteAccountController.php" method="post" >
+	<label for="submitDeleteAccount">Изтрий профила си</label>
+	<input type="submit" name="submitDeleteAccount" value="Изтрий" />
+</form>
+
 <?php
 	include_once "profileFooter.php";
 ?>
