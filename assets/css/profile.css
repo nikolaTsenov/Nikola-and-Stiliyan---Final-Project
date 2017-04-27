@@ -1,0 +1,121 @@
+@CHARSET "UTF-8";
+/* Vertical tabs navigation: */
+#profileContainer {
+	box-sizing: border-box;
+	font-family: "Lato", sans-serif;
+	width: 85%;
+	margin: 0 auto;
+	margin-top: 2em;
+}
+
+/* Style the tab */
+.tab {
+    float: left;
+    border: 1px solid #ccc;
+    background-color: #f1f1f1;
+    width: 30%;
+    height: 18.75em;
+}
+
+/* Style the buttons inside the tab */
+.tab button {
+    display: block;
+    background-color: inherit;
+    color: black;
+    padding: 1.3em 1em;
+    width: 100%;
+    border: none;
+    outline: none;
+    text-align: left;
+    cursor: pointer;
+    transition: 0.3s;
+    font-size: 1.05em;
+}
+
+/* Change background color of buttons on hover */
+.tab button:hover {
+    background-color: #ddd;
+}
+
+/* Create an active/current "tab button" class */
+.tab button.active {
+    background-color: #ccc;
+}
+
+/* Style the tab content */
+.mainContentOfSelected {
+    float: left;
+    padding: 0px 0.75em;
+    border: 1px solid #ccc;
+    width: 70%;
+    border-left: none;
+    height: 18.75em;
+}
+/* End of vertical tab navigation */
+
+/* Logout user and delete user style: */
+.accordion {
+    background-color: #eee;
+    color: #444;
+    cursor: pointer;
+    padding: 1.1em;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 0.9em;
+    transition: 0.4s;
+}
+
+.accordion.active, .accordion:hover {
+    background-color: #ddd;
+}
+
+.accordion:after {
+    content: '\002B';
+    color: #777;
+    font-weight: bold;
+    float: right;
+    margin-left: 0.3em;
+}
+
+.accordion.active:after {
+    content: "\2212";
+}
+
+.formPannel {
+    padding: 0 1em;
+    background-color: white;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+}
+.forContent {
+	padding: 1em;
+}
+/* Delete submit button and logout submit button style: */
+.submitFormPannel, .refuse {
+  padding: 0.2em 0.3em;
+  font-size: 0.8em;
+  text-align: center;
+  cursor: pointer;
+  outline: none;
+  color: #fff;
+  background-color: #e00000;
+  border: none;
+  border-radius: 0.3em;
+  box-shadow: 0 9px #999;
+}
+.refuse {
+	background-color: #20db00;
+}
+.submitFormPannel:hover {background-color: #9b0000}
+
+.submitFormPannel:active, .refuse:active {
+  background-color: #9b0000;
+  box-shadow: 0 0.4em #666;
+  transform: translateY(0.25em);
+}
+.refuse:hover, .refuse:active {
+	background-color: #169b00;
+}
