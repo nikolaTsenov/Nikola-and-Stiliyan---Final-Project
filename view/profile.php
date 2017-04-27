@@ -27,7 +27,7 @@
 		<form class="formPannel" id="sessDestroyForm" action="../controller/logoutController.php" method="post" >
 			<div class="forContent">
 				<label for="submitDestroy">Излез от профила си</label>
-				<button onclick="clickAccordion1()" class="refuse" >Не, още!</button>
+				<button onclick="clickAccordion1()" class="refuse" >Не още!</button>
 				<input type="submit" name="submitDestroy" value="Изход" class="submitFormPannel" />
 			</div>
 		</form>
