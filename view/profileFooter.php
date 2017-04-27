@@ -1,8 +1,4 @@
 </div>
-<!-- The below button is hidden it serves to navigate to the top of the page -->
-<div id="goUp">
-    <p><a href="#userNav">Go Up <i class="fa fa-arrow-up" aria-hidden="true"></i></a></p>
-</div>
 <footer id="footerContainer">
     <div id="footer">
         <div id="services">
@@ -35,13 +31,11 @@
     </div>
 </footer>
 </div>
-<!-- The below js file is to regulate when the #goUp div to appear and disappear -->
-<script src="../assets/js/goUpButton.js" ></script>
-<!-- The below js script is to fix the position of #productNav and to regulate it through matchMedia queries in JS -->
-<script src="../assets/js/fixProductNavPosition.js" ></script>
-<!-- The below js script is for the carousel of thech brands -->
-<script src="../assets/js/carouselTechBrands.js" ></script>
-<!-- The below js script is for changing skins -->
-<script src="../assets/js/changeSkin.js" ></script>
+<!-- The below js file is for the accordion view of form.formPannel -->
+<script src="../assets/js/accordion.js" ></script>
+<!-- The below js file is for the vertical tabs -->
+<script src="../assets/js/verticalTabs.js" ></script>
+<!-- The below js file is for behavior of buttons that refuse deletion and logout -->
+<script src="../assets/js/refuseLogoutOrDeletion.js" ></script>
 </body>
 </html>

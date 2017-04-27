@@ -12,6 +12,7 @@ include_once "../controller/skinController.php";
 ?>
     <link rel="stylesheet" href="../assets/css/<?php echo $style; ?>.css" type="text/css" />
     <link rel="stylesheet" href="../assets/css/<?php echo $loginStyle; ?>.css" type="text/css" />
+    <link rel="stylesheet" href="../assets/css/profile.css" type="text/css" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 </head>
 <body>
