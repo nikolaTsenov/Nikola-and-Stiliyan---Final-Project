@@ -7,8 +7,13 @@ class User implements JsonSerializable {
 	private $phone;
 	private $picture;
 	private $is_subscr;
+	private $favorite_id;
+	private $address_id;
 	
-	function __construct($email, $password, $name=null, $id = null, $phone = null, $picture = null, $is_subscr = null) {
+	function __construct($email, $password, 
+						 $name=null, $id = null, $phone = null,
+						 $picture = null, $is_subscr = null, 
+						 $favorite_id = null, $address_id = null) {
 		
 		if (empty($email)) {
 			throw new Exception ( 'Няма имейл!' );
