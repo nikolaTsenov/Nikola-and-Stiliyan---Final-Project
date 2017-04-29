@@ -1,9 +1,17 @@
 <?php
 class UserValidation {
-	
+	// database:
+	private $db;
+	// const for method checkName:
 	const CHECK_NAME_IF_EXISTS_SQL = "SELECT name FROM users WHERE name = ?";
+	// const for method checkEmail:
 	const CHECK_EMAIL_IF_EXISTS_SQL = "SELECT email FROM users WHERE email = ?";
+	// const for method checkSession:
 	const CHECK_SESSION_SQL = "SELECT name FROM users WHERE email = ? AND name=?";
+	
+	public function __construct() {
+		$this->db = DBConnection::getDb ();
+	}
 	
 	public function checkName (User $user) {
 		if (mb_strlen($user->name,"UTF-8") > 25) {
@@ -11,9 +19,8 @@ class UserValidation {
 		} elseif (mb_strlen($user->name,"UTF-8") < 3) {
 			throw new Exception("Съжаляваме, името Ви не може да бъде по-малко от 3 букви!");
 		} else {
-			$db = DBConnection::getDb();
 	
-			$pstmt = $db->prepare(self::CHECK_NAME_IF_EXISTS_SQL);
+			$pstmt = $this->db->prepare(self::CHECK_NAME_IF_EXISTS_SQL);
 			$pstmt->execute(array($user->name));
 	
 			$nameCheck = $pstmt->fetchAll(PDO::FETCH_ASSOC);
@@ -39,9 +46,8 @@ class UserValidation {
 			} elseif (mb_strlen($user->email,"UTF-8") < 5) {
 				throw new Exception("Съжаляваме, мейла Ви не може да бъде по-малко от 5 символа!");
 			} else {
-				$db = DBConnection::getDb();
 				
-				$pstmt = $db->prepare(self::CHECK_EMAIL_IF_EXISTS_SQL);
+				$pstmt = $this->db->prepare(self::CHECK_EMAIL_IF_EXISTS_SQL);
 				$pstmt->execute(array($user->email));
 				
 				$emailCheck = $pstmt->fetchAll(PDO::FETCH_ASSOC);
@@ -56,9 +62,8 @@ class UserValidation {
 	}
 	
 	public function checkSession (User $user) {
-		$db = DBConnection::getDb();
 		
-		$pstmt = $db->prepare(self::CHECK_SESSION_SQL);
+		$pstmt = $this->db->prepare(self::CHECK_SESSION_SQL);
 		$pstmt->execute(array($user->email,$user->name));
 		
 		$sessCheck = $pstmt->fetchAll(PDO::FETCH_ASSOC);

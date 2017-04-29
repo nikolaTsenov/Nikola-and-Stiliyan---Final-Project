@@ -9,6 +9,7 @@
 <link rel="stylesheet" href="../assets/font-awesome-4.7.0/css/font-awesome.min.css"/>
 <?php
 include_once "../controller/skinController.php";
+require_once "../controller/accountController.php";
 ?>
     <link rel="stylesheet" href="../assets/css/<?php echo $style; ?>.css" type="text/css" />
     <link rel="stylesheet" href="../assets/css/<?php echo $loginStyle; ?>.css" type="text/css" />

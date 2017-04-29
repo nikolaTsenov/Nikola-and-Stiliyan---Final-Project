@@ -17,6 +17,16 @@
     height: 18.75em;
 }
 
+/* Heading for the tab */
+
+.myData {
+	padding: 1em;
+	padding-bottom: 1.5em;
+	font-size: 1.2em;
+	font-weight: bold;
+	color: #111111;
+}
+
 /* Style the buttons inside the tab */
 .tab button {
     display: block;
@@ -92,6 +102,39 @@
 }
 .forContent {
 	padding: 1em;
+}
+/* Change Skin button styles: */
+#profSkinsPar {
+	display: inline-block;
+}
+/* Popular and most properties of EyeFriendly: */
+.popular, .eyeFriendly {
+  padding: 0.2em 0.3em;
+  font-size: 0.8em;
+  text-align: center;
+  cursor: pointer;
+  outline: none;
+  color: #fff;
+  background-color: #0000FF;
+  border: none;
+  border-radius: 0.3em;
+  box-shadow: 0 9px #e70001;
+}
+.popular:hover {background-color: #017fc1}
+.popular:active {
+  background-color: #017fc1;
+  box-shadow: 0 0.4em #e70001;
+  transform: translateY(0.25em);
+}
+/* EyeFriendly set colors: */
+.eyeFriendly {
+  background-color: #f9792a;
+  box-shadow: 0 9px #017fc1;
+}
+.eyeFriendly:hover {background-color: #ffbb91}
+.eyeFriendly:active {
+  background-color: #ffbb91;
+  box-shadow: 0 0.4em #017fc1;
 }
 /* Delete submit button and logout submit button style: */
 .submitFormPannel, .refuse {

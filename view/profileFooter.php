@@ -36,6 +36,8 @@
 <!-- The below js file is for the vertical tabs -->
 <script src="../assets/js/verticalTabs.js" ></script>
 <!-- The below js file is for behavior of buttons that refuse deletion and logout -->
-<script src="../assets/js/refuseLogoutOrDeletion.js" ></script>
+<script src="../assets/js/profileRefuses.js" ></script>
+<!-- The below js script is for changing skins -->
+<script src="../assets/js/profChangeSkin.js" ></script>
 </body>
 </html>

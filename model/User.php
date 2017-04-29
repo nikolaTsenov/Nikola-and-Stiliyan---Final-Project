@@ -6,13 +6,14 @@ class User implements JsonSerializable {
 	private $email;
 	private $phone;
 	private $picture;
-	private $is_subscr;
+	private $first_name;
+	private $last_name;
 	private $favorite_id;
 	private $address_id;
 	
 	function __construct($email, $password, 
 						 $name=null, $id = null, $phone = null,
-						 $picture = null, $is_subscr = null, 
+						 $picture = null, $first_name = null, $last_name = null,
 						 $favorite_id = null, $address_id = null) {
 		
 		if (empty($email)) {
@@ -37,6 +38,14 @@ class User implements JsonSerializable {
 	
 	public function __get($prop) {
 		return $this->$prop;
+	}
+	
+	public function setName($name,$user) {
+		$validChecker = new UserValidation();
+		
+		$validChecker->checkName($user);
+		
+		$this->name = $name;
 	}
 }
 
