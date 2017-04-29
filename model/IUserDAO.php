@@ -5,7 +5,7 @@
 		 * @param User $user
 		 * constructor for database connection
 		 */
-		public function __construct(User $user);
+		public function __construct();
 		
 		/**
 		 * 
