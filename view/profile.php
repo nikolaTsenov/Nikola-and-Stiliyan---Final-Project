@@ -27,38 +27,51 @@
 	<div id="profileManager" class="mainContentOfSelected">
 		<h1 class="myData">Моят Профил</h1>
 		<div class="personalData">
-			<div class="avatarContainer">
-				<img src="" alt="" />
+			<div class="mainAvatarWrapper">
+				<div class="avatarContainer">
+					<img src="<?php echo $pathToAvatarPic; ?>" alt="Avatar" />
+				</div>
+				<button class="accordion" id="accForm">Смени снимката си</button>
+				<form class="formPannel" action="" method="post" enctype='multipart/form-data' onsubmit="return Validate(this);" >
+					<input type='hidden' name='MAX_FILE_SIZE' value='5000000' />
+					<div class="file-drop-area">
+						<span class="fake-btn">Изберете снимка</span> <span
+							class="file-msg js-set-number">или довлачете и пуснете</span>
+						<input class="file-input" type="file"  name="fileUpload" onchange="javascript: document.getElementById('fileName').value = this.value" >
+					</div>
+					<input type="text" id="fileName" class="file_input_textbox" readonly="readonly">
+					<input name="submit" type="submit" value="Качи снимка" id="uploadSubmit" class="changeButton" >
+				</form>
 			</div>
 			<form action="../controller/changeNameController.php" class="changeName" method="post" >
 				<p><?php echo $user->name; ?></p>
 				<label for="changeUserName">Сменете името на профила си </label>
 				<input type="text" name="changeUserName" id="changeUserName" placeholder="<?php echo $user->name . "..."; ?>"/>
-				<button type="submit" name="submitNameChange">Смени</button>
+				<button type="submit" name="submitNameChange" class="changeButton" >Смени</button>
 			</form>
 			<form action="../controller/changeEmailController.php" class="changeName" method="post" >
 				<p><?php echo $user->email; ?></p>
 				<label for="changeEmail">Сменете e-mail-а си </label>
 				<input type="text" name="changeEmail" id="changeEmail" placeholder="<?php echo $user->email . "..."; ?>"/>
-				<button type="submit" name="submitEmailChange">Смени</button>
+				<button type="submit" name="submitEmailChange" class="changeButton" >Смени</button>
 			</form>
 			<form action="../controller/changeFirstNameController.php" class="changeName" method="post">
 				<p><?php $fnmsg = isset($user->first_name) ? $user->first_name : 'недефинирано'; echo "Първото Ви име е " . $fnmsg; ?></p>
 				<label for="changeFirstName">Първо име<?php echo " ( " . $fnmsg . " ) "; ?> </label>
 				<input type="text" name="changeFirstName" id="changeFirstName" placeholder="<?php echo $fnmsg . "..."; ?>"/>
-				<button type="submit" name="submitFirstNameChange">Смени</button>
+				<button type="submit" name="submitFirstNameChange" class="changeButton" >Смени</button>
 			</form>
 			<form action="../controller/changeLastNameController.php" class="changeName" method="post">
 				<p><?php $lnmsg = isset($user->last_name) ? $user->last_name : 'недефинирана'; echo "Фамилията Ви е " . $lnmsg; ?></p>
 				<label for="changeLastName">Фамилия<?php echo " ( " . $lnmsg . " ) "; ?> </label>
 				<input type="text" name="changeLastName" id="changeLastName" placeholder="<?php echo $lnmsg . "..."; ?>"/>
-				<button type="submit" name="submitLastNameChange">Смени</button>
+				<button type="submit" name="submitLastNameChange" class="changeButton" >Смени</button>
 			</form>
 			<form action="../controller/changePhoneController.php" class="changeName" method="post">
 				<p><?php $phmsg = isset($user->phone) ? $user->phone : 'няма телефон'; echo "Телефон: " . $phmsg; ?></p>
 				<label for="changePhone">Телефон<?php echo " ( " . $phmsg . " ) "; ?> </label>
 				<input type="text" name="changePhone" id="changePhone" placeholder="08XXXXXXXX"/>
-				<button type="submit" name="submitPhoneChange">Смени</button>
+				<button type="submit" name="submitPhoneChange" class="changeButton" >Смени</button>
 			</form>
 		</div>
 		<button class="accordion" id="acc0">Смяна на изгледа на сайта</button>

@@ -221,7 +221,7 @@ body {
 	border-radius: 1em;
 	background-color: #e70001;
 }
-#categories #telephones {
+#categories .selectedCat {
 	background-color: #688ff9;
 }
 #categories li:hover {
@@ -248,7 +248,7 @@ body {
 	font-weight: bold;
 	padding: 1em;
 }
-#categories #telephones a {
+#categories .selectedCat a {
 	color: #e70001;
 }
 @media all and (max-width:799px) {

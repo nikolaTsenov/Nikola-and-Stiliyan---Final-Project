@@ -1,9 +1,11 @@
 <?php
-	function __autoload($className) {
-		require_once "../model/" . $className . '.php';
-	}
+function my_autoloader($className) {
+	require_once "../model/" . $className . '.php';
+}
+
+spl_autoload_register('my_autoloader');
 	// require accountController.php to give this file visibility to the $_SESSION['user'] and its content:
-	require_once "./accountController.php";
+ 	require_once "./accountController.php";
 	
 	//For testing goals you can uncomment:
 	// 		echo $user->name;

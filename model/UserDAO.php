@@ -24,6 +24,8 @@
 		const CHANGE_USER_LASTNAME_SQL = "UPDATE users SET last_name=? WHERE name=? AND email=?";
 		// constant for change last_name:
 		const CHANGE_USER_PHONE_SQL = "UPDATE users SET phone=? WHERE name=? AND email=?";
+		// constant for checkPicture:
+		const CHECK_USER_AVATAR_SQL = "SELECT picture FROM users WHERE email = ? AND name = ?";
 		
 		public function __construct() {
 			$this->db = DBConnection::getDb ();
@@ -120,6 +122,28 @@
 		public function changePhone (User $user) {
 			$pstmt = $this->db->prepare(self::CHANGE_USER_PHONE_SQL);
 			$pstmt->execute(array($user->phone, $user->name, $user->email));
+		}
+		
+		public function checkPicture (User $user) {
+			try {
+				$pstmt = $this->db->prepare(self::CHECK_USER_AVATAR_SQL);
+				$pstmt->execute(array($user->email, $user->name));
+					
+				$res = $pstmt->fetchAll(PDO::FETCH_ASSOC);
+					
+				if (count($res) > 1) {
+					throw new Exception("Заявката не трябва да връща повече от 1 резултат!");
+				}
+				if (count($res) === 0) {
+					throw new Exception("Заявката трябва да върне 1 резултат!");
+				}
+				return $res[0];
+			}
+			catch (PDOException $e) {
+				$errorMessage = $e->getMessage();
+				include '../view/profile.php';
+			}
+				
 		}
 	}
 ?>

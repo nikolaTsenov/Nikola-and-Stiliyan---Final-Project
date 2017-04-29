@@ -15,4 +15,5 @@ if ((isset ($_COOKIE['skin']) && $_COOKIE['skin'] == 'skin2')) {
 	$oppositeStyleName = "Популярен";
 	$oppositeStyleNameForClass = "popular";
 }
+
 ?>

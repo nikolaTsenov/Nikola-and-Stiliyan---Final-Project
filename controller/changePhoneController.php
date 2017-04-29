@@ -1,10 +1,12 @@
 <?php
 // Load all classes, abstract classes, traits and interfaces:
-function __autoload($className) {
+function my_autoloader($className) {
 	require_once "../model/" . $className . '.php';
 }
+
+spl_autoload_register('my_autoloader');
 // Require the account controller in order to read the session and get the object $user from class User:
-require_once "./accountController.php";
+ require_once "./accountController.php";
 
 if (isset($_POST['submitPhoneChange']) ) {
 	try {
@@ -36,3 +38,4 @@ if (isset($_POST['submitPhoneChange']) ) {
 } else {
 	header('Location:../view/profile.php');
 }
+?>

@@ -39,6 +39,8 @@
 <script src="../assets/js/profileRefuses.js" ></script>
 <!-- The below js script is for changing skins -->
 <script src="../assets/js/profChangeSkin.js" ></script>
+<!-- The below js script is for validating the profile picture file -->
+<script src="../assets/js/profilePicValidation.js" ></script>
 <!-- The below js script is for making error msg disappear on klick out of it -->
 <script src="../assets/js/errorDivFade.js" ></script>
 </body>
