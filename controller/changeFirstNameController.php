@@ -6,24 +6,27 @@ function __autoload($className) {
 // Require the account controller in order to read the session and get the object $user from class User:
 require_once "./accountController.php";
 
-if (isset($_POST['submitNameChange'])) {
+if (isset($_POST['submitFirstNameChange']) ) {
 	try {
 		// Record all the data from the form in variables:
-		$newName = htmlentities(trim($_POST['changeUserName']));
+		$newFirstName = htmlentities(trim($_POST['changeFirstName']));
 		// Create new object of class User:
-		$userForSet = new User($user->email, 'sth', $newName);
-		// Set new name:
-		$userForSet->setName($newName,$userForSet);
-		// throw New Exception(var_dump($userForSet)); - for testing purposes
+		$userForSet = new User($user->email, 'sth', $user->name, null, null, null, $newFirstName,
+								null, null, null);
+		// Set new first name:
+		$userForSet->setFirstName($newFirstName,$userForSet);
+		//throw New Exception(var_dump($userForSet)); //- for testing purposes
 		// If all checks are ok, create new object from class UserDAO:
 		$userData = new UserDAO();
-		// Change the username:
-		$userData->changeName($userForSet);
+		// Change the first name in the database:
+		$userData->changeFirstName($userForSet);
+		//throw New Exception(var_dump($userForSet)); //- for testing purposes
 		// Get the user user with the modified data:
 		$newUserData = $userData->getUserData($userForSet);
+		//throw New Exception(var_dump($newUserData)); //- for testing purposes
 		// Replace the session 'user' with the new data:
 		$_SESSION['user'] = json_encode($newUserData);
-		// Redirect the new user:
+		// Redirect the new user to homecontroller:
 		header('Location:../view/profile.php', true, 302);
 	}
 	catch (Exception $e) {

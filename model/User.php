@@ -28,6 +28,12 @@ class User implements JsonSerializable {
 		$this->email = $email;
 		$this->password = $password;
 		$this->id = $id;
+		$this->phone = $phone;
+		$this->picture = $picture;
+		$this->first_name = $first_name;
+		$this->last_name = $last_name;
+		$this->favorite_id = $favorite_id;
+		$this->address_id = $address_id;
 	}
 	
 	public function jsonSerialize() {
@@ -43,9 +49,46 @@ class User implements JsonSerializable {
 	public function setName($name,$user) {
 		$validChecker = new UserValidation();
 		
+		$validChecker->checkSessionWithMail($user);
 		$validChecker->checkName($user);
 		
 		$this->name = $name;
+	}
+	
+	public function setEmail($email,$user) {
+		$validChecker = new UserValidation();
+	
+		$validChecker->checkSessionWithName($user);
+		$validChecker->checkEmail($user);
+	
+		$this->email = $email;
+	}
+	
+	public function setFirstName($firstName,$user) {
+		$validChecker = new UserValidation();
+		
+		$validChecker->checkSession($user);
+		$validChecker->checкFirstName($user);
+	
+		$this->first_name = $firstName;
+	}
+	
+	public function setLastName($lastName,$user) {
+		$validChecker = new UserValidation();
+	
+		$validChecker->checkSession($user);
+		$validChecker->checкLastName($user);
+	
+		$this->last_name = $lastName;
+	}
+	
+	public function setPhone($phone,$user) {
+		$validChecker = new UserValidation();
+		
+		$validChecker->checkSession($user);
+		$validChecker->checкPhone($user);
+	
+		$this->phone = $phone;
 	}
 }
 

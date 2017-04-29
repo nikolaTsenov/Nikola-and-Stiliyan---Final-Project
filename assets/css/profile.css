@@ -14,7 +14,7 @@
     border: 1px solid #ccc;
     background-color: #f1f1f1;
     width: 30%;
-    height: 18.75em;
+    height: auto;
 }
 
 /* Heading for the tab */
@@ -58,8 +58,7 @@
     padding: 0px 0.75em;
     border: 1px solid #ccc;
     width: 70%;
-    border-left: none;
-    height: 18.75em;
+    height: auto;
 }
 /* End of vertical tab navigation */
 

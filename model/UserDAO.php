@@ -15,7 +15,15 @@
 		const DELETE_USER_FROM_ORDERS_SQL = "DELETE FROM orders WHERE user_id=?;";
 		const DELETE_USER_FROM_ADDRESS_SQL = "DELETE FROM address WHERE address_id=?;";
 		// constant for change username:
-		const CHANGE_USER_NAME = "UPDATE users SET name=? WHERE email=?";
+		const CHANGE_USER_NAME_SQL = "UPDATE users SET name=? WHERE email=?";
+		// constant for change email:
+		const CHANGE_USER_EMAIL_SQL = "UPDATE users SET email=? WHERE name=?";
+		// constant for change first_name:
+		const CHANGE_USER_FIRSTNAME_SQL = "UPDATE users SET first_name=? WHERE name=? AND email=?";
+		// constant for change last_name:
+		const CHANGE_USER_LASTNAME_SQL = "UPDATE users SET last_name=? WHERE name=? AND email=?";
+		// constant for change last_name:
+		const CHANGE_USER_PHONE_SQL = "UPDATE users SET phone=? WHERE name=? AND email=?";
 		
 		public function __construct() {
 			$this->db = DBConnection::getDb ();
@@ -34,7 +42,7 @@
 			$user = $res[0];
 				
 			return new User($user['email'], 'sth', $user['name'], $user['user_id'], $user['phone'],
-					$user['picture'], $user['firs_name'],$user['last_name'], $user['favorite_id'], $user['address_id']);
+					$user['picture'], $user['first_name'],$user['last_name'], $user['favorite_id'], $user['address_id']);
 		}
 		
 		public function loginUser(User $user) {
@@ -90,8 +98,28 @@
 		}
 		
 		public function changeName (User $user) {
-			$pstmt = $this->db->prepare(self::CHANGE_USER_NAME);
+			$pstmt = $this->db->prepare(self::CHANGE_USER_NAME_SQL);
 			$pstmt->execute(array($user->name, $user->email));
+		}
+		
+		public function changeEmail (User $user) {
+			$pstmt = $this->db->prepare(self::CHANGE_USER_EMAIL_SQL);
+			$pstmt->execute(array($user->email, $user->name));
+		}
+		
+		public function changeFirstName (User $user) {
+			$pstmt = $this->db->prepare(self::CHANGE_USER_FIRSTNAME_SQL);
+			$pstmt->execute(array($user->first_name, $user->name, $user->email));
+		}
+		
+		public function changeLastName (User $user) {
+			$pstmt = $this->db->prepare(self::CHANGE_USER_LASTNAME_SQL);
+			$pstmt->execute(array($user->last_name, $user->name, $user->email));
+		}
+		
+		public function changePhone (User $user) {
+			$pstmt = $this->db->prepare(self::CHANGE_USER_PHONE_SQL);
+			$pstmt->execute(array($user->phone, $user->name, $user->email));
 		}
 	}
 ?>

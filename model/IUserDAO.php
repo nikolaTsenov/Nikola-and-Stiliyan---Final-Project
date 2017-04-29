@@ -51,9 +51,17 @@
 		/**
 		 * 
 		 * @param User $user
-		 * @constants - CHANGE_USER_NAME
+		 * @constants - CHANGE_USER_NAME_SQL
 		 * method changes the name of a specified user in the database
 		 */
 		public function changeName(User $user);
+		
+		/**
+		 *
+		 * @param User $user
+		 * @constants - CHANGE_USER_EMAIL_SQL
+		 * method changes the email of a specified user in the database
+		 */
+		public function changeEmail(User $user);
 	}
 ?>

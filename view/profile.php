@@ -15,7 +15,7 @@
     
 ?>
 <div id="profileContainer">
-	<div class="errors" >
+	<div class="errors" id="errorMess">
 		<p class="errorMsg" ><?php echo $errorMessage; ?></p>
 	</div>
 	<nav id="profileNavigation" class="tab">
@@ -33,12 +33,32 @@
 			<form action="../controller/changeNameController.php" class="changeName" method="post" >
 				<p><?php echo $user->name; ?></p>
 				<label for="changeUserName">Сменете името на профила си </label>
-				<input type="text" name="changeUserName" id="changeUserName"/>
+				<input type="text" name="changeUserName" id="changeUserName" placeholder="<?php echo $user->name . "..."; ?>"/>
 				<button type="submit" name="submitNameChange">Смени</button>
 			</form>
-			<form action="" class="changeName">
-				<label for="changeUserName">Сменете името си </label>
-				<input type="text" id="changeUserName"/>
+			<form action="../controller/changeEmailController.php" class="changeName" method="post" >
+				<p><?php echo $user->email; ?></p>
+				<label for="changeEmail">Сменете e-mail-а си </label>
+				<input type="text" name="changeEmail" id="changeEmail" placeholder="<?php echo $user->email . "..."; ?>"/>
+				<button type="submit" name="submitEmailChange">Смени</button>
+			</form>
+			<form action="../controller/changeFirstNameController.php" class="changeName" method="post">
+				<p><?php $fnmsg = isset($user->first_name) ? $user->first_name : 'недефинирано'; echo "Първото Ви име е " . $fnmsg; ?></p>
+				<label for="changeFirstName">Първо име<?php echo " ( " . $fnmsg . " ) "; ?> </label>
+				<input type="text" name="changeFirstName" id="changeFirstName" placeholder="<?php echo $fnmsg . "..."; ?>"/>
+				<button type="submit" name="submitFirstNameChange">Смени</button>
+			</form>
+			<form action="../controller/changeLastNameController.php" class="changeName" method="post">
+				<p><?php $lnmsg = isset($user->last_name) ? $user->last_name : 'недефинирана'; echo "Фамилията Ви е " . $lnmsg; ?></p>
+				<label for="changeLastName">Фамилия<?php echo " ( " . $lnmsg . " ) "; ?> </label>
+				<input type="text" name="changeLastName" id="changeLastName" placeholder="<?php echo $lnmsg . "..."; ?>"/>
+				<button type="submit" name="submitLastNameChange">Смени</button>
+			</form>
+			<form action="../controller/changePhoneController.php" class="changeName" method="post">
+				<p><?php $phmsg = isset($user->phone) ? $user->phone : 'няма телефон'; echo "Телефон: " . $phmsg; ?></p>
+				<label for="changePhone">Телефон<?php echo " ( " . $phmsg . " ) "; ?> </label>
+				<input type="text" name="changePhone" id="changePhone" placeholder="08XXXXXXXX"/>
+				<button type="submit" name="submitPhoneChange">Смени</button>
 			</form>
 		</div>
 		<button class="accordion" id="acc0">Смяна на изгледа на сайта</button>

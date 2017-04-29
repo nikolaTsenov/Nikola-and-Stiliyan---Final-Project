@@ -75,5 +75,7 @@
 <script src="../assets/js/carouselTechBrands.js" ></script>
 <!-- The below js script is for changing skins -->
 <script src="../assets/js/changeSkin.js" ></script>
+<!-- The below js script is for making error msg disappear on klick out of it -->
+<script src="../assets/js/errorDivFade.js" ></script>
 </body>
 </html>

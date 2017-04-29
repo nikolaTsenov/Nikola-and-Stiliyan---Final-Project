@@ -14,7 +14,7 @@
     }
     
 ?>
-		<div class="errors" style="display:<?php echo $errorsStyle; ?>" >
+		<div class="errors" id="errorMess" style="display:<?php echo $errorsStyle; ?>" >
 			<p class="errorMsg" ><?php echo $errorMessage; ?></p>
 		</div>
 		<aside class="leftAside">
