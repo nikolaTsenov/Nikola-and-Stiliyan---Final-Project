@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.5.1
--- http://www.phpmyadmin.net
+-- version 4.6.5.2
+-- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 29 апр 2017 в 12:37
--- Версия на сървъра: 10.1.19-MariaDB
--- PHP Version: 7.0.9
+-- Generation Time: 29 апр 2017 в 23:01
+-- Версия на сървъра: 10.1.21-MariaDB
+-- PHP Version: 7.1.1
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -154,10 +154,17 @@ CREATE TABLE `products` (
 --
 
 INSERT INTO `products` (`id`, `products_name`, `model`, `price`, `picture`, `warranty`, `quantity`, `subcategory_id`, `manufacturer_id`) VALUES
-(1, 'Telefon', 'Samsung', 200, 'nqma', 2, 100, 1, 1),
-(2, 'TV', 'LG', 2020, 'nqma', 2, 100, 1, 1),
-(3, 'Hladilnik', 'SDDF', 700, 'nqma', 2, 100, 1, 1),
-(4, 'Laptop', 'Accer', 1200, 'pic.jpg', 2, 100, 2, 1);
+(1, 'Telefon', 'Samsung', 200, '../assets/images/productPhoto/e.jpg', 2, 100, 1, 1),
+(2, 'TV', 'LG', 2020, '../assets/images/productPhoto/e.jpg', 2, 100, 15, 1),
+(3, 'Hladilnik', 'SDDF', 700, '../assets/images/productPhoto/e.jpg', 2, 100, 16, 1),
+(4, 'Laptop', 'Accer', 1200, '../assets/images/productPhoto/e.jpg', 2, 100, 24, 1),
+(7, 'Laptop', 'Accer', 1200, '../assets/images/productPhoto/e.jpg', 2, 100, 25, 1),
+(8, 'Laptop', 'Accer', 1200, '../assets/images/productPhoto/e.jpg', 2, 100, 2, 1),
+(9, 'Laptop', 'Accer', 1200, '../assets/images/productPhoto/e.jpg', 2, 100, 2, 1),
+(10, 'Laptop', 'Accer', 1200, '../assets/images/productPhoto/e.jpg', 2, 100, 9, 1),
+(11, 'Laptop', 'Accer', 1200, '../assets/images/productPhoto/e.jpg', 2, 100, 8, 1),
+(12, 'Laptop', 'Accer', 1200, '../assets/images/productPhoto/e.jpg', 2, 100, 30, 1),
+(13, 'Laptop', 'Accer', 1200, '../assets/images/productPhoto/e.jpg', 2, 100, 29, 1);
 
 -- --------------------------------------------------------
 
@@ -369,7 +376,7 @@ ALTER TABLE `orders`
 -- AUTO_INCREMENT for table `products`
 --
 ALTER TABLE `products`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 --
 -- AUTO_INCREMENT for table `product_specification_name_values`
 --

@@ -9,14 +9,17 @@
 include_once 'DBConnection.php';
 class ProductDAO
 {
-//    private $db;
+//   private $db;
 
     const SHOW_ALL_PRODUCTS_SQL = "SELECT p.* ,s.name,c.name as cname,m.name as mname FROM products p
                                     INNER JOIN subcategories s ON p.subcategory_id = subcategories_id
                                     INNER JOIN categories c ON s.category_id = c.category_id
                                     INNER JOIN manufacturers m ON p.manufacturer_id = m.manufacturer_id";
 
-    const SHOW_TEL_TAB_SMART_SQL =4;
+    const SHOW_CATEGORY_SQL ="SELECT p.* ,c.name as cname FROM products p
+                                    INNER JOIN subcategories s ON p.subcategory_id = subcategories_id
+                                    INNER JOIN categories c ON s.category_id = c.category_id
+                                    WHERE c.category_id = ?";
 
 
     public function showAllProducts(){
@@ -24,8 +27,8 @@ class ProductDAO
         $db = DBConnection::getDb();
 
 
-        $pstmt = $db->prepare(self::SHOW_ALL_PRODUCTS_SQL);
-        if ($pstmt->execute()){
+        $pstmt = $db->prepare(self::SHOW_CATEGORY_SQL);
+        if ($pstmt->execute(array(1))){
 
 //        $product = $pstmt->fetchAll(PDO::FETCH_ASSOC);
 
@@ -44,26 +47,4 @@ class ProductDAO
 $product = new ProductDAO();
 $product->showAllProducts();
 
-//    public function showAllProduct()
-//    {
-//        $db = DBConnection::getDb();
-//
-//        $pstmt = $db->prepare(self::SHOW_ALL_PRODUCTS_SQL);
-//        $pstmt->execute ( array () );
-//
-//        $product = $pstmt->fetchAll ( PDO::FETCH_ASSOC );
-//        $result = array ();
-//
-//        foreach ( $product as $product ) {
-//            $result [] = new ProductDAO ( $product ['products_name'], $product ['model'],$product ['id'] );
-//        }
-//        var_dump($result);
-//        return $result;
-//
-//    }
-//
-//}
-//
-//$result =new ProductDAO();
-//$result->showAllProduct();
 
