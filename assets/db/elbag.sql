@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.6.5.2
--- https://www.phpmyadmin.net/
+-- version 4.5.1
+-- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: 28 апр 2017 в 13:38
--- Версия на сървъра: 10.1.21-MariaDB
--- PHP Version: 7.1.1
+-- Generation Time: 29 апр 2017 в 12:37
+-- Версия на сървъра: 10.1.19-MariaDB
+-- PHP Version: 7.0.9
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -233,10 +233,19 @@ CREATE TABLE `users` (
   `password` varchar(45) COLLATE utf8_unicode_ci NOT NULL,
   `phone` varchar(20) COLLATE utf8_unicode_ci DEFAULT NULL,
   `picture` varchar(105) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `is_subscr` tinyint(1) DEFAULT NULL,
   `favorite_id` int(11) DEFAULT NULL,
-  `address_id` int(11) DEFAULT NULL
+  `address_id` int(11) DEFAULT NULL,
+  `first_name` varchar(40) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `last_name` varchar(40) COLLATE utf8_unicode_ci DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Схема на данните от таблица `users`
+--
+
+INSERT INTO `users` (`user_id`, `name`, `email`, `password`, `phone`, `picture`, `favorite_id`, `address_id`, `first_name`, `last_name`) VALUES
+(2, 'Gergin', 'gergin@abv.bg', '7c4a8d09ca3762af61e59520943dc26494f8941b', NULL, NULL, NULL, NULL, NULL, NULL),
+(6, 'gencho', 'Gencho@abv.bg', '7c4a8d09ca3762af61e59520943dc26494f8941b', NULL, NULL, NULL, NULL, NULL, NULL);
 
 --
 -- Indexes for dumped tables
@@ -320,7 +329,6 @@ ALTER TABLE `users`
   ADD PRIMARY KEY (`user_id`),
   ADD UNIQUE KEY `name_UNIQUE` (`name`),
   ADD UNIQUE KEY `email_UNIQUE` (`email`),
-  ADD UNIQUE KEY `password_UNIQUE` (`password`),
   ADD KEY `fk_users_address1_idx` (`address_id`);
 
 --
@@ -376,7 +384,7 @@ ALTER TABLE `subcategories`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 --
 -- Ограничения за дъмпнати таблици
 --
