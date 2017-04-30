@@ -24,6 +24,8 @@
 		const CHANGE_USER_LASTNAME_SQL = "UPDATE users SET last_name=? WHERE name=? AND email=?";
 		// constant for change last_name:
 		const CHANGE_USER_PHONE_SQL = "UPDATE users SET phone=? WHERE name=? AND email=?";
+		// constant for change avatar:
+		const CHANGE_USER_AVATAR_SQL = "UPDATE users SET picture=? WHERE name=? AND email=?";
 		// constant for checkPicture:
 		const CHECK_USER_AVATAR_SQL = "SELECT picture FROM users WHERE email = ? AND name = ?";
 		
@@ -122,6 +124,11 @@
 		public function changePhone (User $user) {
 			$pstmt = $this->db->prepare(self::CHANGE_USER_PHONE_SQL);
 			$pstmt->execute(array($user->phone, $user->name, $user->email));
+		}
+		
+		public function changeAvatar (User $user) {
+			$pstmt = $this->db->prepare(self::CHANGE_USER_AVATAR_SQL);
+			$pstmt->execute(array($user->picture, $user->name, $user->email));
 		}
 		
 		public function checkPicture (User $user) {

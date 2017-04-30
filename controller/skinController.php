@@ -6,6 +6,7 @@ if ((isset ($_COOKIE['skin']) && $_COOKIE['skin'] == 'skin1') || !isset ($_COOKI
 	$registerStyle = "regStyle1";
 	$oppositeStyleName = "Щадящ очите";
 	$oppositeStyleNameForClass = "eyeFriendly";
+	$currentStyle = "Популярен";
 }
 if ((isset ($_COOKIE['skin']) && $_COOKIE['skin'] == 'skin2')) {
 	$logo = "newnewlogo.png";
@@ -14,6 +15,7 @@ if ((isset ($_COOKIE['skin']) && $_COOKIE['skin'] == 'skin2')) {
 	$registerStyle = "regStyle2";
 	$oppositeStyleName = "Популярен";
 	$oppositeStyleNameForClass = "popular";
+	$currentStyle = "Щадящ очите";
 }
 
 ?>

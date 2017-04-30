@@ -33,6 +33,8 @@ spl_autoload_register('my_autoloader');
 			$userData = new UserDAO();
 			// Delete the user:
 			$userData->deleteUser($userForCheckAndDell);
+			// Delete profile picture if exists:
+			UserUploader::deleteFile($userForCheckAndDell);
 			// Unlog the user and delete his/her session:
 			header('Location:logoutController.php', true, 302);
 		}

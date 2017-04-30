@@ -238,6 +238,19 @@
     outline: none;
   }
 }
+/* For almost all paragraphs */
+.informativeMsg, .informativeHeadMsg {
+	color: #2c2d30;
+	font-weight: bold;
+	font-size: 1.1em;
+	padding: 0.3em;
+}
+.informativeHeadMsg {
+	font-size: 1.4em;
+	padding: 0.5em;
+	padding-left: 0.3em;
+	text-decoration: underline;
+}
 /* for almost all change buttons */
 .changeButton {
   padding: 0.2em 0.3em;

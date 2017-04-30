@@ -25,7 +25,7 @@ if (session_status() == PHP_SESSION_NONE) {
 	if ($avatarCheck['picture'] == null) {
 		$pathToAvatarPic = "../assets/images/register/avatar.png";
 	} else {
-		$pathToAvatarPic = "";
+		$pathToAvatarPic = $user->picture;
 	}
 } else {
 	header('Location:../view/index.php');

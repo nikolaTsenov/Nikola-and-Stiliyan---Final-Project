@@ -143,4 +143,68 @@ class UserValidation {
 			return true;
 		}
 	}
+	
+	public function checкFileIfEmpty ($fileOnServerName) {
+	
+		$emptyFileException = "Не сте избрали нищо за качване!";
+	
+		if (empty($fileOnServerName)) {
+			throw new Exception($emptyFileException);
+		}
+		
+		return true;
+	}
+	
+	public function checкFileForFake($fileOnServerName) {
+		$fakeFileException = "Файлът вероятно не е действителен!";
+		
+		$check = getimagesize($fileOnServerName);
+		if($check !== false) {
+			return true;
+		} else {
+			throw new Exception($fakeFileException);
+		}
+	}
+	
+	public function checкFileSize ($fileOnServerName,$fileOriginalSize) {
+	
+		$tooBigFileException = "Снимката не може да е над 5MB!";
+	
+		if ($fileOriginalSize > 5000000 || filesize($fileOnServerName) > 5000000) {
+			throw new Exception($tooBigFileException);
+		}
+	
+		return true;
+	}
+	
+	public function checкFileExtension ($fileOriginalName) {
+	
+		$extensionException = "Неразрешен формат(разрешени: .jpg,.jpeg,.png,.bmp!)";
+		
+		$imageFileType = pathinfo ( $fileOriginalName, PATHINFO_EXTENSION );
+		if ($imageFileType != "jpg" && $imageFileType != "jpeg" && $imageFileType != "png" && $imageFileType != "bmp") {
+			throw new Exception($extensionException);
+		}
+		
+		return true;
+	}
+	
+	public function checкFileType ($fileOnServerName,$fileType) {
+	
+		$fileTypeException = "Неразрешен формат(разрешени: .jpg,.jpeg,.png,.bmp!)";
+	
+		if (function_exists ( 'mime_content_type' )) {
+			$mimeType = mime_content_type ( $fileOnServerName );
+			// First check for MIME type:
+			if ($mimeType !== "image/jpeg" && $mimeType !== "image/png" && $mimeType !== "image/bmp") {
+				throw new Exception($extensionException);
+			}
+		} else {
+			if ($fileType !== "image/jpeg" && $fileType !== "image/png" && $fileType !== "image/bmp") {
+				throw new Exception($extensionException);
+			}
+		}
+	
+		return true;
+	}
 }

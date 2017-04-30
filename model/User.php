@@ -90,6 +90,14 @@ class User implements JsonSerializable {
 	
 		$this->phone = $phone;
 	}
+	
+	public function setPicture($picture,$user) {
+		$validChecker = new UserValidation();
+	
+		$validChecker->checkSession($user);
+	
+		$this->picture = $picture;
+	}
 }
 
 ?>
