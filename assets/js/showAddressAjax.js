@@ -27,9 +27,15 @@ function displayAddress (forSend) {
 			var addressPar = document.getElementById('addressInfoMsg');
 			var addressLabel = document.getElementById('addressInfoMsg2');
 			
-			addressPar.innerHTML = 'Адресът за доставка: '+addressData[1]+', '+addressData[2]+', ПК: '+addressData[3];
-			
-			addressLabel.innerHTML = '( '+addressData[1]+', '+addressData[2]+', ПК: '+addressData[3]+' )';
+			if (addressData.constructor === Array) {
+				addressPar.innerHTML = 'Адресът за доставка: '+addressData[1]+', '+addressData[2]+', ПК: '+addressData[3];
+				
+				addressLabel.innerHTML = '( '+addressData[1]+', '+addressData[2]+', ПК: '+addressData[3]+' )';
+			} else {
+				addressPar.innerHTML = 'Адресът за доставка: не сте дали адрес';
+				
+				addressLabel.innerHTML = '( няма адрес )';
+			}
 		}
 	}
 	xhttp.open('GET', '../controller/showAddressController.php?n='+forSend, true);
