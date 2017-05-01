@@ -19,7 +19,7 @@ class CommentDAO
 
     const PRODUCT_ID_SQL = "SELECT id FROM products
                             WHERE id = ?";
-    }
+
 
     public function showComments()
     {

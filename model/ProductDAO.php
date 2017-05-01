@@ -61,7 +61,7 @@ class ProductDAO
         $stmt->execute(array($this->productCatName));
 
         $arr = $stmt->fetchAll(PDO::FETCH_ASSOC);
-       echo json_encode($arr);
+        echo json_encode($arr);
         return $arr;
     }
     
@@ -80,30 +80,7 @@ class ProductDAO
     	$stmt->execute(array($this->productId));
     	
     	$arr = $stmt->fetchAll(PDO::FETCH_ASSOC);
-    	//echo json_encode($arr);
-    	//var_dump($arr);
     	return $arr;
     
     }
-
-
-//    function showCategories($product){
-//        $pstmt = $this->db->query(self::SHOW_CATEGORY_SQL);
-//        $arr = $pstmt->fetchAll(PDO::FETCH_ASSOC);
-//        echo json_encode($arr);
-//        return $arr;
-//    }
-//
-//    function showSubCat($product){
-//        $pstmt = $this->db->query(self::SHOW_SUB_CATEGORY_SQL);
-//        $arr = $pstmt->fetchAll(PDO::FETCH_ASSOC);
-//        echo json_encode($arr);
-//        return $arr;
-//    }
-
-
-
-
-
-
 }

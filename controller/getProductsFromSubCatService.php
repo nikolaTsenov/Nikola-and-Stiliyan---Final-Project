@@ -4,7 +4,7 @@ function __autoload($class){
 }
 
 $allSubCatsArr = array (
-		"telephones",
+		"tele-phones",
 		"smartWatches",
 		"tablets",
 		"bateries",

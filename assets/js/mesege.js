@@ -2,77 +2,77 @@
  * Created by user on 4/30/2017.
  */
 
-
-
-function createCom(contact) {
-    var content = "<div class='comments_content'>";
-    content += "<p id='comm-time'>" + "<a href='delete.php?id=" + "$row['id']" +"X</a></p>";
-    content += "<h1 id='comm-name'>" . $row['name'] + "</h1>";
-    content += "<p><span id='comments-data'>" . $row['date_publish'];
-    content += "<p id'='comm-mess'>" . $row['Comment'] + "</p>";
-    content += "</div>";
-
-    return content;
-}
-
-function addNewContact() {
-    // var name = document.getElementById('name').value;
-    // var phone = document.getElementById('phone').value;
-    // var email = document.getElementById('mail').value;
-
-    var name = form.name.value;
-    var comments = form.comments.value;
-
-    function commentSubmit() {
-        if (form.name.value == '' && form.comments.value == '') { //exit if one of the field is blank
-            alert('Enter your message !');
-            return;
-        }
-    }
-
-    var newComment = {
-        name: name,
-        comment: comments,
-    };
-    var xhr = new XMLHttpRequest();
-    xhr.open('POST', '../controller/showComments.php', true);
-    xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-    xhr.send('data=' + JSON.stringify(newComment));
-
-    xhr.onload = function () {
-        if (xhr.status == 200) {
-            if (!editMode)
-                document.getElementById('table').innerHTML += createCom(newComment);
-
-            document.getElementById('result').innerHTML = xhr.responseText;
-            reloadTable();
-        }
-    }
-}
-
-    function reloadTable() {
-        var xhr = new XMLHttpRequest();
-        xhr.open('GET', '../controller/showComments.php', true);
-
-        xhr.onload = function () {
-            if (xhr.status == 200) {
-                var data = JSON.parse(xhr.responseText);
-                var content = '';
-                for (var i = 0; i < data.length; i++) {
-                    content += createRow(data[i]);
-                }
-
-                document.getElementById('comment_logs').innerHTML = content;
-            }
-        }
-        xhr.send(null);
-    }
-
-    document.addEventListener('DOMContentLoaded', function () {
-        reloadTable();
-    });
-
-
+//
+//
+// function createCom(contact) {
+//     var content = "<div class='comments_content'>";
+//     content += "<p id='comm-time'>" + "<a href='delete.php?id=" + "$row['id']" +"X</a></p>";
+//     content += "<h1 id='comm-name'>" . $row['name'] + "</h1>";
+//     content += "<p><span id='comments-data'>" . $row['date_publish'];
+//     content += "<p id'='comm-mess'>" . $row['Comment'] + "</p>";
+//     content += "</div>";
+//
+//     return content;
+// }
+//
+// function addNewContact() {
+//     // var name = document.getElementById('name').value;
+//     // var phone = document.getElementById('phone').value;
+//     // var email = document.getElementById('mail').value;
+//
+//     var name = form.name.value;
+//     var comments = form.comments.value;
+//
+//     function commentSubmit() {
+//         if (form.name.value == '' && form.comments.value == '') { //exit if one of the field is blank
+//             alert('Enter your message !');
+//             return;
+//         }
+//     }
+//
+//     var newComment = {
+//         name: name,
+//         comment: comments,
+//     };
+//     var xhr = new XMLHttpRequest();
+//     xhr.open('POST', '../controller/showComments.php', true);
+//     xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+//     xhr.send('data=' + JSON.stringify(newComment));
+//
+//     xhr.onload = function () {
+//         if (xhr.status == 200) {
+//             if (!editMode)
+//                 document.getElementById('table').innerHTML += createCom(newComment);
+//
+//             document.getElementById('result').innerHTML = xhr.responseText;
+//             reloadTable();
+//         }
+//     }
+// }
+//
+//     function reloadTable() {
+//         var xhr = new XMLHttpRequest();
+//         xhr.open('GET', '../controller/showComments.php', true);
+//
+//         xhr.onload = function () {
+//             if (xhr.status == 200) {
+//                 var data = JSON.parse(xhr.responseText);
+//                 var content = '';
+//                 for (var i = 0; i < data.length; i++) {
+//                     content += createRow(data[i]);
+//                 }
+//
+//                 document.getElementById('comment_logs').innerHTML = content;
+//             }
+//         }
+//         xhr.send(null);
+//     }
+//
+//     document.addEventListener('DOMContentLoaded', function () {
+//         reloadTable();
+//     });
+//
+//
 
 
 
