@@ -50,8 +50,8 @@ h2 {
 
 /*buttons*/
 
-#add-for-buy,
-#add-to-fav {
+.add-for-buy,
+.add-to-fav {
     background-color: blue;
     ;
     /* Green */

@@ -46,6 +46,12 @@ class ProductDAO
                                     INNER JOIN categories c ON s.category_id = c.category_id
                                     WHERE p.id = ?";
 
+    const PRODUCT_WHIT_VAL_SQL = "  SELECT p.* ,psnv.* ,c.name as cname FROM products p
+                                    INNER JOIN subcategories s ON p.subcategory_id = subcategories_id
+                                    INNER JOIN categories c ON s.category_id = c.category_id
+                                    INNER JOIN product_specification_name_values psnv ON psnv.product_id = p.id
+                                    WHERE psnv.product_id=1";
+
     public function __construct() {
         $this->db = DBConnection::getDb ();
     }
@@ -82,5 +88,14 @@ class ProductDAO
     	$arr = $stmt->fetchAll(PDO::FETCH_ASSOC);
     	return $arr;
     
+    }
+
+    public function getProductValue ($product) {
+        $stmt = $this->db->prepare(self::PRODUCT_WHIT_VAL_SQL);
+        $stmt->execute(array($this->productId));
+
+        $arr = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        return $arr;
+
     }
 }

@@ -31,16 +31,16 @@ function displayMobiles () {
 			var htmlString = "";
 			
 			for (var i =0; i<ourData.length; i++){
-		        htmlString +="<div class='' id='mobilePhones"+i+"'><a href='#'>"
+		        htmlString +="<div class='' id='mobilePhones"+i+"'><a href='../view/product.php?id="+ourData[i].id+"'>"
 
 		            + "<img src =' "+ ourData[i].picture + "'  alt='tv'>"
 		            // + data[i].warranty + " "
 		            // + data[i].quantity + " "
-		            +"<h3>" + ourData[i].model + "</h3></a>"
-		             +"<p>" + ourData[i].cname + " </p>"
+		            // +"<h3>" + ourData[i].model + "</h3></a>"
+		             // +"<p>" + ourData[i].cname + " </p>"
 		            +"<p>" + ourData[i].products_name + " </p>"
 		             +"<p>" + ourData[i].name + " </p>"
-		            +"<p>" + ourData[i].sname +" </p>";
+		            // +"<p>" + ourData[i].sname +" </p>";
 		            // + data[i].mname + " "
 		              // + data[i].price + " "
 		        htmlString += "<a href='../view/product.php?id="+ourData[i].id+"' id='link-button-for-articles'>"+"виж тук"+"</a>";
@@ -82,16 +82,16 @@ function displayMobiles () {
 			var htmlString2 = "";
 			
 			for (var i =0; i<ourData2.length; i++){
-		        htmlString2 +="<div class='' id='smartWatches"+i+"'><a href='#'>"
+		        htmlString2 +="<div class='' id='smartWatches"+i+"'><a href='../view/product.php?="+ourData2[i].id+"'>"
 
 		            + "<img src =' "+ ourData2[i].picture + "'  alt='tv'>"
 		            // + data[i].warranty + " "
 		            // + data[i].quantity + " "
-		            +"<h3>" + ourData2[i].model + "</h3></a>"
-		             +"<p>" + ourData2[i].cname + " </p>"
-		            +"<p>" + ourData2[i].products_name + " </p>"
-		             +"<p>" + ourData2[i].name + " </p>"
-		            +"<p>" + ourData2[i].sname +" </p>";
+		             +"<h3>" + ourData2[i].model + "</h3></a>"
+		            //  +"<p>" + ourData2[i].cname + " </p>"
+		             +"<p>" + ourData2[i].products_name + " </p>"
+		             // +"<p>" + ourData2[i].name + " </p>"
+		            // +"<p>" + ourData2[i].sname +" </p>";
 		            // + data[i].mname + " "
 		              // + data[i].price + " "
 		        htmlString2 += "<a href='../view/product.php?="+ourData2[i].id+"' id='link-button-for-articles'>"+"виж тук"+"</a>";

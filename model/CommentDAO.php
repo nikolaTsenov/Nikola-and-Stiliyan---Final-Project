@@ -9,6 +9,8 @@
 class CommentDAO
 {
 
+    public $id='1';
+
     const ADD_COMENT_SQL = "INSERT INTO comments(`id_comm`, `product_id`, `person_name`, `comments`)
                                           VALUES (null,'?','?','?','?')";
 
@@ -21,14 +23,19 @@ class CommentDAO
                             WHERE id = ?";
 
 
+    public function __construct() {
+        $this->db = DBConnection::getDb ();
+    }
+
+
     public function showComments()
     {
         $stmt = $this->db->prepare(self::SELECT_COMMENTS_SQL);
-        $stmt->execute(array($this->productID));
-
+        $stmt->execute(array($this->id));
         $arr = $stmt->fetchAll(PDO::FETCH_ASSOC);
-        echo json_encode($arr);
+         json_encode($arr);
         return $arr;
+
     }
 
 
@@ -40,5 +47,8 @@ class CommentDAO
                 $comments->name,$comments->comments,
             ));
     }
+
+
+
 }
 

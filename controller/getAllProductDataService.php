@@ -19,4 +19,4 @@ $waranty= $arr[0]['warranty'];
 $quantity = $arr[0]['quantity'];
 
 
-	
+//$value = $product->getProductValue($product);
