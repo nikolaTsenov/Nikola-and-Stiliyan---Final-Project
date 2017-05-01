@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 29 апр 2017 в 23:01
+-- Generation Time:  1 май 2017 в 18:35
 -- Версия на сървъра: 10.1.21-MariaDB
 -- PHP Version: 7.1.1
 
@@ -66,6 +66,30 @@ INSERT INTO `categories` (`category_id`, `name`) VALUES
 (3, 'ТВ, Електроника & Фото'),
 (4, 'Големи електроуреди'),
 (5, 'Малки електроуреди');
+
+-- --------------------------------------------------------
+
+--
+-- Структура на таблица `comments`
+--
+
+CREATE TABLE `comments` (
+  `id_comm` int(11) NOT NULL,
+  `product_id` int(11) NOT NULL,
+  `person_name` varchar(45) COLLATE utf8_unicode_ci NOT NULL,
+  `date_publish` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `comments` text COLLATE utf8_unicode_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Схема на данните от таблица `comments`
+--
+
+INSERT INTO `comments` (`id_comm`, `product_id`, `person_name`, `date_publish`, `comments`) VALUES
+(1, 1, 'Stoqn', '2017-05-01 15:26:52', 'hahahahhaha'),
+(2, 1, 'Stoqn', '2017-05-01 15:26:52', 'hahahahhaha'),
+(3, 2, 'ssss', '2017-05-01 15:28:44', 'dfadsfasdfa'),
+(4, 1, 'Stoqn', '2017-05-01 15:28:25', 'hahahahhaha');
 
 -- --------------------------------------------------------
 
@@ -278,6 +302,13 @@ ALTER TABLE `categories`
   ADD PRIMARY KEY (`category_id`);
 
 --
+-- Indexes for table `comments`
+--
+ALTER TABLE `comments`
+  ADD PRIMARY KEY (`id_comm`),
+  ADD KEY `product_id_idx` (`product_id`);
+
+--
 -- Indexes for table `favorits`
 --
 ALTER TABLE `favorits`
@@ -346,12 +377,17 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `address`
 --
 ALTER TABLE `address`
-  MODIFY `address_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `address_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT for table `categories`
 --
 ALTER TABLE `categories`
   MODIFY `category_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+--
+-- AUTO_INCREMENT for table `comments`
+--
+ALTER TABLE `comments`
+  MODIFY `id_comm` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 --
 -- AUTO_INCREMENT for table `favorits`
 --
@@ -391,7 +427,7 @@ ALTER TABLE `subcategories`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 --
 -- Ограничения за дъмпнати таблици
 --
@@ -402,6 +438,12 @@ ALTER TABLE `users`
 ALTER TABLE `basket`
   ADD CONSTRAINT `fk_basket_products1` FOREIGN KEY (`product_id`) REFERENCES `products` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   ADD CONSTRAINT `fk_basket_users1` FOREIGN KEY (`user_id`) REFERENCES `users` (`user_id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+
+--
+-- Ограничения за таблица `comments`
+--
+ALTER TABLE `comments`
+  ADD CONSTRAINT `product_id` FOREIGN KEY (`product_id`) REFERENCES `products` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
 -- Ограничения за таблица `favorits`
