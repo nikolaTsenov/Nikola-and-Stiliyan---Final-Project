@@ -10,11 +10,27 @@ function __autoload($className) {
 }
 
 
+
 //if (isset ( $_SESSION ['productId'] )) {
 
 //    $name = $_REQUEST['name'];
 //    $comments = $_REQUEST['comments'];
 //    $productId = $_SESSION ['productId'];
+
+
+
+
+ if (isset($_GET['id'])) {
+ 	
+ 	
+ 	
+ 	
+ 
+ 	
+ }else {
+   http_response_code ( 401 );
+   echo '{"error": "not logged in"}';
+}
 
 
 
@@ -40,5 +56,7 @@ function __autoload($className) {
 //    http_response_code ( 401 );
 //    echo '{"error": "not logged in"}';
 //}
-$id = new ProductDAO();
-$id->productId = '1';
+//$id = new ProductDAO();
+//$id->productId = '1';
+//}
+

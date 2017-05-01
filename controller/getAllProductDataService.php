@@ -10,5 +10,13 @@ $product = new ProductDAO();
 $product->productId='1';
 $arr = $product->getProductData($product);
 
-
+//var_dump($arr);
 $name =$arr[0]['products_name'];
+$model =$arr[0]['model'];
+$cena = $arr[0]['price'];
+$picture=$arr[0]['picture'];
+$waranty= $arr[0]['warranty'];
+$quantity = $arr[0]['quantity'];
+
+
+	
