@@ -9,7 +9,6 @@ if (session_status() == PHP_SESSION_NONE) {
 		}
 	// Require the account controller in order to read the session and get the object $user:
 	require_once "../controller/accountController.php";
-	
 	// Check if the user has an avatar picture:
 	// Create new object of class User:
 	$userForAvatarCheck = new User($user->email, 'sth', $user->name, null, null, $user->picture, null,

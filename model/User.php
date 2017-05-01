@@ -98,6 +98,14 @@ class User implements JsonSerializable {
 	
 		$this->picture = $picture;
 	}
+	
+	public function setAddress_id($address_id,$user) {
+		$validChecker = new UserValidation();
+	
+		$validChecker->checkSession($user);
+	
+		$this->address_id = $address_id;
+	}
 }
 
 ?>

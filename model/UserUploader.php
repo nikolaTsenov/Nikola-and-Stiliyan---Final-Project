@@ -4,7 +4,16 @@ class UserUploader {
 	
 	public static function changeFileName ($fileOriginalName, User $user) {
 		$temporary = explode(".", $fileOriginalName);
-		return $user->name . '.' . end($temporary);
+		if (strlen($user->email) != mb_strlen($user->email,"UTF-8")) {
+			throw new Exception("Не може да сменяте аватара си!");
+		} 
+		$userEmail = $user->email;
+		$userEmailExploded = explode(".", $userEmail);
+		$newName = "";
+		for ($index = 0; $index < count($userEmailExploded); $index++) {
+			$newName .= $userEmailExploded[$index];
+		}
+		return $newName . '.' . end($temporary);
 	}
 	
 	public static function uploadFile ($fileOnServerName, $newFileName) {

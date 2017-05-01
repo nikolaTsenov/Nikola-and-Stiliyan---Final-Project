@@ -1,4 +1,4 @@
-var _validFileExtensions = [".jpg", ".jpeg", ".bmp", ".gif", ".png"];
+var _validFileExtensions = [".jpg", ".jpeg", ".bmp", ".png"];
 /**
  * 
  * @param oForm
@@ -21,7 +21,7 @@ function Validate(oForm) {
                 }
                 
                 if (!blnValid) {
-                    alert("Sorry, " + sFileName + " is invalid, allowed extensions are: " + _validFileExtensions.join(", "));
+                    alert("Съжаляваме, " + sFileName + " не е валидно, позволени формати са: " + _validFileExtensions.join(", "));
                     return false;
                 }
             }

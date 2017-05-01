@@ -12,6 +12,8 @@ class UserValidation {
 	const CHECK_SESSION_WITH_EMAIL_SQL = "SELECT name FROM users WHERE email = ?";
 	// const for method checkSessionWithName:
 	const CHECK_SESSION_WITH_NAME_SQL = "SELECT email FROM users WHERE name = ?";
+	// const for method checkAddressIfExists:
+	const CHECK_ADDRESS_IF_EXISTS_SQL = "SELECT address_id FROM address WHERE address_id=(SELECT address_id FROM users WHERE name=?);";
 	
 	public function __construct() {
 		$this->db = DBConnection::getDb ();
@@ -205,6 +207,66 @@ class UserValidation {
 			}
 		}
 	
+		return true;
+	}
+	
+	public function checkAddressIfExists (User $user) {
+	
+		$pstmt = $this->db->prepare(self::CHECK_ADDRESS_IF_EXISTS_SQL);
+		$pstmt->execute(array($user->name));
+	
+		$addressCheck = $pstmt->fetchAll(PDO::FETCH_ASSOC);
+	
+		if (count($addressCheck) > 1) {
+			throw new Exception("Заявката трябва да върне само 1 резултат!");
+		} elseif (count($addressCheck) == 0) {
+			return false;
+		} elseif (count($addressCheck) == 1) {
+			return true;
+		} else {
+			throw new Exception("Нещо се е объркало доста! :D");
+		}
+	}
+	
+	public function symbolsInStringCheck ($string) {
+		if (!is_string($string)) {
+			throw new Exception("Невалиден адрес!");
+		}
+		if (strlen($string) == 0) {
+			throw new Exception("Празно поле!");
+		}
+		for ($count = 0; $count < mb_strlen($string,"UTF-8"); $count++) {
+			if ($count > 0 && $string{$count} == " " && $string{$count-1} == " ") {
+				throw new Exception("Моля, не попълвайте повече от едно празно поле!");
+			}
+			if (preg_match('/[\'^£$%&*()}{@#~?><>,|=_+¬-]/', $string{$count})) {
+				throw new Exception("Непозволени символи!");
+			}
+		}
+		return true;
+	}
+	
+	public function validateStreetAddress ($streetAddress) {
+		if (mb_strlen($streetAddress,"UTF-8") > 50 || mb_strlen($streetAddress,"UTF-8") < 8) {
+			throw new Exception("Молят вместете адреса си между 8 и 50 символа!");
+		}
+		return $this->symbolsInStringCheck($streetAddress);
+	}
+	
+	public function validateCityAddress ($cityAddress) {
+		if (mb_strlen($cityAddress,"UTF-8") > 25 || mb_strlen($cityAddress,"UTF-8") < 5) {
+			throw new Exception("Молят вместете града си между 5 и 25 символа!");
+		}
+		return $this->symbolsInStringCheck($cityAddress);
+	}
+	
+	public function validatePostCode ($postCode) {
+		if (!is_numeric($postCode)) {
+			throw new Exception("Невалиден пощенски код!");
+		}
+		if (mb_strlen($postCode,"UTF-8") !== 4) {
+			throw new Exception("Пощенските кодове в Б-я са от 4 символа!");
+		}
 		return true;
 	}
 }

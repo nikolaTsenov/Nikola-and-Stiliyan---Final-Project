@@ -14,6 +14,8 @@ class DBConnection {
 			try {
 				self::$db = new PDO ( "mysql:host=" . DB_HOST . ";dbname=" . DB_NAME, DB_USER, DB_PASS );
 				self::$db->setAttribute ( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION );
+				self::$db->exec("SET NAMES utf8;");
+				self::$db->exec("SET character_set_results=utf8;");
 			}
 			catch (PDOException $e) {
 				throw new Exception("Problem loading database!", $e);

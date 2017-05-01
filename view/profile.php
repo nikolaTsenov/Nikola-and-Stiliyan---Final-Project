@@ -119,12 +119,43 @@
 		</div>	
 	</div>
 	<div id="securityData" class="mainContentOfSelected">
+		<h1 class="myData">Сигурност</h1>
+		<div class="personalData">
+			<p class="informativeMsg" id="addressInfoMsg" ><?php //$adrmsg = isset($user->address_id) ? $user->address_id : 'няма адрес'; echo "Адресът за доставка е " . $adrmsg; ?></p>
+			<button class="accordion" id="accAddr">Редактиране на адрес</button>
+			<form class="formPannel" action="../controller/changeAddressController.php" method="post" >
+				<div class="forContent">
+					<table>
+						<tr>
+						<td><label for="changeAddress" id="addressInfoMsg2"><!--  Адрес за доставка--><?php // echo " ( " . $adrmsg . " ) "; ?> </label></td>
+						</tr>
+						<tr>
+							<td><label for="changeAddressStr">Адрес(по шаблона) </label></td>
+							<td><input type="text" name="changeAddressStr" id="changeAddressStr" placeholder="<?php echo "ул.Тинтява 6 ет.1 ап.1"; ?>"/></td>
+						</tr>
+						<tr>
+							<td><label for="changeAddressCity">Град(по шаблона) </label></td>
+							<td><input type="text" name="changeAddressCity" id="changeAddressCity" placeholder="<?php echo "гр. София"; ?>"/></td>
+						</tr>
+						<tr>
+							<td><label for="changeAddressPC">Пощенски код(по шаблона) </label></td>
+							<td><input type="text" name="changeAddressPC" id="changeAddressPC" placeholder="<?php echo "1700"; ?>"/></td>
+						</tr>
+						<tr>
+							<td><button type="submit" name="submitAddressChange" class="changeButton" >Смени</button></td>
+						</tr>
+					</table>
+				</div>
+			</form>
+			<?php // var_dump($user); // - for testing ?>
+		</div>
 	</div>
 	<div id="ordersData" class="mainContentOfSelected">
 	</div>
 	<div id="favouritesData" class="mainContentOfSelected">
 	</div>
 </div>
+<a href="" id="addressAnchor" style="display:none"><?php echo $user->name; ?></a>
 <?php
 	include_once "profileFooter.php";
 ?>

@@ -5,7 +5,7 @@ function my_autoloader($className) {
 
 spl_autoload_register('my_autoloader');
 	// require accountController.php to give this file visibility to the $_SESSION['user'] and its content:
- 	require_once "./accountController.php";
+ 	require_once "../controller/accountController.php";
 	
 	//For testing goals you can uncomment:
 	// 		echo $user->name;
@@ -23,8 +23,9 @@ spl_autoload_register('my_autoloader');
 		// Create user from class User for checking session and than deletion:
 		$userForCheckAndDell = new User($user->email, 'sth', 
 							 $user->name, $user->id, $user->phone,
-							 $user->picture, $user->is_subscr, 
+							 $user->picture, $user->first_name, $user->last_name, 
 							 $user->favorite_id, $user->address_id);
+			// throw New Exception(var_dump($userForCheckAndDell)); //-for testing
 			// create object from class UserValidation:
 			$sessChecker = new UserValidation();
 			// Check for rights to delete this account:
@@ -32,6 +33,7 @@ spl_autoload_register('my_autoloader');
 			// Create new object from class UserDAO
 			$userData = new UserDAO();
 			// Delete the user:
+			// throw New Exception(var_dump($userForCheckAndDell)); //-for testing
 			$userData->deleteUser($userForCheckAndDell);
 			// Delete profile picture if exists:
 			UserUploader::deleteFile($userForCheckAndDell);
@@ -40,7 +42,7 @@ spl_autoload_register('my_autoloader');
 		}
 		catch (Exception $e) {
 			$errorMessage = $e->getMessage();
-			include '../view/index.php';
+			include '../view/profile.php';
 		}
 	} else {
 		header('Location:../view/index.php');

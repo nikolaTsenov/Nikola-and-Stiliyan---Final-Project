@@ -13,7 +13,7 @@
 		const DELETE_USER_FROM_BASKET_SQL = "DELETE FROM basket WHERE user_id=?;";
 		const DELETE_USER_FROM_FAVORITS_SQL = "DELETE FROM favorits WHERE user_id=?;";
 		const DELETE_USER_FROM_ORDERS_SQL = "DELETE FROM orders WHERE user_id=?;";
-		const DELETE_USER_FROM_ADDRESS_SQL = "DELETE FROM address WHERE address_id=?;";
+		const DELETE_USER_FROM_ADDRESS_SQL = "DELETE FROM address WHERE address_id=(SELECT address_id FROM users WHERE name=?);";
 		// constant for change username:
 		const CHANGE_USER_NAME_SQL = "UPDATE users SET name=? WHERE email=?";
 		// constant for change email:
@@ -28,6 +28,18 @@
 		const CHANGE_USER_AVATAR_SQL = "UPDATE users SET picture=? WHERE name=? AND email=?";
 		// constant for checkPicture:
 		const CHECK_USER_AVATAR_SQL = "SELECT picture FROM users WHERE email = ? AND name = ?";
+		// constant for removing foreign key check:
+		const REMOVE_FK_CHECK = "SET foreign_key_checks = 0;";
+		// constant for return foreign key check:
+		const RETURN_FK_CHECK = "SET foreign_key_checks = 1;";
+		// constants for changeAddressIfNotExists:
+		const INSERT_NEW_ADDRESS_SQL = "INSERT INTO address VALUES (null,?,?,?);";
+		const UPDATE_ADDRESS_ID_SQL = "UPDATE users SET address_id=? WHERE name=?;";
+		// constant for changeAddressIfExists:
+		const UPDATE_ADDRESS_SQL = "UPDATE address SET street_address=?, city=?,
+									post_code=? WHERE address_id=(SELECT address_id FROM users WHERE name=?);";
+		// constant for getAddress:
+		const GET_ADDRESS_SQL = "SELECT * FROM address WHERE address_id=(SELECT address_id FROM users WHERE name=?);";
 		
 		public function __construct() {
 			$this->db = DBConnection::getDb ();
@@ -74,11 +86,10 @@
 		
 		public function deleteUser (User $user) {
 			
-			try {
+ 			try {
 				$this->db->beginTransaction();
-			
-				$stmt = $this->db->prepare(self::DELETE_USER_FROM_USERS_SQL);
-				$stmt->execute(array($user->name, $user->email));
+				
+				$stmt = $this->db->exec(self::REMOVE_FK_CHECK);
 			
 				$stmt = $this->db->prepare(self::DELETE_USER_FROM_BASKET_SQL);
 				$stmt->execute(array($user->id));
@@ -90,14 +101,21 @@
 				$stmt->execute(array($user->id));
 				
 				$stmt = $this->db->prepare(self::DELETE_USER_FROM_ADDRESS_SQL);
-				$stmt->execute(array($user->address_id));
+				$stmt->execute(array($user->name));
+				
+				$stmt = $this->db->prepare(self::DELETE_USER_FROM_USERS_SQL);
+				$stmt->execute(array($user->name, $user->email));
 			
+				$stmt = $this->db->exec(self::RETURN_FK_CHECK);
+				
 				$this->db->commit();
-			} catch(PDOException $e) {
-				//Something went wrong rollback!
-				$this->db->rollBack();
-				throw New Exception("Нещо се обърка!");
-			}
+			
+				return true;
+ 			} catch(Exception $ex) {
+ 				//Something went wrong rollback!
+ 				$this->db->rollBack();
+ 				echo $ex->getMessage();
+ 			}
 		
 		}
 		
@@ -151,6 +169,62 @@
 				include '../view/profile.php';
 			}
 				
+		}
+		
+		public function changeAddressIfNotExists (User $user,$streetAddress,$city,$postCode) {
+				
+			try {
+				$this->db->beginTransaction();
+		
+				$stmt = $this->db->exec(self::REMOVE_FK_CHECK);
+					
+				$stmt = $this->db->prepare(self::INSERT_NEW_ADDRESS_SQL);
+				$stmt->execute(array($streetAddress,$city,$postCode));
+				
+				$last_id = $this->db->lastInsertId();
+				
+				$stmt = $this->db->prepare(self::UPDATE_ADDRESS_ID_SQL);
+				$stmt->execute(array($last_id,$user->name));
+					
+				$stmt = $this->db->exec(self::RETURN_FK_CHECK);
+		
+				$this->db->commit();
+					
+				return true;
+			} catch(Exception $ex) {
+				//Something went wrong rollback!
+				$this->db->rollBack();
+				echo $ex->getMessage();
+			}
+		
+		}
+		
+		public function changeAddressIfExists (User $user,$streetAddress,$city,$postCode) {
+		
+			try {
+				$pstmt = $this->db->prepare(self::UPDATE_ADDRESS_SQL);
+				$pstmt->execute(array($streetAddress,$city,$postCode,$user->name));
+				return true;
+			}
+			catch (PDOException $e) {
+				$errorMessage = $e->getMessage();
+				include '../view/profile.php';
+			}
+		}
+		
+		public function getAddress($username) {
+			$pstmt = $this->db->prepare(self::GET_ADDRESS_SQL);
+			$pstmt->execute(array($username));
+		
+			$res = $pstmt->fetchAll(PDO::FETCH_ASSOC);
+		
+			if (count($res) === 0) {
+				throw new Exception("Първата проверка за сетнато address_id е била заобиколена!");
+			}
+		
+			$user = $res[0];
+		
+			return array($user['address_id'],$user['street_address'],$user['city'],$user['post_code']);
 		}
 	}
 ?>
