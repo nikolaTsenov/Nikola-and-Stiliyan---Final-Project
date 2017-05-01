@@ -151,9 +151,9 @@
 			<button class="accordion" id="acc2">Смянана парола</button>
 			<form class="formPannel" id="changePassForm" action="../controller/changePasswordAccountController.php" method="post" >
 				<div class="forContent">
-					<label for="submitFormPannel" >Наистина ли искате да изтриете акаунта си? <i class="fa fa-frown-o" aria-hidden="true"></i></label>
-					<button onclick="clickAccordion2()" class="refuse" >Не, оставам!</button>
-					<input type="submit" name="submitDeleteAccount" value="Изтрий" class="submitPassChange" />
+					<label for="submitFormPannel" >Смяна на парола </i></label>
+					<input type="password" name="changePass" id="changePhone" placeholder="..."/>
+					<button type="submit" name="submitPassChange" class="changeButton" >Смени</button>
 				</div>
 			</form>	
 			<?php // var_dump($user); // - for testing ?>

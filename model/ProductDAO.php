@@ -18,13 +18,14 @@ class ProductDAO
     public $productName;
     public $productPicture;
     public $productCatName;
+    public $productId;
 
     const SHOW_ALL_PRODUCTS_SQL = "SELECT p.* ,s.name,c.name as cname,m.name as mname FROM products p
                                     INNER JOIN subcategories s ON p.subcategory_id = subcategories_id
                                     INNER JOIN categories c ON s.category_id = c.category_id
                                     INNER JOIN manufacturers m ON p.manufacturer_id = m.manufacturer_id";
 
-    const SHOW_CATEGORY_SQL ="SELECT p.* ,c.name as cname,s.name as sname FROM products p
+    const SHOW_CATEGORY_SQL =		"SELECT p.* ,c.name as cname,s.name as sname FROM products p
                                     INNER JOIN subcategories s ON p.subcategory_id = subcategories_id
                                     INNER JOIN categories c ON s.category_id = c.category_id
                                     WHERE c.category_id = ?";
@@ -39,6 +40,11 @@ class ProductDAO
                                     INNER JOIN subcategories s ON p.subcategory_id = subcategories_id
                                     INNER JOIN categories c ON s.category_id = c.category_id
                                     WHERE  c.category_id= 1 AND subcategories_id = ?";
+    
+    const GE_PRODUCT_DATA_SQL = "SELECT p.* ,c.name as cname,s.name as sname FROM products p
+                                    INNER JOIN subcategories s ON p.subcategory_id = subcategories_id
+                                    INNER JOIN categories c ON s.category_id = c.category_id
+                                    WHERE p.id = ?";
 
     public function __construct() {
         $this->db = DBConnection::getDb ();
@@ -57,6 +63,27 @@ class ProductDAO
         $arr = $stmt->fetchAll(PDO::FETCH_ASSOC);
        echo json_encode($arr);
         return $arr;
+    }
+    
+    public function showSubCatProducts($product){
+    
+    	$stmt = $this->db->prepare(self::SHOW_SUB_CATEGORY_SQL);
+    	$stmt->execute(array($this->productCatName));
+    
+    	$arr = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    	echo json_encode($arr);
+    	return $arr;
+    }
+    
+    public function getProductData ($product) {
+    	$stmt = $this->db->prepare(self::GE_PRODUCT_DATA_SQL);
+    	$stmt->execute(array($this->productId));
+    	
+    	$arr = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    	//echo json_encode($arr);
+    	//var_dump($arr);
+    	return $arr;
+    
     }
 
 

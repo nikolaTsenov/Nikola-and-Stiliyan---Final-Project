@@ -12,9 +12,6 @@ function __autoload($className) {
 session_start ();
 
 if (isset ( $_SESSION ['productId'] )) {
-    /**
-     * MOE
-     */
 
 //    $name = $_REQUEST['name'];
 //    $comments = $_REQUEST['comments'];

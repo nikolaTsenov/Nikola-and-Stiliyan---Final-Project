@@ -36,7 +36,7 @@
 		?>
 		<!-- In the below section we will load all adds from the database, I will leave it empty for now -->
 		<section id="articles">
-            <h2 class="categories-header">ТЕЛЕФОНИ</h2>
+            <h2 class="categories-header">Мобилни телефони</h2>
                 <div id="telephones">
 
                 </div>
