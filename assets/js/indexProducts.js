@@ -43,7 +43,7 @@ function displayMobiles () {
 		            +"<p>" + ourData[i].sname +" </p>";
 		            // + data[i].mname + " "
 		              // + data[i].price + " "
-		        htmlString += "<a href='' id='link-button-for-articles'>"+"виж тук"+"</a>";
+		        htmlString += "<a href='../view/product.php?id="+ourData[i].id+"' id='link-button-for-articles'>"+"виж тук"+"</a>";
 		        htmlString += "</div>";
 
 		    }
@@ -94,7 +94,7 @@ function displayMobiles () {
 		            +"<p>" + ourData2[i].sname +" </p>";
 		            // + data[i].mname + " "
 		              // + data[i].price + " "
-		        htmlString2 += "<a href='../view/product.php?id=1' id='link-button-for-articles'>"+"виж тук"+"</a>";
+		        htmlString2 += "<a href='../view/product.php?="+ourData2[i].id+"' id='link-button-for-articles'>"+"виж тук"+"</a>";
 		        htmlString2 += "</div>";
 
 		    }
@@ -145,7 +145,7 @@ function displayMobiles () {
 		            +"<p>" + ourData3[i].sname +" </p>";
 		            // + data[i].mname + " "
 		              // + data[i].price + " "
-		        htmlString3 += "<a href='' id='link-button-for-articles'>"+"виж тук"+"</a>";
+		        htmlString3 += "<a href='../view/product.php?="+ourData3[i].id+"' id='link-button-for-articles'>"+"виж тук"+"</a>";
 		        htmlString3 += "</div>";
 
 		    }
@@ -196,7 +196,7 @@ function displayMobiles () {
 		            +"<p>" + ourData4[i].sname +" </p>";
 		            // + data[i].mname + " "
 		              // + data[i].price + " "
-		        htmlString4 += "<a href='' id='link-button-for-articles'>"+"виж тук"+"</a>";
+		        htmlString4 += "<a href='../view/product.php?='"+ourData4[i].id+"' id='link-button-for-articles'>"+"виж тук"+"</a>";
 		        htmlString4 += "</div>";
 
 		    }
@@ -247,7 +247,7 @@ function displayMobiles () {
 		            +"<p>" + ourData5[i].sname +" </p>";
 		            // + data[i].mname + " "
 		              // + data[i].price + " "
-		        htmlString5 += "<a href='' id='link-button-for-articles'>"+"виж тук"+"</a>";
+		        htmlString5 += "<a href='../view/product.php?="+ourData5[i].id+"' id='link-button-for-articles'>"+"виж тук"+"</a>";
 		        htmlString5 += "</div>";
 
 		    }
@@ -279,7 +279,7 @@ function displayMobiles () {
 	xhttp6.onreadystatechange = function() {
 		if (this.readyState == 4 && this.status == 200) {
 			// successfuly received response
-			var ourData6 = JSON.parse(xhttp5.responseText);
+			var ourData6 = JSON.parse(xhttp6.responseText);
 			
 			var htmlDiv6 = document.getElementById('tablets');
 			
@@ -298,7 +298,7 @@ function displayMobiles () {
 		            +"<p>" + ourData6[i].sname +" </p>";
 		            // + data[i].mname + " "
 		              // + data[i].price + " "
-		        htmlString6 += "<a href='' id='link-button-for-articles'>"+"виж тук"+"</a>";
+		        htmlString6 += "<a href='../view/product.php?="+ourData6[i].id +"' id='link-button-for-articles'>"+"виж тук"+"</a>";
 		        htmlString6 += "</div>";
 
 		    }

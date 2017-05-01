@@ -1,19 +1,3 @@
-<!--<!DOCTYPE html>-->
-<!--<html lang="en">-->
-<!---->
-<!--<head>-->
-<!--    <meta charset="UTF-8">-->
-<!--    <meta name="viewport" content="width=device-width, initial-scale=1.0">-->
-<!--    <meta http-equiv="X-UA-Compatible" content="ie=edge">-->
-<!--    <title>Products</title>-->
-<!--    <link href="css/reset.css" rel="stylesheet" type="text/css">-->
-<!--    <link href="css/prductStyle.css" rel="stylesheet" type="text/css">-->
-<!--    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>-->
-<!--</head>-->
-<!---->
-<!--<body>-->
-<!--    <div id="wrapper">-->
-<!--        <h1>Име на Продукта</h1>-->
 
 <?php
 include_once "../view/header.php";
@@ -24,15 +8,15 @@ include_once '../controller/getAllProductDataService.php';
 
         <div id="picture-wrapper">
             <div id="product-picture">
-                <img src="http://www.technopolis.bg/medias/sys_master/hf7/h94/9753428197406.jpg" alt="tv">
+                <img src="<?php echo $picture; ?>" alt="tv">
             </div>
             <div id="product-fav-and-buy">
                 <div>
-                    <p> 1.559,<sup>00</sup> <span>лв.</span> </p>
+                    <p> <?= $cena; ?> <span>лв.</span> </p>
 <!--                     <p><span>В наличност</span></p> -->
                     <button type="submit" id="add-for-buy">Добави в количката</button>
                     <div class="whishlist-button-holder" data-display-type="default" data-product-id="5499268" data-offer-id="17426062">
-                        <button type="button" id="add-to-fav">Добави в Любими</button>
+                        <button type="button" id="<?php echo $productId; ?>">Добави в Любими</button>
                     </div>
                 </div>
             </div>
@@ -45,11 +29,11 @@ include_once '../controller/getAllProductDataService.php';
                     <table class="table-specifications">
                         <tbody>
                             <tr>
-                                <td class="col-xs-4 text-muted">н</td>
-                                <td class="col-xs-8">Smartphone</td>
+                                <td class="col-xs-4 text-muted">Модел</td>
+                                <td class="col-xs-8"><?php echo $model; ?></td>
                             </tr>
                             <tr>
-                                <td class="col-xs-4 text-muted">Sim слотове</td>
+                                <td class="col-xs-4 text-muted"></td>
                                 <td class="col-xs-8">Single Sim</td>
                             </tr>
                             <tr>
