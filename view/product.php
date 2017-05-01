@@ -16,10 +16,11 @@
 <!--        <h1>Име на Продукта</h1>-->
 
 <?php
-include_once "header.php";
+include_once "../view/header.php";
+include_once '../controller/getAllProductDataService.php';
 ?>
     <div id="product-wrapper">
-        <h1>Име на Продукта</h1>
+        <h1><?= $name; ?></h1>
 
         <div id="picture-wrapper">
             <div id="product-picture">
@@ -27,8 +28,8 @@ include_once "header.php";
             </div>
             <div id="product-fav-and-buy">
                 <div>
-                    <p> 1.559<sup>00</sup> <span>лв.</span> </p>
-                    <p><span>В наличност</span></p>
+                    <p> 1.559,<sup>00</sup> <span>лв.</span> </p>
+<!--                     <p><span>В наличност</span></p> -->
                     <button type="submit" id="add-for-buy">Добави в количката</button>
                     <div class="whishlist-button-holder" data-display-type="default" data-product-id="5499268" data-offer-id="17426062">
                         <button type="button" id="add-to-fav">Добави в Любими</button>
@@ -44,7 +45,7 @@ include_once "header.php";
                     <table class="table-specifications">
                         <tbody>
                             <tr>
-                                <td class="col-xs-4 text-muted">Тип телефон</td>
+                                <td class="col-xs-4 text-muted">н</td>
                                 <td class="col-xs-8">Smartphone</td>
                             </tr>
                             <tr>
@@ -96,8 +97,6 @@ include_once "header.php";
         </div>
         <script src="../assets/js/mesege.js"></script>
     </div>
-
-
 <?php
 include_once "footer.php";
 ?>
