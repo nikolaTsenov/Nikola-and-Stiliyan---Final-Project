@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time:  1 май 2017 в 18:35
+-- Generation Time:  2 май 2017 в 01:00
 -- Версия на сървъра: 10.1.21-MariaDB
 -- PHP Version: 7.1.1
 
@@ -119,7 +119,21 @@ CREATE TABLE `manufacturers` (
 --
 
 INSERT INTO `manufacturers` (`manufacturer_id`, `name`) VALUES
-(1, 'СОНИ');
+(1, 'Samsung'),
+(2, 'Apple'),
+(3, 'Huawei'),
+(4, 'Lenovo'),
+(5, 'ASUS'),
+(6, 'Sony'),
+(7, 'LG'),
+(8, 'Mercury'),
+(9, 'Flexy'),
+(10, 'zaGSMnet'),
+(11, 'A+'),
+(12, 'Acer'),
+(13, 'HP'),
+(14, 'Dell'),
+(15, 'Toshiba');
 
 -- --------------------------------------------------------
 
@@ -188,7 +202,36 @@ INSERT INTO `products` (`id`, `products_name`, `model`, `price`, `picture`, `war
 (10, 'Laptop', 'Accer', 1200, '../assets/images/productPhoto/e.jpg', 2, 100, 9, 1),
 (11, 'Laptop', 'Accer', 1200, '../assets/images/productPhoto/e.jpg', 2, 100, 8, 1),
 (12, 'Laptop', 'Accer', 1200, '../assets/images/productPhoto/e.jpg', 2, 100, 30, 1),
-(13, 'Laptop', 'Accer', 1200, '../assets/images/productPhoto/e.jpg', 2, 100, 29, 1);
+(13, 'Laptop', 'Accer', 1200, '../assets/images/productPhoto/e.jpg', 2, 100, 29, 1),
+(14, 'Laptop', 'Accer', 1200, '../assets/images/productPhoto/', 2, 100, 1, 1),
+(15, 'Laptop', 'Accer', 1200, '../assets/images/productPhoto/', 2, 100, 1, 1),
+(16, 'Протектор', 'A+ Case Nude за Iphone 6/6S, Gold', 17.55, '../assets/images/productPhoto/ACaseNudIphone6Gold.jpg', 4, 74, 2, 11),
+(17, 'Силиконов гръб', 'Jelly Case Sony Xperia M4 Aqua', 4.23, '../assets/images/productPhoto/MercuryJellyCaseSonyXperM4Aqua.jpg', 0, 33, 2, 8),
+(18, 'Силиконов гръб', 'Samsung S7 Edge, Blue', 1, '../assets/images/productPhoto/SamsungS7EdgeBlue.jpg', 0, 8, 2, 8),
+(19, 'Кожен калъф', 'Flip Cover Samsung Galaxy S3 Neo', 9.53, '../assets/images/productPhoto/zagsmnetFlipCoverSamsungGalaxyS3Neo.jpg', 1, 14, 2, 10),
+(20, 'Твърд гръб', 'Огледален Huawei P9 lite&sbquo;Златист', 13.71, '../assets/images/productPhoto/zaGSMnetОгледаленHuaweiP9lite&sbquo;Златист.jpg', 2, 18, 2, 10),
+(21, 'Вертикален Флип калъф със силиконово легло', 'Samsung Galaxy J1 Mini, Черен', 9.92, '../assets/images/productPhoto/FlexSamsungGalaxyJ1Mini,Черен.jpg', 0, 25, 2, 9),
+(22, 'Лаптоп', 'X540SA-XX411', 439.9, '../assets/images/productPhoto/ASUS-X540SA-XX411.jpg', 36, 12, 12, 5),
+(23, 'Лаптоп', '15-ay008nu', 471.24, '../assets/images/productPhoto/HP 15-ay008nu.jpg', 12, 5, 12, 13),
+(24, 'Лаптоп', 'IdeaPad110', 544.5, '../assets/images/productPhoto/lenovo-IdeaPad110.jpg', 24, 17, 12, 4),
+(25, 'Лаптоп', 'Inspiron 3552', 480, '../assets/images/productPhoto/Inspiron3552.jpg', 32, 48, 12, 14),
+(26, 'Лаптоп', 'MacBook Air 13', 1000000, '../assets/images/productPhoto/MacBookAir13.jpg', 1000, 3, 12, 2),
+(27, 'Лаптоп', 'Aspire E5-774G-32AX', 1001, '../assets/images/productPhoto/AspireE5-774G-32AX.jpg', 24, 15, 12, 12),
+(28, 'Смартфон', 'G4 Dual Sim', 704, '../assets/images/productPhoto/lg-g4.jpg', 24, 7, 1, 7),
+(29, 'Смартфон', 'Xperia Z5', 901, '../assets/images/productPhoto/sony-z5.jpg', 28, 56, 1, 6),
+(30, 'Смартфон', 'Xperia XA', 540, '../assets/images/productPhoto/xperia-xa.jpg', 30, 48, 1, 6),
+(31, 'Смартфон', 'Xperia M5', 500, '../assets/images/productPhoto/xperia-m5.jpg', 30, 54, 1, 6),
+(32, 'Смартфон', 'P8 Lite', 300, '../assets/images/productPhoto/huawei-p8-lite.jpg', 24, 43, 1, 3),
+(33, 'Смартфон', 'iPhone 7', 1400, '../assets/images/productPhoto/iphone7.jpg', 30, 20, 1, 2),
+(34, 'Смартфон', 'Galaxy S7 Edge', 1000, '../assets/images/productPhoto/samsung-s7-edge.jpg', 24, 30, 1, 1),
+(35, 'Смартфон', 'A7010', 289, '../assets/images/productPhoto/lenovo-a7010.jpg', 24, 50, 1, 4),
+(36, 'Смартфон', 'Galaxy A5 (2016)', 500, '../assets/images/productPhoto/samsung-a5-2016.jpg', 25, 50, 1, 1),
+(37, 'Смартфон', 'P9 Lite', 450, '../assets/images/productPhoto/huawei-P9 Lite.jpg', 24, 60, 1, 3),
+(38, 'Смартфон', 'K6', 300, '../assets/images/productPhoto/lenovo-k6.jpg', 24, 40, 1, 4),
+(39, 'Смартфон', 'ZenFone Go ZB500KL', 250, '../assets/images/productPhoto/ASUS-ZenFone-Go-ZB500KL.jpg', 24, 30, 1, 5),
+(40, 'Смартфон', 'iPhone 5S', 550, '../assets/images/productPhoto/iPhone-5S.jpg', 30, 25, 1, 2),
+(41, 'Смартфон', 'Galaxy J5 (2016)', 330, '../assets/images/productPhoto/Samsung-J3-2016.jpg', 24, 50, 1, 1),
+(42, 'Протектор', 'A+ Case ultraslim за iPhone 6/6s', 15, '../assets/images/productPhoto/A+CaseultraslimiPhone6s.jpg', 3, 20, 2, 11);
 
 -- --------------------------------------------------------
 
@@ -202,6 +245,54 @@ CREATE TABLE `product_specification_name_values` (
   `specification_values` varchar(45) COLLATE utf8_unicode_ci DEFAULT NULL,
   `product_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Схема на данните от таблица `product_specification_name_values`
+--
+
+INSERT INTO `product_specification_name_values` (`id`, `specification_name`, `specification_values`, `product_id`) VALUES
+(274, 'Процесор', 'Quad Core 1.2Ghz', 1),
+(604, 'Размери (Ш x В x Д мм)', '72.3 x 145.8 x 8.1', 1),
+(605, 'Тегло (гр)', '159', 1),
+(606, 'Операционна система', 'Android v6.0 (Marshmallow)', 1),
+(607, 'Вътрешна памет', '16 GB', 1),
+(608, 'RAM памет', '2 GB', 1),
+(609, 'Тип дисплей', 'Super AMOLED', 1),
+(610, 'Диагонал', '5.2', 1),
+(611, 'Oсновна камера (Mp)', '13', 1),
+(612, 'Вторична камера (Mp)', '5', 1),
+(613, 'Батерия', '3100 mAh', 1),
+(614, 'Процесор', 'Octa Core 1.2GHz', 2),
+(615, 'Размери (Ш x В x Д мм)', '70.6 x 143 x 7.7', 2),
+(616, 'Операционна система', 'Android v5.0 (Lollipop)', 2),
+(617, 'Вътрешна памет', '16 GB', 2),
+(618, 'RAM памет', '2 GB', 2),
+(619, 'Тип дисплей', 'IPS LSD', 2),
+(620, 'Диагонал', '5.0', 2),
+(621, 'Oсновна камера (Mp)', '13', 2),
+(622, 'Вторична камера (Mp)', '13', 2),
+(623, 'Батерия', '2200 mAh', 2),
+(624, 'Процесор', 'A10 Fusion', 3),
+(656, 'Размери (Ш x В x Д мм)', '67.1 x 138.3 x 7.1', 3),
+(657, 'Тегло (гр)', '138', 3),
+(658, 'Операционна система', 'iOS 10', 3),
+(659, 'Вътрешна памет', '32 GB', 3),
+(660, 'Тип дисплей', 'IPS LCD', 3),
+(661, 'Диагонал', '4,7', 3),
+(662, 'Основна камера (Mp)', '12', 3),
+(663, 'Вторична камера (Mp)', '7', 3),
+(664, 'Батерия', 'до 240 часа', 3),
+(665, 'Процесор', '2 x Quad Core, 2.3GHz + 1.6Ghz', 4),
+(666, 'Размери (Ш x В x Д мм)', '72.6 x 150.9 x 7.7', 4),
+(667, 'Тегло (гр)', '157', 4),
+(668, 'Операционна система', 'Android v6.0 (Marshmallow)', 4),
+(669, 'Вътрешна памет', '32 GB', 4),
+(670, 'RAM памет', '4 GB', 4),
+(671, 'Тип дисплей', 'Super AMOLED', 4),
+(672, 'Диагонал', '5.5', 4),
+(673, 'Основна камера (Mpх)', '12', 4),
+(674, 'Вторична камера (Mpх)', '5', 4),
+(675, 'Батерия', '3600 mAh', 4);
 
 -- --------------------------------------------------------
 
@@ -397,7 +488,7 @@ ALTER TABLE `favorits`
 -- AUTO_INCREMENT for table `manufacturers`
 --
 ALTER TABLE `manufacturers`
-  MODIFY `manufacturer_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `manufacturer_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 --
 -- AUTO_INCREMENT for table `minicategories`
 --
@@ -412,12 +503,12 @@ ALTER TABLE `orders`
 -- AUTO_INCREMENT for table `products`
 --
 ALTER TABLE `products`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=43;
 --
 -- AUTO_INCREMENT for table `product_specification_name_values`
 --
 ALTER TABLE `product_specification_name_values`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=676;
 --
 -- AUTO_INCREMENT for table `subcategories`
 --
