@@ -25,7 +25,8 @@ include_once "header.php";
         </section>
 
 
-
+    <!-- This is for products -->
+    <script src="../assets/js/laptopsP.js" ></script>
 
 <?php
 include_once "footer.php";

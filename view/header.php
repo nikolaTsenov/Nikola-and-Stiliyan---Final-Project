@@ -1,5 +1,5 @@
 <?php
-	include_once "../controller/skinController.php";
+include_once "../controller/skinController.php";
 ?>
 <!doctype html>
 <html lang="en">
@@ -10,7 +10,7 @@
     <title>elBag</title>
     <link rel="stylesheet" href="../assets/css/reset.css" type="text/css" />
     <link rel="stylesheet" href="../assets/font-awesome-4.7.0/css/font-awesome.min.css"/>
-    
+
     <link rel="stylesheet" href="../assets/css/<?php echo $style; ?>.css" type="text/css" />
     <link rel="stylesheet" href="../assets/css/<?php echo $loginStyle; ?>.css" type="text/css" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
@@ -37,33 +37,33 @@
         </nav>
         <nav class="productNav">
             <ul id="categories">
-            	<?php 
-				    $currentDir = $_SERVER['PHP_SELF'];
-				    
-				    $cats = array ('Телефони, Таблети &amp; Смарт технологии',
-				    				'Лаптопи, IT продукти &amp; Офис',
-				    				'ТВ, Електроника &amp; Фото',
-				    				'Големи електроуреди',
-				    				'Малки електроуреди'
-				    );
-				    $links = array ('index',
-				    				'laptops',
-				    				'electronics',
-				    				'bigEls',
-				    				'smallEls'
-				    );
-				    
-				    $currentSelected = "";
-				    
-				    for ($index = 0; $index < 5; $index++) {
-				    	if (strpos($currentDir, $links[$index]) !== false || (strpos($currentDir, 'homeController') !== false && $index == 0)) {
-				    		echo "<li class='selectedCat' id='cat" . $index . "'><a href='../view/" . $links[$index] . ".php' >$cats[$index]</a></li>";
-				    		$currentSelected = 1;
-				    	} else {
-				    		echo "<li id='cat" . $index . "'><a href='../view/" . $links[$index] . ".php' >$cats[$index]</a></li>";
-				    	}
-				    }
-			    ?>
+                <?php
+                $currentDir = $_SERVER['PHP_SELF'];
+
+                $cats = array ('Телефони, Таблети &amp; Смарт технологии',
+                    'Лаптопи, IT продукти &amp; Офис',
+                    'ТВ, Електроника &amp; Фото',
+                    'Големи електроуреди',
+                    'Малки електроуреди'
+                );
+                $links = array ('index',
+                    'laptops',
+                    'electronics',
+                    'bigEls',
+                    'smallEls'
+                );
+
+                $currentSelected = "";
+
+                for ($index = 0; $index < 5; $index++) {
+                    if (strpos($currentDir, $links[$index]) !== false || (strpos($currentDir, 'homeController') !== false && $index == 0)) {
+                        echo "<li class='selectedCat' id='cat" . $index . "'><a href='../view/" . $links[$index] . ".php' >$cats[$index]</a></li>";
+                        $currentSelected = $links[$index];
+                    } else {
+                        echo "<li id='cat" . $index . "'><a href='../view/" . $links[$index] . ".php' >$cats[$index]</a></li>";
+                    }
+                }
+                ?>
             </ul>
         </nav>
     </header>

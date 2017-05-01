@@ -22,12 +22,12 @@
 				Категории - Телефони, Таблети &amp; Смарт технологии
 			</h3>
 			<ul id="telList">
-				<li><a href="">Мобилни телефони</a></li>
-				<li><a href="">Смарт часовници</a></li>
-				<li><a href="">Таблети</a></li>
-				<li><a href="">Външни батерии</a></li>
-				<li><a href="">Аксесоари</a></li>
-				<li><a href="">Smart Home &amp; VR очила</a></li>
+				<li><a href="#telephones">Мобилни телефони</a></li>
+				<li><a href="#smartWatches">Смарт часовници</a></li>
+				<li><a href="#tablets">Таблети</a></li>
+				<li><a href="#bateries">Външни батерии</a></li>
+				<li><a href="#accessories">Аксесоари</a></li>
+				<li><a href="#smartHome">Smart Home &amp; VR очила</a></li>
 			</ul>
 		</aside>
 		<?php 
@@ -36,9 +36,33 @@
 		?>
 		<!-- In the below section we will load all adds from the database, I will leave it empty for now -->
 		<section id="articles">
+            <h2 class="categories-header">ТЕЛЕФОНИ</h2>
+                <div id="telephones">
 
-                <h1 class="categories-header">ТЕЛЕФОН</h1>
+                </div>
+            <h2 class="categories-header">Смарт часовници</h2>
+            <div id="smartWatches">
+
+            </div>
+            <h2 class="categories-header">Таблети</h2>
+            <div id="tablets">
+
+            </div>
+            <h2 class="categories-header">Външни батерии</h2>
+            <div id="bateries">
+
+            </div>
+            <h2 class="categories-header">Аксесоари</h2>
+            <div id="accessories">
+
+            </div>
+            <h2 class="categories-header">Smart Home&amp;VR очила </h2>
+            <div id="smartHome">
+
+            </div>
         </section>
+<!-- This is for products -->
+<script src="../assets/js/indexProducts.js" ></script>
 <?php
 include_once "footer.php";
 ?>

@@ -31,8 +31,6 @@
     </div>
 </footer>
 </div>
-<!-- The below js file is AJAX for loading address content -->
-<script src="../assets/js/showAddressAjax.js" ></script>
 <!-- The below js file is for the accordion view of form.formPannel -->
 <script src="../assets/js/accordion.js" ></script>
 <!-- The below js file is for the vertical tabs -->

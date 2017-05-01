@@ -19,9 +19,12 @@ include_once "header.php";
 			include_once '../view/login.php';
 		?>
 		<!-- In the below section we will load all adds from the database, I will leave it empty for now -->
-		<section id="articles">
+    <section id="articles">
 
-        </section>
+    </section>
+    <!-- This is for prod
+        <!-- This is for products -->
+    <script src="../assets/js/electronPr.js" ></script>
 <?php
 include_once "footer.php";
 ?>
