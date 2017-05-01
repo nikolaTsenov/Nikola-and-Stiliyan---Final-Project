@@ -58,7 +58,7 @@
 				    for ($index = 0; $index < 5; $index++) {
 				    	if (strpos($currentDir, $links[$index]) !== false || (strpos($currentDir, 'homeController') !== false && $index == 0)) {
 				    		echo "<li class='selectedCat' id='cat" . $index . "'><a href='../view/" . $links[$index] . ".php' >$cats[$index]</a></li>";
-				    		$currentSelected = $links[$index];
+				    		$currentSelected = 1;
 				    	} else {
 				    		echo "<li id='cat" . $index . "'><a href='../view/" . $links[$index] . ".php' >$cats[$index]</a></li>";
 				    	}

@@ -4,7 +4,7 @@ var div = document.getElementById("articles");
 // btn.addEventListener("click",function () {
 
     var req = new XMLHttpRequest();
-    req.open('GET','http://localhost/php/Nikola-and-Stiliyan---Final-Project/controller/productController.php')
+    req.open('GET','http://localhost/php/Nikola-and-Stiliyan---Final-Project/controller/indexController.php')
     req.onload = function () {
 
         var ourData = JSON.parse(req.responseText);
