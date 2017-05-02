@@ -627,3 +627,19 @@ body {
 	font-size: 1em;
 	color: #f7f8ff;
 }
+.seeAllFromCat {
+	width: 90%;
+	margin: 0 auto;
+	clear: both;
+	margin-bottom: 1em;
+}
+.seeAllFromCat a {
+	clear: both;
+	margin: 0 auto;
+	text-align: center;
+	background-color: #4286f4;
+	border-radius: 10px;
+	font-size: 1em;
+	color: #f7f8ff;
+	padding: 1em;
+}

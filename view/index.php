@@ -41,6 +41,9 @@
             <div id="telephones">
 
             </div>
+            <div class="seeAllFromCat" >
+            	<a href="#">Виж всички</a>
+            </div>
             <h2 class="categories-header">Смарт часовници</h2>
             <div id="smartWatches">
 
