@@ -15,5 +15,6 @@ echo "<br />";
 for ($index = 0; $index < count($arr); $index++) {
 	echo "<img src='" . $arr[$index]['picture'] . "' alt=''";
 	echo $arr[$index]['products_name'];
+    echo $arr[$index]['manufacturers'];
 	echo "<br /><br />";
 }

@@ -27,14 +27,6 @@ include_once '../controller/getAllProductDataService.php';
 	                    <input type="hidden" name="idto" value="<?php echo $productId; ?>">
 	                    <input type="hidden" name="previusQuantity" value="<?php echo $actualQuantity['quantity']; ?>">
                     </form>
-                    <form action="../controller/favorites.php" method="post">
-                        <div class="whishlist-button-holder" data-display-type="default" data-product-id="5499268"
-                             data-offer-id="17426062">
-                            <button type="button" name="butFav" class="add-to-fav" id="<?php echo $productId; ?>">Добави в Любими</button>
-                            <input type="hidden" name="idOb" value="<?= $productId?>">
-                        </div>
-                    </form>
-
                     <p>Количество: <?php echo $actualQuantity['quantity']; ?></p>
                         <div class="whishlist-button-holder" data-display-type="default" data-product-id="5499268" data-offer-id="17426062">
                         <button type="button" class="add-to-fav" id="<?php echo $productId; ?>">Добави в Любими</button>
