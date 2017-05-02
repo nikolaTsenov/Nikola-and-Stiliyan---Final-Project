@@ -81,7 +81,7 @@ function displaySmallEls () {
 		            
 		             +"<p>" + ourData2[i].products_name + " </p>"
 		             
-		        htmlString2 += "<a href='../view/product.php?="+ourData2[i].id+"' id='link-button-for-articles'>"+"виж тук"+"</a>";
+		        htmlString2 += "<a href='../view/product.php?id="+ourData2[i].id+"' id='link-button-for-articles'>"+"виж тук"+"</a>";
 		        htmlString2 += "</div>";
 
 		    }
@@ -126,7 +126,7 @@ function displaySmallEls () {
 		            
 		            +"<p>" + ourData3[i].products_name + " </p>"
 		             
-		        htmlString3 += "<a href='../view/product.php?="+ourData3[i].id+"' id='link-button-for-articles'>"+"виж тук"+"</a>";
+		        htmlString3 += "<a href='../view/product.php?id="+ourData3[i].id+"' id='link-button-for-articles'>"+"виж тук"+"</a>";
 		        htmlString3 += "</div>";
 
 		    }

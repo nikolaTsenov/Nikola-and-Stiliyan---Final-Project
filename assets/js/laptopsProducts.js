@@ -81,7 +81,7 @@ function displayMobiles () {
 		            
 		             +"<p>" + ourData2[i].products_name + " </p>"
 		             
-		        htmlString2 += "<a href='../view/product.php?="+ourData2[i].id+"' id='link-button-for-articles'>"+"виж тук"+"</a>";
+		        htmlString2 += "<a href='../view/product.php?id="+ourData2[i].id+"' id='link-button-for-articles'>"+"виж тук"+"</a>";
 		        htmlString2 += "</div>";
 
 		    }
@@ -126,7 +126,7 @@ function displayMobiles () {
 		            
 		            +"<p>" + ourData3[i].products_name + " </p>"
 		             
-		        htmlString3 += "<a href='../view/product.php?="+ourData3[i].id+"' id='link-button-for-articles'>"+"виж тук"+"</a>";
+		        htmlString3 += "<a href='../view/product.php?id="+ourData3[i].id+"' id='link-button-for-articles'>"+"виж тук"+"</a>";
 		        htmlString3 += "</div>";
 
 		    }
@@ -177,7 +177,7 @@ function displayMobiles () {
 		           // +"<p>" + ourData4[i].sname +" </p>";
 		            // + data[i].mname + " "
 		              // + data[i].price + " "
-		        htmlString4 += "<a href='../view/product.php?='"+ourData4[i].id+"' id='link-button-for-articles'>"+"виж тук"+"</a>";
+		        htmlString4 += "<a href='../view/product.php?id='"+ourData4[i].id+"' id='link-button-for-articles'>"+"виж тук"+"</a>";
 		        htmlString4 += "</div>";
 
 		    }
@@ -222,7 +222,7 @@ function displayMobiles () {
 		            
 		            +"<p>" + ourData5[i].products_name + " </p>"
 		           
-		        htmlString5 += "<a href='../view/product.php?="+ourData5[i].id+"' id='link-button-for-articles'>"+"виж тук"+"</a>";
+		        htmlString5 += "<a href='../view/product.php?id="+ourData5[i].id+"' id='link-button-for-articles'>"+"виж тук"+"</a>";
 		        htmlString5 += "</div>";
 
 		    }
@@ -267,7 +267,7 @@ function displayMobiles () {
 		            
 		            +"<p>" + ourData6[i].products_name + " </p>"
 		           
-		        htmlString6 += "<a href='../view/product.php?="+ourData6[i].id +"' id='link-button-for-articles'>"+"виж тук"+"</a>";
+		        htmlString6 += "<a href='../view/product.php?id="+ourData6[i].id +"' id='link-button-for-articles'>"+"виж тук"+"</a>";
 		        htmlString6 += "</div>";
 
 		    }
@@ -312,7 +312,7 @@ function displayMobiles () {
 		            
 		            +"<p>" + ourData7[i].products_name + " </p>"
 		           
-		        htmlString7 += "<a href='../view/wirelessNetWorking.php?="+ourData7[i].id +"' id='link-button-for-articles'>"+"виж тук"+"</a>";
+		        htmlString7 += "<a href='../view/wirelessNetWorking.php?id="+ourData7[i].id +"' id='link-button-for-articles'>"+"виж тук"+"</a>";
 		        htmlString7 += "</div>";
 
 		    }
