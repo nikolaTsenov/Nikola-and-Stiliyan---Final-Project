@@ -25,6 +25,9 @@ include_once "header.php";
             <div id="laptopsAndAcc">
 
             </div>
+            <div>
+            	<a href="#">Виж всички</a>
+            </div>
             <h2 class="categories-header">Настолни компютри &amp; Монитори</h2>
             <div id="computers">
 

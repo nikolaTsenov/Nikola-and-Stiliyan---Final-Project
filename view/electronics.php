@@ -52,6 +52,9 @@ include_once "header.php";
             <div class="categsContainer" id="photoAndVideoCameras">
 
             </div>
+            <div>
+            <a href="ksdnfskajf">sadkjbfhshffihoobv</a>
+            </div>
    		 </section>
     <!-- This is for prod
         <!-- This is for products -->

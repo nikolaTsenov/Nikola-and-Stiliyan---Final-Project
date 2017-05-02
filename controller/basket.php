@@ -7,29 +7,35 @@ function my_autoloader($className) {
 spl_autoload_register('my_autoloader');
 if (session_status() == PHP_SESSION_NONE) {
     session_start();
-    if (isset($_SESSION['user']) && $_POST['submitForBasket']) {
-        try {
-            $id = trim(htmlentities($_POST['idto']));
-            echo $id;
-            $user = json_decode($_SESSION['user']);
-            //echo $user->id;
-            $quantity = trim(htmlentities($_POST['quantity']));
-
-            if ($quantity < 1 && !is_numeric($quantity)) {
-                throw New Exception("Invalid quantity");
-            }
-
-            $add = new BasketDAO();
-            $add->addToBasket($quantity, $user->id, 1);
-        } catch (Exception $e) {
-            $errorMessage = $e->getMessage();
-            include "../view/product.php";
-        }
-
-        // } else {
-        //header('Location:../view/index.php');
-        //}
-
-    }
 }
+if (isset($_POST['submitForBasket'])) {
+   try {
+            $id = trim ( htmlentities ( $_POST ['idto'] ) );
+           echo $id; //- for testing
+            $user = json_decode($_SESSION['user']);
+           // echo $user->id."<br />"; -for testing
+            $quantityAdded = trim ( htmlentities ( $_POST ['quantity'] ) );
+			
+            $previousQantity = trim(htmlentities($_POST['previusQuantity']));
+            
+            $newStorageQuantity = ($previousQantity-$quantityAdded);
+            
+			echo $quantityAdded;
+            $add = new BasketDAO();
+            $set = new ProductDAO();
+            
+            $set->setNewProductQuantity($newStorageQuantity, $id);
+            
+            $add->addToBasket($quantityAdded, $user->id, $id);
+            header('Location:../view/product.php?id='.$id);
+    } catch (Exception $e) {
+           echo $errorMessage = $e->getMessage();
+
+            include "../view/index.php";
+}
+
+} else {
+header('Location:../view/index.php');
+}
+
 ?>
