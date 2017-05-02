@@ -6,11 +6,11 @@
  * Date: 4/28/2017
  * Time: 0:00 AM
  */
-function my_autoloader($className) {
-    require_once "../model/" . $className . '.php';
-}
+// function my_autoloader($className) {
+//     require_once "../model/" . $className . '.php';
+// }
 
-spl_autoload_register('my_autoloader');
+// spl_autoload_register('my_autoloader');
 class ProductDAO
 {
     private $db;
@@ -54,6 +54,8 @@ class ProductDAO
                                     WHERE psnv.product_id=1";
     const VALUES_SQL = "SELECT  specification_name,specification_values FROM elbag.product_specification_name_values 
                         WHERE product_id =?";
+    
+    const UPDATE_QUANTITY_SQL = "UPDATE products SET quantity=? WHERE id=?;";
 
 
 
@@ -101,5 +103,13 @@ class ProductDAO
 
         return $mod;
 
+    }
+    
+    public function setNewProductQuantity ($newQuantity,$productId) {
+    	$stmt = $this->db->prepare(self::UPDATE_QUANTITY_SQL);
+    	$stmt->execute(array($newQuantity,$productId));
+    
+    	return true;
+    
     }
 }

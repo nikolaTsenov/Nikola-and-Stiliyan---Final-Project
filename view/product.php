@@ -18,14 +18,16 @@ include_once '../controller/getAllProductDataService.php';
                         <select name="quantity" id="">
                             <?php
                             for ($quantity = 1; $quantity<=$actualQuantity['quantity'] ; $quantity++) {
-                                echo '<option value="$quantity">'.$quantity.'</option>';
+                                echo "<option value=$quantity>".$quantity."</option>";
                             }
                             ?>
                         </select>
-
-                    <button type="submit" name="submitForBasket" class="add-for-buy" id="<?php echo $productId; ?>">Добави в количката</button>
-                        <input type="hidden" name="idto" value="<?php echo $productId; ?>">
+						
+	                    <button type="submit" name="submitForBasket" class="add-for-buy" id="<?php echo $productId; ?>">Добави в количката</button>
+	                    <input type="hidden" name="idto" value="<?php echo $productId; ?>">
+	                    <input type="hidden" name="previusQuantity" value="<?php echo $actualQuantity['quantity']; ?>">
                     </form>
+                    <p>Количество: <?php echo $actualQuantity['quantity']; ?></p>
                         <div class="whishlist-button-holder" data-display-type="default" data-product-id="5499268" data-offer-id="17426062">
                         <button type="button" class="add-to-fav" id="<?php echo $productId; ?>">Добави в Любими</button>
                     </div>

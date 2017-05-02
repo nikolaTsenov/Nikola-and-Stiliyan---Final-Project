@@ -39,25 +39,25 @@
         <div id="services">
             <h6>Услуги</h6>
             <ul>
-                <li><a href="">Проверка на пратката</a></li>
-                <li><a href="">Гаранция и сервиз</a></li>
-                <li><a href="">30 дни право на връщане</a></li>
+                <li><a href="../view/staticContentMsg.php">Проверка на пратката</a></li>
+                <li><a href="../view/staticContentMsg.php">Гаранция и сервиз</a></li>
+                <li><a href="../view/staticContentMsg.php">30 дни право на връщане</a></li>
             </ul>
         </div>
         <div id="orders">
             <h6>Поръчкии и доставка</h6>
             <ul>
-                <li><a href="">Моят акаунт</a></li>
-                <li><a href="">Как да поръчам онлайн</a></li>
-                <li><a href="">Доставка</a></li>
-                <li><a href="">Често срещани въпроси</a></li>
+                <li><a href="../view/staticContentMsg.php">Моят акаунт</a></li>
+                <li><a href="../view/staticContentMsg.php">Как да поръчам онлайн</a></li>
+                <li><a href="../view/staticContentMsg.php">Доставка</a></li>
+                <li><a href="../view/staticContentMsg.php">Често срещани въпроси</a></li>
             </ul>
         </div>
         <div id="contacts">
             <h6>Контакти</h6>
             <ul>
-                <li><a href="">Пиши ни</a></li>
-                <li><a href="">Къде да ни откриеш</a></li>
+                <li><a href="../view/staticContentMsg.php">Пиши ни</a></li>
+                <li><a href="../view/staticContentMsg.php">Къде да ни откриеш</a></li>
             </ul>
         </div>
     </div>

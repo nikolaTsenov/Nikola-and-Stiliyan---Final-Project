@@ -8,21 +8,21 @@ class BasketDAO
 			                            FROM basket b JOIN products p
 		                            	ON (b.product_id = p.id)
 			                             JOIN manufacturers m ON (p.manufacturer_id= m.manufacturer_id) 
-			                            WHERE b.user_id = 1 AND 1 < p.quantity";
+			                            WHERE b.user_id = ?;";
 
     const GET_SUM_PRODUCTS = "SELECT SUM(b.quantity*p.price) FROM baskets b JOIN products p
                                 ON (b.product_id=p.id)
                                 WHERE b.users_id = ?";
 
     const ADD_PRODUCT_TO_BASKET_SQL = "INSERT INTO basket(quantity,user_id,product_id)
-			                            VALUES (?,?,?)";
+			                            VALUES (?,?,?);";
 
     const GET_QUANTITY_SQL = "SELECT quantity  FROM products
                               WHERE id=?";
 
-    const REMOVE_FK_CHECKS = "SET foreign_key_checks = 0";
+    const REMOVE_FK_CHECKS = "SET foreign_key_checks = 0;";
 
-    const RETURN_FK_CHECKS = "SET foreign_key_checks = 1";
+    const RETURN_FK_CHECKS = "SET foreign_key_checks = 1;";
 
     public function __construct() {
         $this->db = DBConnection::getDb ();
@@ -31,9 +31,9 @@ class BasketDAO
 
 
 
-    function getProductInBasket($userId, $quantity){
-            $pstmt =$this->db->prepare(GET_ALL_PRODUCT_IN_BASKET);
-            $pstmt->execute(array($userId, $quantity));
+    function getProductInBasket($userId){
+            $pstmt =$this->db->prepare(self::GET_ALL_PRODUCT_IN_BASKET);
+            $pstmt->execute(array($userId));
             return $res = $pstmt ->fetchAll(PDO::FETCH_ASSOC);
     }
 
@@ -42,12 +42,12 @@ class BasketDAO
         try {
             $this->db->beginTransaction();
 
-            $stmt = $this->db->exec(self::REMOVE_FK_CHECK);
+            $stmt = $this->db->exec(self::REMOVE_FK_CHECKS);
 
             $stmt = $this->db->prepare(self::ADD_PRODUCT_TO_BASKET_SQL);
             $stmt->execute(array($quantity,$userId,$productId));
 
-            $stmt = $this->db->exec(self::RETURN_FK_CHECK);
+            $stmt = $this->db->exec(self::RETURN_FK_CHECKS);
 
             $this->db->commit();
 
@@ -73,5 +73,7 @@ class BasketDAO
         return $arr[0];
 
     }
+    
+
 
 }

@@ -17,13 +17,16 @@ if (isset($_GET['id'])) {
     $cena = $arr[0]['price'];
     $picture = $arr[0]['picture'];
     $waranty = $arr[0]['warranty'];
-    $quantity = $arr[0]['quantity'];
-
+    $storage = $arr[0]['quantity'];
+    $productId = $_GET['id'];
+	//echo $storage;
+   // echo $productId."<br />"; - for testing
+    
     $mod = $product->getProductValue($product);
     $basketData = new BasketDAO();
 
     $actualQuantity = $basketData->showQuantity($_GET['id']);
-    var_dump($actualQuantity)."-------";
+   // var_dump($actualQuantity)."-------";
 
 }
 //    for ($tr = 0; $tr< count($mod);$tr++){
