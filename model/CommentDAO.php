@@ -17,7 +17,7 @@ class CommentDAO
 
     const SELECT_COMMENTS_SQL = "SELECT *, p.products_name FROM comments c
                                   JOIN products p ON c.product_id = p.id
-                                  WHERE p.id =?";
+                                  WHERE p.id =1";
 
     const PRODUCT_ID_SQL = "SELECT id FROM products
                             WHERE id = ?";
@@ -33,7 +33,7 @@ class CommentDAO
         $stmt = $this->db->prepare(self::SELECT_COMMENTS_SQL);
         $stmt->execute(array($this->id));
         $arr = $stmt->fetchAll(PDO::FETCH_ASSOC);
-         json_encode($arr);
+          echo  json_encode($arr);
         return $arr;
 
     }
@@ -44,7 +44,7 @@ class CommentDAO
 
             $pstmt = $this->db->prepare(self::ADD_COMENT_SQL);
             $pstmt->execute(array(
-                $comments->name,$comments->comments,
+                1,$comments->name,$comments->comments,
             ));
     }
 

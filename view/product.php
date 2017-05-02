@@ -61,13 +61,13 @@ include_once '../controller/getAllProductDataService.php';
             <hr>
             <div class="comment_input">
                 <form name="form">
-                    <input type="text" name="name" placeholder="Name..." />
+                    <input type="text" name="name" id="commName" placeholder="Name..." />
                     <br/>
                     <br/>
                     <textarea name="comments" placeholder="Leave Comments Here..." style="width:635px; height:100px;" id="queryText"></textarea>
                     <br/>
                     <br/>
-                    <a href="#" onClick="commentSubmit()" class="button">Коментар</a>
+                    <a href="#" onClick="addNewComM()" class="button">Коментар</a>
                     <br/><br/>
                 </form>
             </div>

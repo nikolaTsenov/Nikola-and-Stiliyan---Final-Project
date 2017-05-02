@@ -1,50 +1,87 @@
-/**
- * Created by user on 4/30/2017.
- */
+function display() {
 
-//
-//
-function createCom(contact) {
-    var content = "<div class='comments_content'>";
-    content += "<p id='comm-time'>" + "<a href='delete.php?id=" + "$row['id']" +"X</a></p>";
-    content += "<h1 id='comm-name'>" . $row['name'] + "</h1>";
-    content += "<p><span id='comments-data'>" . $row['date_publish'];
-    content += "<p id'='comm-mess'>" . $row['Comment'] + "</p>";
-    content += "</div>";
+    if (typeof XMLHttpRequest !== 'undefined') xhttp = new XMLHttpRequest();
+    else {
+        var versions = ["MSXML2.XmlHttp.5.0",
+            "MSXML2.XmlHttp.4.0",
+            "MSXML2.XmlHttp.3.0",
+            "MSXML2.XmlHttp.2.0",
+            "Microsoft.XmlHttp"
+        ]
 
-    return content;
+        for (var i = 0; i < versions.length; i++) {
+            try {
+                xhttp = new ActiveXObject(versions[i]);
+                break;
+            } catch (e) {}
+        } // end for
+    }
+
+
+    xhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+            // successfuly received response
+            //console.log(xhttp.responseText); - for testing
+            var commenT = JSON.parse(xhttp.responseText);
+            console.log(commenT);
+            var htmlDiv = document.getElementById('comment_logs');
+
+            var htmlString = "";
+
+            for (var i = 0; i < commenT.length; i++) {
+                htmlString += "<div class='comments_content'>";
+                htmlString += "<p id='comm-time'>" + commenT[i].person_name + "</p>";
+                // htmlString += "<p id='comm-time'><a href='delete.php?id=" + commenT[i].id_comm + "'>X</a></p>";
+                htmlString += "<h1 id='comm-name'>" + commenT[i].comments + "</h1>";
+                htmlString += "<p><span id='comments-data'>" + commenT[i].date_publish + "<span><p></br></br>";
+                 // "<p id'='comm-mess'>".$row['Comment'].
+                // "</p>";
+                // "</div>";
+
+                htmlString += "</div>";
+
+            }
+
+            htmlDiv.innerHTML = htmlString;
+        }
+    }
+    xhttp.open('GET', '../controller/showComments.php', true);
+    xhttp.send(null);
 }
-//
-function addNewContact() {
-    // var name = document.getElementById('name').value;
-    // var phone = document.getElementById('phone').value;
-    // var email = document.getElementById('mail').value;
 
-    var name = form.name.value;
-    var comments = form.comments.value;
 
-    function commentSubmit() {
-        if (form.name.value == '' && form.comments.value == '') { //exit if one of the field is blank
+
+    // ADD COMMENTS
+
+    function addNewComM() {
+    var name = document.getElementById('commName').value;
+    var comment = document.getElementById('queryText').value;
+
+        if (name.length == '' && comment.length == '') { //exit if one of the field is blank
             alert('Enter your message !');
             return;
         }
-    }
 
-    var newComment = {
+    var newComm = {
         name: name,
-        comment: comments,
+        comment:comment
+
     };
+
+    // if (editMode) {
+    //     newComm.id = editcontactId;
+    // }
+
     var xhr = new XMLHttpRequest();
     xhr.open('POST', '../controller/showComments.php', true);
     xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-    xhr.send('data=' + JSON.stringify(newComment));
-
-    xhr.onload = function () {
+    xhr.send('data='+JSON.stringify(addNewComM));
+        var htmlString = "";
+    xhr.onload =  function() {
         if (xhr.status == 200) {
-            if (!editMode)
-                document.getElementById('table').innerHTML += createCom(newComment);
 
-            document.getElementById('result').innerHTML = xhr.responseText;
+                document.getElementById('comment_logs').innerHTML += createCom(newComm);
+            // document.getElementById('result').innerHTML = xhr.responseText;
             reloadTable();
         }
     }
@@ -52,97 +89,16 @@ function addNewContact() {
 
 
 
+function createCom(contact) {
+  var  htmlString = "<div class='comments_content'>";
+    htmlString += "<p id='comm-time'>" + contact.name+ "</p>";
+    htmlString += "<h1 id='comm-name'>" + contact.comment+ "</h1>";
+    htmlString += "<p><span id='comments-data'><span><p></br></br>";
+    htmlString += "</div>";
+    return htmlString;
+}
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-//
-//     function reloadTable() {
-//         var xhr = new XMLHttpRequest();
-//         xhr.open('GET', '../controller/showComments.php', true);
-//
-//         xhr.onload = function () {
-//             if (xhr.status == 200) {
-//                 var data = JSON.parse(xhr.responseText);
-//                 var content = '';
-//                 for (var i = 0; i < data.length; i++) {
-//                     content += createRow(data[i]);
-//                 }
-//
-//                 document.getElementById('comment_logs').innerHTML = content;
-//             }
-//         }
-//         xhr.send(null);
-//     }
-//
-//     document.addEventListener('DOMContentLoaded', function () {
-//         reloadTable();
-//     });
-//
-//
-
-
-
-// function commentSubmit() {
-//     if (form1.name.value == '' && form1.comments.value == '') { //exit if one of the field is blank
-//         alert('Enter your message !');
-//         return;
-//     }
-//     var name = form1.name.value;
-//     var comments = form1.comments.value;
-//     var xmlhttp = new XMLHttpRequest(); //http request instance
-//
-//     xmlhttp.onreadystatechange = function() {
-//         //display the content of insert.php once successfully loaded-->
-//         if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
-//             document.getElementById('comment_logs').innerHTML = xmlhttp.responseText;
-//             //the chatlogs from the db will be displayed inside the div section
-//         }
-//     }
-//     xmlhttp.open('GET', 'insert.php?name=' + name + '&comments=' + comments, true);
-//     //open and send http request
-//     xmlhttp.send();
-// }
-//
-// $(document).ready(function(e) {
-//     $.ajaxSetup({ cache: false });
-//     setInterval(function() { $('#comment_logs').load('logs.php'); }, 200);
-// });
-// // window.location.reload(false);
-
-//     var name = form.name.value;
-//     var comments = form.comments.value;
-//     var xmlhttp = new XMLHttpRequest(); //http request instance
-//
-//     xmlhttp.onreadystatechange = function() {
-//         //display the content of insert.php once successfully loaded-->
-//         if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
-//             document.getElementById('comment_logs').innerHTML = xmlhttp.responseText;
-//             //the chatlogs from the db will be displayed inside the div section
-//         }
-//     }
-//     xmlhttp.open('GET', 'insert.php?name=' + name + '&comments=' + comments, true);
-//     //open and send http request
-//     xmlhttp.send();
-// }
-//
-// $(document).ready(function(e) {
-//     $.ajaxSetup({ cache: false });
-//     setInterval(function() { $('#comment_logs').load('logs.php'); }, 200);
-// });
-// // window.location.reAload(false);
+document.addEventListener('DOMContentLoaded', function() {
+    display();
+});

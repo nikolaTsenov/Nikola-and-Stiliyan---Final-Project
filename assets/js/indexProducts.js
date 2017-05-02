@@ -89,8 +89,8 @@ function displayMobiles () {
 		            // + data[i].quantity + " "
 		             +"<h3>" + ourData2[i].model + "</h3></a>"
 		            //  +"<p>" + ourData2[i].cname + " </p>"
-		             +"<p>" + ourData2[i].products_name + " </p>"
-		             // +"<p>" + ourData2[i].name + " </p>"
+		            // +"<p>" + ourData2[i].products_name + " </p>"
+		             +"<p>" + ourData2[i].name + " </p>"
 		            // +"<p>" + ourData2[i].sname +" </p>";
 		            // + data[i].mname + " "
 		              // + data[i].price + " "
