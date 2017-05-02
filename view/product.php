@@ -4,15 +4,15 @@ include_once "../view/header.php";
 include_once '../controller/getAllProductDataService.php';
 ?>
     <div id="product-wrapper">
-        <h1><?= $name; ?></h1>
+        <h1><?php if (isset($name)) { echo $name; } else { echo "недефинирано"; } ?></h1>
 
         <div id="picture-wrapper">
             <div id="product-picture">
-                <img src="<?php echo $picture; ?>" alt="tv">
+                <img src="<?php if (isset($picture)) { echo $picture; } else { echo "недефинирано"; } ?>" alt="tv">
             </div>
             <div id="product-fav-and-buy">
                 <div>
-                    <p> <?= $cena; ?> <span>лв.</span> </p>
+                    <p> <?php if (isset($cena)) { echo $cena; } else { echo "недефинирано"; } ?> <span>лв.</span> </p>
 <!--                     <p><span>В наличност</span></p> -->
                     <button type="submit" class="add-for-buy" id="<?php echo $productId; ?>">Добави в количката</button>
                     <div class="whishlist-button-holder" data-display-type="default" data-product-id="5499268" data-offer-id="17426062">
@@ -30,20 +30,24 @@ include_once '../controller/getAllProductDataService.php';
                         <tbody>
                             <tr>
                                 <td class="col-xs-4 text-muted">Модел</td>
-                                <td class="col-xs-8"><?php echo $model; ?></td>
+                                <td class="col-xs-8"><?php if (isset($model)) { echo $model; } else { echo "недефинирано"; } ?></td>
                             </tr>
 
                             <?php
 //                            echo "<tr>";
-                            for ($tr = 0; $tr< count($mod);$tr++){
-                              echo "<tr>";
-                                for($td=0; $td<count($mod[$tr]); $td++) {
-
-                                    echo"<td class='col-xs-4 text-muted'>".$mod[$tr][$td]."</td>";
-//                                    echo"<td class='col-xs-8'>".$mod[$tr][$td]."</td>";
-                               }
-                                echo "</tr>";
-                            }
+							if (isset($mod) && $mod !== null) {
+	                            for ($tr = 0; $tr< count($mod);$tr++){
+	                              echo "<tr>";
+	                                for($td=0; $td<count($mod[$tr]); $td++) {
+	
+	                                    echo"<td class='col-xs-4 text-muted'>".$mod[$tr][$td]."</td>";
+	//                                    echo"<td class='col-xs-8'>".$mod[$tr][$td]."</td>";
+	                               }
+	                                echo "</tr>";
+	                            }
+							} else {
+								echo "<tr><td>недефинирано</td></tr>";
+							}
                             ?>
                         </tbody>
                     </table>
