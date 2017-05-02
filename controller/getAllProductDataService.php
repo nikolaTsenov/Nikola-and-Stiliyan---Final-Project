@@ -18,7 +18,12 @@ if (isset($_GET['id'])) {
     $picture = $arr[0]['picture'];
     $waranty = $arr[0]['warranty'];
     $quantity = $arr[0]['quantity'];
+
     $mod = $product->getProductValue($product);
+    $basketData = new BasketDAO();
+
+    $actualQuantity = $basketData->showQuantity($_GET['id']);
+    var_dump($actualQuantity)."-------";
 
 }
 //    for ($tr = 0; $tr< count($mod);$tr++){

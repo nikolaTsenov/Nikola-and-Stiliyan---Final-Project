@@ -14,8 +14,19 @@ include_once '../controller/getAllProductDataService.php';
                 <div>
                     <p> <?php if (isset($cena)) { echo $cena; } else { echo "недефинирано"; } ?> <span>лв.</span> </p>
 <!--                     <p><span>В наличност</span></p> -->
-                    <button type="submit" class="add-for-buy" id="<?php echo $productId; ?>">Добави в количката</button>
-                    <div class="whishlist-button-holder" data-display-type="default" data-product-id="5499268" data-offer-id="17426062">
+                    <form action="../controller/basket.php" method="post">
+                        <select name="quantity" id="">
+                            <?php
+                            for ($quantity = 1; $quantity<=$actualQuantity['quantity'] ; $quantity++) {
+                                echo '<option value="$quantity">'.$quantity.'</option>';
+                            }
+                            ?>
+                        </select>
+
+                    <button type="submit" name="submitForBasket" class="add-for-buy" id="<?php echo $productId; ?>">Добави в количката</button>
+                        <input type="hidden" name="idto" value="<?php echo $productId; ?>">
+                    </form>
+                        <div class="whishlist-button-holder" data-display-type="default" data-product-id="5499268" data-offer-id="17426062">
                         <button type="button" class="add-to-fav" id="<?php echo $productId; ?>">Добави в Любими</button>
                     </div>
                 </div>

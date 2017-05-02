@@ -1,49 +1,35 @@
 <?php
-if (isset($_GET['userId']) && isset($_GET['productId'])){
-    $userId = $_GET['userId'];
-    $userId = htmlentities(trim($userId));
+// Load all classes, abstract classes, traits and interfaces:
+function my_autoloader($className) {
+    require_once "../model/" . $className . '.php';
+}
 
-    $productId = $_GET['productId'];
-    $productId = htmlentities(trim($productId));
+spl_autoload_register('my_autoloader');
+if (session_status() == PHP_SESSION_NONE) {
+    session_start();
+    if (isset($_SESSION['user']) && $_POST['submitForBasket']) {
+        try {
+            $id = trim(htmlentities($_POST['idto']));
+            echo $id;
+            $user = json_decode($_SESSION['user']);
+            //echo $user->id;
+            $quantity = trim(htmlentities($_POST['quantity']));
 
-    if (!defined('DB_HOST')){
-        define ( 'DB_HOST', 'localhost' );
-    }
-    if (!defined('DB_NAME')){
-        define ( 'DB_NAME', 'kalimag' );
-    }
-    if (!defined('DB_USER')){
-        define ( 'DB_USER', 'root' );
-    }
-    if (!defined('DB_PASS')){
-        define ( 'DB_PASS', '' );
-    }
+            if ($quantity < 1 && !is_numeric($quantity)) {
+                throw New Exception("Invalid quantity");
+            }
 
-    try {
-        $db = new PDO ("mysql:host=" . DB_HOST . ";dbname=" . DB_NAME . ';charset=utf8', DB_USER, DB_PASS );
-        $db->setAttribute (PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION );
-
-        $result = $db->prepare("SELECT * FROM baskets WHERE users_id = ? and product_id = ?");
-        $result->execute([$userId, $productId]);
-        $row = $result->fetchAll(PDO::FETCH_NUM);
-
-
-        if (!$row){
-            $psmt = $db->prepare("INSERT INTO baskets VALUES (?,?,1);");
-            $psmt->execute([$userId,$productId]);
-        } else {
-            $quantity = $row[0][2];
-            $psmt = $db->prepare("UPDATE baskets SET quantity = ? WHERE users_id = ? and product_id = ?;");
-            $quantity++;
-            var_dump($quantity);
-            $psmt->execute([$quantity, $userId, $productId]);
+            $add = new BasketDAO();
+            $add->addToBasket($quantity, $user->id, 1);
+        } catch (Exception $e) {
+            $errorMessage = $e->getMessage();
+            include "../view/product.php";
         }
-    } catch ( PDOException $e ) {
-        echo "{error : " . $e->getMessage () . "}";
-        http_response_code ( 500 );
-    }
 
-} else {
-    echo "Не успяхте да запишете продукта в кошницата си!";
+        // } else {
+        //header('Location:../view/index.php');
+        //}
+
+    }
 }
 ?>
