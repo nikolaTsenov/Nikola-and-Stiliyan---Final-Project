@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>PHP</ID>
+  <OriginalElement>\BasketDAO</OriginalElement>
+  <nodes>
+    <node x="329.0" y="441.0">\ProductDAO</node>
+    <node x="183.0" y="659.0">\UserUploader</node>
+    <node x="0.0" y="332.0">\Product</node>
+    <node x="0.0" y="550.0">\UserValidation</node>
+    <node x="216.0" y="550.0">\BasketDAO</node>
+    <node x="0.0" y="114.0">\UserDAO</node>
+    <node x="432.0" y="550.0">\CommentDAO</node>
+    <node x="362.0" y="659.0">\IProduct</node>
+    <node x="0.0" y="441.0">\Comment</node>
+    <node x="0.0" y="0.0">\IUserDAO</node>
+    <node x="0.0" y="659.0">\DBConnection</node>
+    <node x="0.0" y="223.0">\User</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="\UserDAO" target="\IUserDAO">
+      <point x="0.0" y="-32.0" />
+      <point x="0.0" y="32.0" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="0.9" x="220.22222222222217" y="419.88888888888886" />
+  <SelectedNodes />
+  <Categories>
+    <Category>Constructors</Category>
+  </Categories>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+
