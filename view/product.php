@@ -32,26 +32,19 @@ include_once '../controller/getAllProductDataService.php';
                                 <td class="col-xs-4 text-muted">Модел</td>
                                 <td class="col-xs-8"><?php echo $model; ?></td>
                             </tr>
-<!--                            <tr>-->
-<!--                                <td class="col-xs-4 text-muted"></td>-->
-<!--                                <td class="col-xs-8">Single Sim</td>-->
-<!--                            </tr>-->
-<!--                            <tr>-->
-<!--                                <td class="col-xs-4 text-muted">Устойчивост на</td>-->
-<!--                                <td class="col-xs-8">IP68 </td>-->
-<!--                            </tr>-->
-<!--                            <tr>-->
-<!--                                <td class="col-xs-4 text-muted">Touchscreen</td>-->
-<!--                                <td class="col-xs-8">Да</td>-->
-<!--                            </tr>-->
-<!--                            <tr>-->
-<!--                                <td>Модел процесор</td>-->
-<!--                                <td class="col-xs-8">Exynos 8895 Octa Core</td>-->
-<!--                            </tr>-->
-<!--                            <tr>-->
-<!--                                <td class="col-xs-4 text-muted">Операционна система</td>-->
-<!--                                <td class="col-xs-8">Android V7.0 (Nougat)</td>-->
-<!--                            </tr>-->
+
+                            <?php
+//                            echo "<tr>";
+                            for ($tr = 0; $tr< count($mod);$tr++){
+                              echo "<tr>";
+                                for($td=0; $td<count($mod[$tr]); $td++) {
+
+                                    echo"<td class='col-xs-4 text-muted'>".$mod[$tr][$td]."</td>";
+//                                    echo"<td class='col-xs-8'>".$mod[$tr][$td]."</td>";
+                               }
+                                echo "</tr>";
+                            }
+                            ?>
                         </tbody>
                     </table>
                 </div>

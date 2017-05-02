@@ -52,8 +52,8 @@ class ProductDAO
                                     INNER JOIN categories c ON s.category_id = c.category_id
                                     INNER JOIN product_specification_name_values psnv ON psnv.product_id = p.id
                                     WHERE psnv.product_id=1";
-    const VALUES_SQL = "SELECT * FROM elbag.product_specification_name_values
-                        WHERE product_id = 1";
+    const VALUES_SQL = "SELECT  specification_name,specification_values FROM elbag.product_specification_name_values 
+                        WHERE product_id =?";
 
 
 
@@ -94,11 +94,12 @@ class ProductDAO
     }
 
     public function getProductValue ($product) {
-        $stmt = $this->db->prepare(self::PRODUCT_WHIT_VAL_SQL);
+        $stmt = $this->db->prepare(self::VALUES_SQL);
         $stmt->execute(array($this->productId));
 
-        $arr = $stmt->fetchAll(PDO::FETCH_ASSOC);
-        return $arr;
+        $mod = $stmt->fetchAll(PDO::FETCH_NUM);
+
+        return $mod;
 
     }
 }
