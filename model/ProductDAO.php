@@ -52,6 +52,10 @@ class ProductDAO
                                     INNER JOIN categories c ON s.category_id = c.category_id
                                     INNER JOIN product_specification_name_values psnv ON psnv.product_id = p.id
                                     WHERE psnv.product_id=1";
+    const VALUES_SQL = "SELECT * FROM elbag.product_specification_name_values
+                        WHERE product_id = 1";
+
+
 
     public function __construct() {
         $this->db = DBConnection::getDb ();

@@ -31,7 +31,7 @@ function displayMobiles () {
 			var htmlString = "";
 			
 			for (var i =0; i<ourData.length; i++){
-		        htmlString +="<div class='' id='mobilePhones"+i+"'><a href='../view/product.php?id="+ourData[i].id+"'>"
+		        htmlString +="<div class='products' id='mobilePhones"+i+"'><a href='../view/product.php?id="+ourData[i].id+"'>"
 
 		            + "<img src =' "+ ourData[i].picture + "'  alt='tv'>"
 		           
@@ -76,7 +76,7 @@ function displayMobiles () {
 			var htmlString2 = "";
 			
 			for (var i =0; i<ourData2.length; i++){
-		        htmlString2 +="<div class='' id='smartWatches"+i+"'><a href='../view/product.php?="+ourData2[i].id+"'>"
+		        htmlString2 +="<div class='products' id='smartWatches"+i+"'><a href='../view/product.php?="+ourData2[i].id+"'>"
 
 		            + "<img src =' "+ ourData2[i].picture + "'  alt='tv'>"
 		            
@@ -121,7 +121,7 @@ function displayMobiles () {
 			var htmlString3 = "";
 			
 			for (var i =0; i<ourData3.length; i++){
-		        htmlString3 +="<div class='' id='tablets"+i+"'><a href='#'>"
+		        htmlString3 +="<div class='products' id='tablets"+i+"'><a href='#'>"
 
 		            + "<img src =' "+ ourData3[i].picture + "'  alt='tv'>"
 		            
@@ -166,7 +166,7 @@ function displayMobiles () {
 			var htmlString4 = "";
 			
 			for (var i =0; i<ourData4.length; i++){
-		        htmlString4 +="<div class='' id='bateries"+i+"'><a href='#'>"
+		        htmlString4 +="<div class='products' id='bateries"+i+"'><a href='#'>"
 
 		            + "<img src =' "+ ourData4[i].picture + "'  alt='tv'>"
 		            // + data[i].warranty + " "
@@ -217,7 +217,7 @@ function displayMobiles () {
 			var htmlString5 = "";
 			
 			for (var i =0; i<ourData5.length; i++){
-		        htmlString5 +="<div class='' id='accessories"+i+"'><a href='#'>"
+		        htmlString5 +="<div class='products' id='accessories"+i+"'><a href='#'>"
 
 		            + "<img src =' "+ ourData5[i].picture + "'  alt='tv'>"
 		            
@@ -262,7 +262,7 @@ function displayMobiles () {
 			var htmlString6 = "";
 			
 			for (var i =0; i<ourData6.length; i++){
-		        htmlString6 +="<div class='' id='smartHome"+i+"'><a href='#'>"
+		        htmlString6 +="<div class='products' id='smartHome"+i+"'><a href='#'>"
 
 		            + "<img src =' "+ ourData6[i].picture + "'  alt='tv'>"
 		            

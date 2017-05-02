@@ -1,5 +1,4 @@
 </div>
-
 <div id="topBrands">
     <h1 id="brandsHeader">В нашия сайт може да изберете от хиляди артикули с различни брандове! Ето и нашите топ брандове в тази категория:</h1>
     <div class="slideshow-container">
