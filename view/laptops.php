@@ -22,11 +22,11 @@ include_once "header.php";
 		<!-- In the below section we will load all adds from the database, I will leave it empty for now -->
 		<section id="articles">
 			<h2 class="categories-header">Лаптопи &amp; Аксесоари</h2>
-            <div class="categsContainer" id="laptopsAndAcc">
+            <div id="laptopsAndAcc">
 
             </div>
             <h2 class="categories-header">Настолни компютри &amp; Монитори</h2>
-            <div class="categsContainer" id="computers">
+            <div id="computers">
 
             </div>
             <h2 class="categories-header">PC компоненти</h2>

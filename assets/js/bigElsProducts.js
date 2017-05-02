@@ -30,7 +30,7 @@ function displayBigEls () {
 			var htmlString = "";
 			
 			for (var i =0; i<ourData.length; i++){
-		        htmlString +="<div class='' id='refrigerators"+i+"'><a href='../view/product.php?id="+ourData[i].id+"'>"
+		        htmlString +="<div class='products' id='refrigerators"+i+"'><a href='../view/product.php?id="+ourData[i].id+"'>"
 
 		            + "<img src =' "+ ourData[i].picture + "'  alt='tv'>"
 		           
@@ -75,7 +75,7 @@ function displayBigEls () {
 			var htmlString2 = "";
 			
 			for (var i =0; i<ourData2.length; i++){
-		        htmlString2 +="<div class='' id='washingMachines"+i+"'><a href='../view/product.php?="+ourData2[i].id+"'>"
+		        htmlString2 +="<div class='products' id='washingMachines"+i+"'><a href='../view/product.php?="+ourData2[i].id+"'>"
 
 		            + "<img src =' "+ ourData2[i].picture + "'  alt='tv'>"
 		            
@@ -120,7 +120,7 @@ function displayBigEls () {
 			var htmlString3 = "";
 			
 			for (var i =0; i<ourData3.length; i++){
-		        htmlString3 +="<div class='' id='dishWashers"+i+"'><a href='#'>"
+		        htmlString3 +="<div class='products' id='dishWashers"+i+"'><a href='#'>"
 
 		            + "<img src =' "+ ourData3[i].picture + "'  alt='tv'>"
 		            
@@ -165,7 +165,7 @@ function displayBigEls () {
 			var htmlString4 = "";
 			
 			for (var i =0; i<ourData4.length; i++){
-		        htmlString4 +="<div class='' id='insertingDevices"+i+"'><a href='#'>"
+		        htmlString4 +="<div class='products' id='insertingDevices"+i+"'><a href='#'>"
 
 		            + "<img src =' "+ ourData4[i].picture + "'  alt='tv'>"
 		            // + data[i].warranty + " "
@@ -216,7 +216,7 @@ function displayBigEls () {
 			var htmlString5 = "";
 			
 			for (var i =0; i<ourData5.length; i++){
-		        htmlString5 +="<div class='' id='ovens"+i+"'><a href='#'>"
+		        htmlString5 +="<div class='products' id='ovens"+i+"'><a href='#'>"
 
 		            + "<img src =' "+ ourData5[i].picture + "'  alt='tv'>"
 		            
@@ -261,7 +261,7 @@ function displayBigEls () {
 			var htmlString6 = "";
 			
 			for (var i =0; i<ourData6.length; i++){
-		        htmlString6 +="<div class='' id='airConditioners"+i+"'><a href='#'>"
+		        htmlString6 +="<div class='products' id='airConditioners"+i+"'><a href='#'>"
 
 		            + "<img src =' "+ ourData6[i].picture + "'  alt='tv'>"
 		            

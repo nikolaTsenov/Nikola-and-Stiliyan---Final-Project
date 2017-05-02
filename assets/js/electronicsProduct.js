@@ -30,7 +30,7 @@ function displayElectronics () {
 			var htmlString = "";
 			
 			for (var i =0; i<ourData.length; i++){
-		        htmlString +="<div class='' id='televisions"+i+"'><a href='../view/product.php?id="+ourData[i].id+"'>"
+		        htmlString +="<div class='products' id='televisions"+i+"'><a href='../view/product.php?id="+ourData[i].id+"'>"
 
 		            + "<img src =' "+ ourData[i].picture + "'  alt='tv'>"
 		           
@@ -75,7 +75,7 @@ function displayElectronics () {
 			var htmlString2 = "";
 			
 			for (var i =0; i<ourData2.length; i++){
-		        htmlString2 +="<div class='' id='videosScreens"+i+"'><a href='../view/product.php?="+ourData2[i].id+"'>"
+		        htmlString2 +="<div class='products' id='videosScreens"+i+"'><a href='../view/product.php?="+ourData2[i].id+"'>"
 
 		            + "<img src =' "+ ourData2[i].picture + "'  alt='tv'>"
 		            
@@ -120,7 +120,7 @@ function displayElectronics () {
 			var htmlString3 = "";
 			
 			for (var i =0; i<ourData3.length; i++){
-		        htmlString3 +="<div class='' id='homeKinoAndAudio"+i+"'><a href='#'>"
+		        htmlString3 +="<div class='products' id='homeKinoAndAudio"+i+"'><a href='#'>"
 
 		            + "<img src =' "+ ourData3[i].picture + "'  alt='tv'>"
 		            
@@ -165,7 +165,7 @@ function displayElectronics () {
 			var htmlString4 = "";
 			
 			for (var i =0; i<ourData4.length; i++){
-		        htmlString4 +="<div class='' id='electronica"+i+"'><a href='#'>"
+		        htmlString4 +="<div class='products' id='electronica"+i+"'><a href='#'>"
 
 		            + "<img src =' "+ ourData4[i].picture + "'  alt='tv'>"
 		            // + data[i].warranty + " "
@@ -216,7 +216,7 @@ function displayElectronics () {
 			var htmlString5 = "";
 			
 			for (var i =0; i<ourData5.length; i++){
-		        htmlString5 +="<div class='' id='consolsAndGames"+i+"'><a href='#'>"
+		        htmlString5 +="<div class='products' id='consolsAndGames"+i+"'><a href='#'>"
 
 		            + "<img src =' "+ ourData5[i].picture + "'  alt='tv'>"
 		            
@@ -261,7 +261,7 @@ function displayElectronics () {
 			var htmlString6 = "";
 			
 			for (var i =0; i<ourData6.length; i++){
-		        htmlString6 +="<div class='' id='photos"+i+"'><a href='#'>"
+		        htmlString6 +="<div class='products' id='photos"+i+"'><a href='#'>"
 
 		            + "<img src =' "+ ourData6[i].picture + "'  alt='tv'>"
 		            
@@ -306,7 +306,7 @@ function displayElectronics () {
 			var htmlString7 = "";
 			
 			for (var i =0; i<ourData7.length; i++){
-		        htmlString5 +="<div class='' id='videoCameras"+i+"'><a href='#'>"
+		        htmlString5 +="<div class='products' id='videoCameras"+i+"'><a href='#'>"
 
 		            + "<img src =' "+ ourData7[i].picture + "'  alt='tv'>"
 		            
@@ -351,7 +351,7 @@ function displayElectronics () {
 			var htmlString8 = "";
 			
 			for (var i =0; i<ourData8.length; i++){
-		        htmlString5 +="<div class='' id='photoAndVideoCameras"+i+"'><a href='#'>"
+		        htmlString5 +="<div class='products' id='photoAndVideoCameras"+i+"'><a href='#'>"
 
 		            + "<img src =' "+ ourData8[i].picture + "'  alt='tv'>"
 		            

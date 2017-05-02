@@ -30,7 +30,7 @@ function displaySmallEls () {
 			var htmlString = "";
 			
 			for (var i =0; i<ourData.length; i++){
-		        htmlString +="<div class='' id='hoovers"+i+"'><a href='../view/product.php?id="+ourData[i].id+"'>"
+		        htmlString +="<div class='products' id='hoovers"+i+"'><a href='../view/product.php?id="+ourData[i].id+"'>"
 
 		            + "<img src =' "+ ourData[i].picture + "'  alt='tv'>"
 		           
@@ -75,7 +75,7 @@ function displaySmallEls () {
 			var htmlString2 = "";
 			
 			for (var i =0; i<ourData2.length; i++){
-		        htmlString2 +="<div class='' id='preparingDrinks"+i+"'><a href='../view/product.php?="+ourData2[i].id+"'>"
+		        htmlString2 +="<div class='products' id='preparingDrinks"+i+"'><a href='../view/product.php?="+ourData2[i].id+"'>"
 
 		            + "<img src =' "+ ourData2[i].picture + "'  alt='tv'>"
 		            
@@ -120,7 +120,7 @@ function displaySmallEls () {
 			var htmlString3 = "";
 			
 			for (var i =0; i<ourData3.length; i++){
-		        htmlString3 +="<div class='' id='kitchenAppliances"+i+"'><a href='#'>"
+		        htmlString3 +="<div class='products' id='kitchenAppliances"+i+"'><a href='#'>"
 
 		            + "<img src =' "+ ourData3[i].picture + "'  alt='tv'>"
 		            

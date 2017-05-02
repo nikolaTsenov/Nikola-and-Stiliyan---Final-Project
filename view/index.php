@@ -36,13 +36,11 @@
 		?>
 		<!-- In the below section we will load all adds from the database, I will leave it empty for now -->
 		<section id="articles">
-
+			
             <h2 class="categories-header">Мобилни телефони</h2>
-                <div id="telephones">
+            <div id="telephones">
 
-                </div>
-        </section>
-    <section id="articles">
+            </div>
             <h2 class="categories-header">Смарт часовници</h2>
             <div id="smartWatches">
 

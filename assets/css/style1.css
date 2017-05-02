@@ -561,6 +561,7 @@ body {
 	float: left;
 	padding: 1%;
 	padding-bottom: 5%;
+	display:inline-block;
 }
 .products img {
 	width: 100%;
@@ -581,7 +582,7 @@ body {
 .categories-header{
 	font-size: 2em;
 	padding: 10px;
-	float: none;
+	clear:both;
 }
 
 .section-wrapper {
