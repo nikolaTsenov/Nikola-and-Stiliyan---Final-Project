@@ -61,6 +61,8 @@
 
             </div>
         </section>
+        <div>
+        </div>
 <!-- This is for products -->
 <script src="../assets/js/indexProducts.js" ></script>
 <?php

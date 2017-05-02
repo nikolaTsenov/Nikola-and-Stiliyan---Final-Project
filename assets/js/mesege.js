@@ -82,7 +82,7 @@ function display() {
 
                 document.getElementById('comment_logs').innerHTML += createCom(newComm);
             // document.getElementById('result').innerHTML = xhr.responseText;
-            reloadTable();
+            // reloadTable();
         }
     }
 }

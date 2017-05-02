@@ -61,10 +61,8 @@ class ProductDAO
 
     public function showAllProducts($product){
 
-//        $pstmt = $this->db->prepare(self::SHOW_CATEGORY_INDEX_SQL);
-//        $pstmt= $this->db->exec(array($this->productCatName));
 
-        $stmt = $this->db->prepare(self::SHOW_CATEGORY_SQL);
+        $stmt = $this->db->prepare(self::SHOW_ALL_PRODUCTS_SQL);
         $stmt->execute(array($this->productCatName));
 
         $arr = $stmt->fetchAll(PDO::FETCH_ASSOC);
