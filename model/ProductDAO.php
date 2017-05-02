@@ -17,6 +17,7 @@ class ProductDAO
     public $id;
     public $productName;
     public $productPicture;
+    public $productSubCatName;
     public $productCatName;
     public $productId;
 
@@ -39,7 +40,7 @@ class ProductDAO
     const SHOW_SUB_CATEGORY_SQL = "SELECT p.* ,c.name as cname,s.name as sname FROM products p
                                     INNER JOIN subcategories s ON p.subcategory_id = subcategories_id
                                     INNER JOIN categories c ON s.category_id = c.category_id
-                                    WHERE  c.category_id= 1 AND subcategories_id = ?";
+                                    WHERE  c.category_id= ? AND subcategories_id = ?";
     
     const GE_PRODUCT_DATA_SQL = "SELECT p.* ,c.name as cname,s.name as sname FROM products p
                                     INNER JOIN subcategories s ON p.subcategory_id = subcategories_id
@@ -74,7 +75,7 @@ class ProductDAO
     public function showSubCatProducts($product){
     
     	$stmt = $this->db->prepare(self::SHOW_SUB_CATEGORY_SQL);
-    	$stmt->execute(array($this->productCatName));
+    	$stmt->execute(array($this->productCatName,$this->productSubCatName));
     
     	$arr = $stmt->fetchAll(PDO::FETCH_ASSOC);
     	echo json_encode($arr);

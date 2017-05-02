@@ -1,9 +1,8 @@
-
-function displayMobiles () { 
+function displayBigEls () { 
 	
 	
 	
-	/* Show all telephones */
+	/* Show all refrigerators */
 	if(typeof XMLHttpRequest !== 'undefined') xhttp = new XMLHttpRequest();
 	else {
 	   var versions = ["MSXML2.XmlHttp.5.0", 
@@ -25,13 +24,13 @@ function displayMobiles () {
 			// successfuly received response
 			//console.log(xhttp.responseText); - for testing
 			var ourData = JSON.parse(xhttp.responseText);
-			
-			var htmlDiv = document.getElementById('telephones');
+			console.log(xhttp.responseText);
+			var htmlDiv = document.getElementById('refrigerators');
 			
 			var htmlString = "";
 			
 			for (var i =0; i<ourData.length; i++){
-		        htmlString +="<div class='' id='mobilePhones"+i+"'><a href='../view/product.php?id="+ourData[i].id+"'>"
+		        htmlString +="<div class='' id='refrigerators"+i+"'><a href='../view/product.php?id="+ourData[i].id+"'>"
 
 		            + "<img src =' "+ ourData[i].picture + "'  alt='tv'>"
 		           
@@ -45,10 +44,10 @@ function displayMobiles () {
 			htmlDiv.innerHTML = htmlString;
 		}
 	}
-	xhttp.open('GET', '../controller/getProductsFromSubCatService.php?sc=telephones', true);
+	xhttp.open('GET', '../controller/getProductsFromSubCatService.php?sc=refrigerators', true);
 	xhttp.send(null);
 	
-	/* Show all smartwatches */
+	/* Show all computers and washingMachines */
 	
 	if(typeof XMLHttpRequest !== 'undefined') xhttp2 = new XMLHttpRequest();
 	else {
@@ -70,13 +69,13 @@ function displayMobiles () {
 		if (this.readyState == 4 && this.status == 200) {
 			// successfuly received response
 			var ourData2 = JSON.parse(xhttp2.responseText);
-			
-			var htmlDiv2 = document.getElementById('smartWatches');
+			console.log(xhttp2.responseText);
+			var htmlDiv2 = document.getElementById('washingMachines');
 			
 			var htmlString2 = "";
 			
 			for (var i =0; i<ourData2.length; i++){
-		        htmlString2 +="<div class='' id='smartWatches"+i+"'><a href='../view/product.php?="+ourData2[i].id+"'>"
+		        htmlString2 +="<div class='' id='washingMachines"+i+"'><a href='../view/product.php?="+ourData2[i].id+"'>"
 
 		            + "<img src =' "+ ourData2[i].picture + "'  alt='tv'>"
 		            
@@ -90,10 +89,10 @@ function displayMobiles () {
 			htmlDiv2.innerHTML = htmlString2;
 		}
 	}
-	xhttp2.open('GET', '../controller/getProductsFromSubCatService.php?sc=smartWatches', true);
+	xhttp2.open('GET', '../controller/getProductsFromSubCatService.php?sc=washingMachines', true);
 	xhttp2.send(null);
 
-	/* Show all tablets */
+	/* Show all dishWashers */
 	
 	if(typeof XMLHttpRequest !== 'undefined') xhttp3 = new XMLHttpRequest();
 	else {
@@ -116,12 +115,12 @@ function displayMobiles () {
 			// successfuly received response
 			var ourData3 = JSON.parse(xhttp3.responseText);
 			
-			var htmlDiv3 = document.getElementById('tablets');
+			var htmlDiv3 = document.getElementById('dishWashers');
 			
 			var htmlString3 = "";
 			
 			for (var i =0; i<ourData3.length; i++){
-		        htmlString3 +="<div class='' id='tablets"+i+"'><a href='#'>"
+		        htmlString3 +="<div class='' id='dishWashers"+i+"'><a href='#'>"
 
 		            + "<img src =' "+ ourData3[i].picture + "'  alt='tv'>"
 		            
@@ -135,10 +134,10 @@ function displayMobiles () {
 			htmlDiv3.innerHTML = htmlString3;
 		}
 	}
-	xhttp3.open('GET', '../controller/getProductsFromSubCatService.php?sc=tablets', true);
+	xhttp3.open('GET', '../controller/getProductsFromSubCatService.php?sc=dishWashers', true);
 	xhttp3.send(null);
 	
-	/* Show all bateries */
+	/* Show all insertingDevices */
 	
 	if(typeof XMLHttpRequest !== 'undefined') xhttp4 = new XMLHttpRequest();
 	else {
@@ -161,12 +160,12 @@ function displayMobiles () {
 			// successfuly received response
 			var ourData4 = JSON.parse(xhttp4.responseText);
 			
-			var htmlDiv4 = document.getElementById('tablets');
+			var htmlDiv4 = document.getElementById('insertingDevices');
 			
 			var htmlString4 = "";
 			
 			for (var i =0; i<ourData4.length; i++){
-		        htmlString4 +="<div class='' id='bateries"+i+"'><a href='#'>"
+		        htmlString4 +="<div class='' id='insertingDevices"+i+"'><a href='#'>"
 
 		            + "<img src =' "+ ourData4[i].picture + "'  alt='tv'>"
 		            // + data[i].warranty + " "
@@ -186,10 +185,10 @@ function displayMobiles () {
 			htmlDiv4.innerHTML = htmlString4;
 		}
 	}
-	xhttp4.open('GET', '../controller/getProductsFromSubCatService.php?sc=bateries', true);
+	xhttp4.open('GET', '../controller/getProductsFromSubCatService.php?sc=insertingDevices', true);
 	xhttp4.send(null);
 	
-    /* Show all accessories */
+    /* Show all ovens */
 	
 	if(typeof XMLHttpRequest !== 'undefined') xhttp5 = new XMLHttpRequest();
 	else {
@@ -212,12 +211,12 @@ function displayMobiles () {
 			// successfuly received response
 			var ourData5 = JSON.parse(xhttp5.responseText);
 			
-			var htmlDiv5 = document.getElementById('tablets');
+			var htmlDiv5 = document.getElementById('ovens');
 			
 			var htmlString5 = "";
 			
 			for (var i =0; i<ourData5.length; i++){
-		        htmlString5 +="<div class='' id='accessories"+i+"'><a href='#'>"
+		        htmlString5 +="<div class='' id='ovens"+i+"'><a href='#'>"
 
 		            + "<img src =' "+ ourData5[i].picture + "'  alt='tv'>"
 		            
@@ -231,10 +230,10 @@ function displayMobiles () {
 			htmlDiv5.innerHTML = htmlString5;
 		}
 	}
-	xhttp5.open('GET', '../controller/getProductsFromSubCatService.php?sc=accessories', true);
+	xhttp5.open('GET', '../controller/getProductsFromSubCatService.php?sc=ovens', true);
 	xhttp5.send(null);
 	
-	 /* Show all smart home and VR glasses */
+	 /* Show all airConditioners */
 	
 	if(typeof XMLHttpRequest !== 'undefined') xhttp6 = new XMLHttpRequest();
 	else {
@@ -257,12 +256,12 @@ function displayMobiles () {
 			// successfuly received response
 			var ourData6 = JSON.parse(xhttp6.responseText);
 			
-			var htmlDiv6 = document.getElementById('tablets');
+			var htmlDiv6 = document.getElementById('airConditioners');
 			
 			var htmlString6 = "";
 			
 			for (var i =0; i<ourData6.length; i++){
-		        htmlString6 +="<div class='' id='smartHome"+i+"'><a href='#'>"
+		        htmlString6 +="<div class='' id='airConditioners"+i+"'><a href='#'>"
 
 		            + "<img src =' "+ ourData6[i].picture + "'  alt='tv'>"
 		            
@@ -276,133 +275,12 @@ function displayMobiles () {
 			htmlDiv6.innerHTML = htmlString6;
 		}
 	}
-	xhttp6.open('GET', '../controller/getProductsFromSubCatService.php?sc=smartHome', true);
+	xhttp6.open('GET', '../controller/getProductsFromSubCatService.php?sc=airConditioners', true);
 	xhttp6.send(null);
 	
 }
 
 
 document.addEventListener('DOMContentLoaded', function() {
-	displayMobiles();
+	displayBigEls();
 });
-
-
-
-
-/* Interesting code commented just because it can be used in other cases(maybe)
-
-var req = new XMLHttpRequest();
-req.open('GET','../controller/indexController.php?curCat='+selector,true);
-req.onload = function () {
-
-    var ourData = JSON.parse(req.responseText);
-    renderHTML(ourData);
-
-}
-
-req.send();
-*/
-///*
-//var req = new XMLHttpRequest();
-//req.open('GET','../controller/showMobPhones.php',true);
-//req.onload = function () {
-//
-//    var ourData = JSON.parse(req.responseText);
-//    //var forRenderIn = document.getElementById('telephones');
-//    renderHTML(ourData,document.getElementById('telephones'));
-//
-//}
-//
-//req.send();
-///* Show SmartWatches */ 
-//var req2 = new XMLHttpRequest();
-//req2.open('GET','../controller/showSmartWatches.php',true);
-//req2.onload = function () {
-//
-//    var ourData2 = JSON.parse(req.responseText);
-//    //var forRenderIn = document.getElementById('telephones');
-//    renderHTML(ourData2,document.getElementById('smartWatches'));
-//
-//}
-//
-//req2.send();
-
-/*
-function renderHTML(data,forRenderIn) {
-
-    var htmlString = "";
-    
-    for (var i =0; i<data.length; i++){
-        htmlString +="<div class='' id='mobilePhones"+i+"'><a href='#'>"
-
-            + "<img src =' "+ data[i].picture + "'  alt='tv'>"
-            // + data[i].warranty + " "
-            // + data[i].quantity + " "
-            +"<h3>" + data[i].model + "</h3></a>"
-             +"<p>" + data[i].cname + " </p>"
-            +"<p>" + data[i].products_name + " </p>"
-             +"<p>" + data[i].name + " </p>"
-            +"<p>" + data[i].sname +" </p>";
-            // + data[i].mname + " "
-              // + data[i].price + " "
-        htmlString += "<a href='' id='link-button-for-articles'>"+"виж тук"+"</a>";
-        htmlString += "</div>";
-
-    }
-
-    forRenderIn.insertAdjacentHTML('beforeend',htmlString);
-
-}
-*/
- // });
-
-
-
-
-
-
-
-
-
-
-
-
-//
-//
-// var div = document.getElementById("articles");
-// var btn = document.getElementById("defaultOpen");
-//
-// var req = new XMLHttpRequest();
-// req.open('GET','../controller/indexController.php')
-// req.onload = function () {
-//
-//     var ourData = JSON.parse(req.responseText);
-//     renderHTML(ourData);
-//
-// }
-//
-// req.send();
-//
-// function renderHTML(data) {
-//
-//     var htmlString = "";
-//
-//
-//     for (var i =0; i<data.length; i++){
-//         htmlString +="<div class='products'><a href='#'>"
-//             // + data[i].products_name + " "
-//             // + data[i].name + " "
-//             // + data[i].price + " "
-//             + "<img src =' "+ data[i].picture + "'  alt='tv'>"
-//             // + data[i].warranty + " "
-//             // + data[i].quantity + " "
-//             +"<h3>" + data[i].model + "</h3></a>";
-//         // + data[i].cname + " "
-//         // + data[i].mname + " "
-//         htmlString += "<a href='' id='link-button-for-articles'>"+"виж тук"+"</a>";
-//         htmlString += "</div>";
-//     }
-//
-//     div.insertAdjacentHTML('beforeend',htmlString);
-//
-// }
