@@ -12,8 +12,9 @@ include_once '../controller/getAllProductDataService.php';
             </div>
             <div id="product-fav-and-buy">
                 <div>
-                    <p> <?php if (isset($cena)) { echo $cena; } else { echo "недефинирано"; } ?> <span>лв.</span> </p>
+                    <p style="color:red; font-size:1.2em;font-weight:bold"> <?php if (isset($cena)) { echo $cena; } else { echo "недефинирано"; } ?> <span>лв.</span> </p>
 <!--                     <p><span>В наличност</span></p> -->
+					<?php if(isset($_SESSION['user'])) { ?>
                     <form action="../controller/basket.php" method="post">
                         <select name="quantity" id="">
                             <?php
@@ -31,6 +32,7 @@ include_once '../controller/getAllProductDataService.php';
                         <div class="whishlist-button-holder" data-display-type="default" data-product-id="5499268" data-offer-id="17426062">
                         <button type="button" class="add-to-fav" id="<?php echo $productId; ?>">Добави в Любими</button>
                     </div>
+                    <?php } ?>
                 </div>
             </div>
         </div>
